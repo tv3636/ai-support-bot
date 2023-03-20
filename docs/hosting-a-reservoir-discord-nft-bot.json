@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 8,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:19:04.839Z"
+        },
+        "title": "NFT Discord Bot",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "hosting-a-reservoir-discord-nft-bot",
+        "excerpt": "",
+        "body": "> \ud83d\udcd8 Want to go straight to the code?\n> \n> [Check out the github](https://github.com/reservoirprotocol/reservoir-discord-bot)\n\nReservoir Discord Bot provides communities easy to use commands and alerts for their  \nDiscord server, which can be expanded and customized to their liking. Come test the bot out now in the [Reservoir discord server](https://discord.gg/fwUcYFSscT)!\n\nThe Discord bot ships with the following functionality:\n\n- Automated alerts for new listings, sales, floor listings, and top collection bids\n\n<p align=\"center\">\n<image src=\"https://i.imgur.com/UNa3src.png\" width=\"500\">\n<image src=\"https://i.imgur.com/OpYAk1A.png\" width=\"500\">\n<image src=\"https://i.imgur.com/xTyVwDJ.png\" width=\"500\">\n</p>\n\n- Collection search to view stats, current top bid, and current floor price\n\n```\n/collection [name: collection name to search for (ex. forgotten runes)] [limit: number of collections to return]\n```\n\n\n\n<p align=\"center\">\n<image src=\"https://i.imgur.com/HUREMOC.png\" width=\"500\">\n<image src=\"https://i.imgur.com/EXTp6tu.png\" width=\"500\">\n<image src=\"https://i.imgur.com/YQ8LmA2.png\" width=\"500\">\n<image src=\"https://i.imgur.com/NTxwvqJ.png\" width=\"500\">\n</p>\n\n## Getting Started\n\n### Prerequisites\n\n1. Install [Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)\n2. Request a free [Reservoir API Key](https://docs.reservoir.tools/reference/rate-limits#instant-api-key)\n3. [Setup a Discord application and bot](https://discordjs.guide/preparations/setting-up-a-bot-application.html#setting-up-a-bot-application)\n\n### Built With\n\n- [Reservoir SDK](https://docs.reservoir.tools/docs/reservoir-sdk)\n- [Reservoir Protocol and API](https://reservoir.tools/)\n- [TypeScript](https://www.typescriptlang.org/)\n- [Discord.js](https://discord.js.org/#/)\n\n### Installation\n\n#### Method 1: Docker Setup (Recommended)\n\n1. Install [Docker](https://docs.docker.com/compose/install/)\n2. Fork this repository, and follow these instructions to get your Discord bot running\n\n```bash\n# Copy env vars sample file\ncp .env.sample .env\n\n# Set env vars in editor of your choice\nvim .env\n\n# Set constants in editor of your choice\nvim src/utils/constants.ts\n\n# Create and start the docker container\ndocker compose up -d\n```\n\n\n\n#### Method 2: Manual Setup\n\n1. Install [Redis](https://redis.io/docs/getting-started/installation/) and start the server on the default port (6379)\n2. Fork this repository, and follow these instructions to get your Discord bot running\n\n```bash\n# Copy env vars sample file\ncp .env.sample .env\n\n# Set env vars in editor of your choice\nvim .env\n\n# Set constants in editor of your choice\nvim src/utils/constants.ts\n\n# Download dependencies\nnpm install\n\n# Start the Discord bot\nnpm run start\n```\n\n\n\n### Configuration\n\nEnvironment Variables\n\n| Environment Variable | Description                                                                                                                        | Example                                                     |\n| :------------------- | :--------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------- |\n| TOKEN                | [Your Discord bot's token](https://discordjs.guide/preparations/setting-up-a-bot-application.html#your-bot-s-token)                | NzkyNzE1NDU0MTk2MDg4ODQy.X-hvzA.Ovy4MCQywSkoMRRclStW4xAYK7I |\n| RESERVOIR_API_KEY    | Reservoir API key provided by the Reservoir Protocol. [Get your own API key](https://api.reservoir.tools/#/0.%20Auth/postApikeys). | 123e4567-e89b-12d3-a456-426614174000                        |\n\nConstants\n\n| Constant              | Description                                                                                                                                            | Default                                               |\n| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- |\n| ALERT_COOLDOWN        | Number of seconds to wait before sending a new floor price or top bid alert                                                                            | 60 \\* 30 (30 minutes)                                 |\n| PRICE_CHANGE_OVERRIDE | Percentage change in floor price to override alert cooldown                                                                                            | 0.1 (10%)                                             |\n| ALERT_ENABLED         | Enable/disable new listings, sales, floor price, and top bid alerts                                                                                    | listings: false, sales: false, floor: true, bid: true |\n| APPLICATION_ID        | [Your Discord application id](https://support-dev.discord.com/hc/en-us/articles/360028717192-Where-can-I-find-my-Application-Team-Server-ID-)          | 5736050287834562                                      |\n| CHANNEL_IDS           | [The Discord channels you want the bot active in](https://support.discord.com/hc/en-us/articles/206346498-Where-can-I-find-my-User-Server-Message-ID-) | 123456789098765432                                    |\n| ALERT_CONTRACT        | The contract address of the collection you want to be alerted of floor price and top bid changes                                                       | 0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb            |\n| TRACKED_CONTRACTS     | The contract address(es) of the collection(s) you want to be alerted of new listings and sales                                                         | [0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb]          |\n| REDIS_HOST            | Redis host to connect to (For Docker set to \"redis\")                                                                                                   | 127.0.0.1                                             |\n| REDIS_PORT            | Redis port to connect to (For Docker set to \"6379\")                                                                                                    | 6379                                                  |",
+        "order": 11,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-15T17:50:08.643Z",
+        "revision": 14,
+        "_id": "63f3e45464c04e0012a8fc0f",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-11-15T22:42:21.032Z",
+        "updatedAt": "2023-02-28T18:19:04.624Z",
+        "user": "62aa40bf070ba500847db14f",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0f"
+    },
+    "meta": {
+        "slug": "hosting-a-reservoir-discord-nft-bot",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "NFT Discord Bot",
+        "title_raw": "NFT Discord Bot",
+        "description": "\ud83d\udcd8Want to go straight to the code?Check out the githubReservoir Discord Bot provides communities easy to use commands and alerts for theirDiscord server, which can be expanded and customized to their liking. Come test the bot out now in the Reservoir discord server!The Discord bot ships with the fol...",
+        "_id": "63f3e45464c04e0012a8fc0f",
+        "hidden": false
+    },
+    "activeDoc": "hosting-a-reservoir-discord-nft-bot"
+}

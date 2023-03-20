@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:18.347Z"
+        },
+        "title": "listToken",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "listtoken",
+        "excerpt": "This action is used to list an ERC-1155 or ERC-721 token. You can also use this action to list to multiple exchanges/marketplaces.",
+        "body": "You can supply an object of parameters listed below:\n\n| Parameter      | Description                                                                                                                                                                       | Required | Example                                                                                                                                                                                                                           |\n| :------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **listings**   | An array of objects representing listings, mapping directly to the `params` property from the [execute list api](/reference/postexecutelistv4).                                   | `true`   | `[{             token: \"0:0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\",             weiPrice: 10000000000000000,             orderbook: \"reservoir\",             orderKind: \"seaport\",           expirationTime: 1667403808616 }]` |\n| **signer**     | A valid [signer](https://docs.ethers.io/v5/api/signer/#Signer) from ethers.                                                                                                       | `true`   | _Refer to ethers documentation on [signers](https://docs.ethers.io/v5/api/signer/#Signer)_                                                                                                                                        |\n| **onProgress** | Callback to update UI state as execution progresses. Can also be used to get the transaction hash for a given step item.                                                          | `true`   | `(steps) => {            console.log(steps)      }`                                                                                                                                                                               |\n| **precheck**   | A boolean indicating whether to just get back the steps and not to execute them. This is useful for checking if marketplace approval is required before iterating over the steps. | `false`  | `false`                                                                                                                                                                                                                           |\n\n**Example**\n\n```typescript\nimport { getClient, Execute } from \"@reservoir0x/reservoir-sdk\";\nimport { ethers } from \"ethers\";\n\n...\n\naddress = \"0x8ba1f109551bD432803012645Ac136ddd64DBA72\"\nsigner = new ethers.VoidSigner(address, provider)\n\ngetClient()?.actions.listToken({\n  listings: [{  \n          token: \"0:0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\",  \n          weiPrice: 10000000000000000,  \n          orderbook: \"reservoir\",  \n          orderKind: \"seaport\",  \n          expirationTime: 1667403808616  \n  }],\n  signer,\n  onProgress: (steps: Execute['steps']) => {\n    console.log(steps)\n  }\n})\n```",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-02T05:49:55.214Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fc0a",
+        "pendingAlgoliaPublish": false,
+        "parentDoc": "63f3e45464c04e0012a8fbb7",
+        "createdAt": "2022-11-02T15:39:24.778Z",
+        "updatedAt": "2022-12-28T17:49:14.802Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0a"
+    },
+    "meta": {
+        "slug": "listtoken",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb7",
+        "image": [],
+        "title": "listToken",
+        "title_raw": "listToken",
+        "description": "This action is used to list an ERC-1155 or ERC-721 token. You can also use this action to list to multiple exchanges/marketplaces.",
+        "_id": "63f3e45464c04e0012a8fc0a",
+        "hidden": false
+    },
+    "activeDoc": "listtoken"
+}

@@ -1,0 +1,78 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-03-14T05:18:54.623Z"
+        },
+        "title": "Blur Limitations",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "blur-limitations",
+        "excerpt": "",
+        "body": "Blur currently has a number of restrictions in place:\n\n- All orders require a signature from the Blur server to be filled\n- To get a signature, the Blur server requires the buyer to be signed in\n- Smart contracts wallets / routers cannot sign in or fill orders\n\nThese restrictions mean that filling Blur orders comes with limitations:\n\n- Before buying, users need to sign a message to sign into Blur\n- Blur purchases can only be combined with purchases from marketplaces that the Blur router already supports (OpenSea, LooksRare, X2Y2). If you try to purchase from other marketplaces, we will break it into multiple transactions\n- Features like normalizing royalties or collecting fees on top are not possible, because they require usage of the Reservoir Router contract\n- If you accept an offer, you'll receive Blur Pool ETH, not ETH or WETH in your wallet, which needs to be withdrawn in a separate transaction\n\nWe do our best to abstract these limitations from end users and developers, making the experience as seamless as possible.\n\nHopefully over time Blur will be upgraded, and some of these limitations removed.",
+        "order": 999,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-03-13T22:01:15.306Z",
+        "revision": 3,
+        "_id": "641000f63457e5000ad7c5a9",
+        "user": "62a26bef4af83a00214889fe",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1e",
+        "createdAt": "2023-03-14T05:07:02.690Z",
+        "updatedAt": "2023-03-14T05:18:54.283Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "641000f63457e5000ad7c5a9"
+    },
+    "meta": {
+        "slug": "blur-limitations",
+        "type": "docs",
+        "image": [],
+        "title": "Blur Limitations",
+        "title_raw": "Blur Limitations",
+        "description": "Blur currently has a number of restrictions in place: All orders require a signature from the Blur server to be filledTo get a signature, the Blur server requires the buyer to be signed inSmart contracts wallets / routers cannot sign in or fill orders These restrictions mean that filling Blur orders...",
+        "_id": "641000f63457e5000ad7c5a9",
+        "hidden": false
+    },
+    "activeDoc": "blur-limitations"
+}

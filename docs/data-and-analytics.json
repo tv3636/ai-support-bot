@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:57:30.162Z"
+        },
+        "title": "Access Market Data",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "data-and-analytics",
+        "excerpt": "Access real-time and historical market data, including sales, orders, and metadata",
+        "body": "Reservoir offers developers easy access to real-time and historical market data for NFTs. Integrating with Reservoir provides your users a comprehensive view of the entire market and the ability to make informed decisions about buying and selling NFTs.\n\nThere are several ways to access NFT market data using Reservoir:\n\n- [Reservoir API](doc:reservoir-api)- an all-in-one NFT data and liquidity API. Get access to all the data you need to contextualize the market\n- [Reservoir's Dune Dataset](doc:dune-dataset)- Leverage Dune\u2019s user-friendly dashboard interface to query Reservoir data.\n- [Sync with Reservoir](doc:sync-with-reservoir)- use Reservoir\u2019s data endpoints to sync your database directly with Reservoir\n\nOur data includes:\n\n- Activity data - Get a feed of activity (new listings, bids, transfers and sales) at the collection, token, or user level. This data can be used to build activity feeds. \n- Collection data - Search for collections, get collection information and metadata, get for users' collections, or create a custom collection set\n- Attribute data - Collection attribute data including counts, floor prices and top bids\n- Token data - Token metadata and market data including floor prices and top bids, flagged token status, and royalty compliance\n- Market statistics - Daily collection volumes and users' total bid liquidity\n- Price event data - Events for changes in token and collection floor prices and top bids\n- Order data - bids and asks filtered by token, collection or maker\n- Ownership data - a variety of ownership data endpoints including collection ownership, owner distribution, and cross collection ownership.\n- Sales data - Recent and historical sales for a contract or token\n- Marketplace source data - Marketplace sources for attributing orders to specific marketplaces\n- Transfer data - Recent and historical NFT transfers",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-22T18:43:40.463Z",
+        "revision": 19,
+        "_id": "63f3e45464c04e0012a8fc28",
+        "pendingAlgoliaPublish": false,
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "createdAt": "2022-12-22T19:11:19.971Z",
+        "updatedAt": "2023-02-28T18:57:29.824Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc28"
+    },
+    "meta": {
+        "slug": "data-and-analytics",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Access Market Data",
+        "title_raw": "Access Market Data",
+        "description": "Access real-time and historical market data, including sales, orders, and metadata",
+        "_id": "63f3e45464c04e0012a8fc28",
+        "hidden": false
+    },
+    "activeDoc": "data-and-analytics"
+}

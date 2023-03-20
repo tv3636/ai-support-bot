@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:18.520Z"
+        },
+        "title": "cancelOrder",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "cancelorder",
+        "excerpt": "This action is can be used to cancel and valid order (bids/listings)",
+        "body": "You can supply an object of parameters listed below:\n\n| Parameter      | Description                                                                                                              | Required | Example                                                                                    |\n| :------------- | :----------------------------------------------------------------------------------------------------------------------- | :------- | :----------------------------------------------------------------------------------------- |\n| **id**         | An order id                                                                                                              | `true`   | `\"0x5c27af06f65deac22abb4307fb68ead818152fee9bc781558be12f8a6a590f97\"`                     |\n| **signer**     | A valid [signer](https://docs.ethers.io/v5/api/signer/#Signer) from ethers.                                              | `true`   | _Refer to ethers documentation on [signers](https://docs.ethers.io/v5/api/signer/#Signer)_ |\n| **onProgress** | Callback to update UI state as execution progresses. Can also be used to get the transaction hash for a given step item. | `true`   | `(steps) => {            console.log(steps)      }`                                        |\n| **options**    | Supports all of the parameters allowed in the [execute cancel api](/reference/getexecutecancelv2)                        | `false`  | `{ maxFeePerGas: 2000, ... }`                                                              |\n\n**Example**\n\n```typescript\nimport { getClient, Execute } from \"@reservoir0x/reservoir-sdk\";\nimport { ethers } from \"ethers\";\n\n...\n\naddress = \"0x8ba1f109551bD432803012645Ac136ddd64DBA72\"\nsigner = new ethers.VoidSigner(address, provider)\n\ngetClient()?.actions.cancelOrder({\n  id: \"0x5c27af06f65deac22abb4307fb68ead818152fee9bc781558be12f8a6a590f97\",\n  signer,\n  onProgress: (steps: Execute['steps']) => {\n    console.log(steps)\n  }\n})\n```",
+        "order": 5,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-02T05:49:55.379Z",
+        "revision": 6,
+        "_id": "63f3e45464c04e0012a8fc0d",
+        "pendingAlgoliaPublish": false,
+        "parentDoc": "63f3e45464c04e0012a8fbb7",
+        "createdAt": "2022-11-02T17:04:08.251Z",
+        "updatedAt": "2022-12-28T17:47:23.472Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0d"
+    },
+    "meta": {
+        "slug": "cancelorder",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb7",
+        "image": [],
+        "title": "cancelOrder",
+        "title_raw": "cancelOrder",
+        "description": "This action is can be used to cancel and valid order (bids/listings)",
+        "_id": "63f3e45464c04e0012a8fc0d",
+        "hidden": false
+    },
+    "activeDoc": "cancelorder"
+}

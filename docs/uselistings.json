@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:06.291Z"
+        },
+        "title": "useListings",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "uselistings",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) and also handles [infinite loading UX](https://docs.reservoir.tools/docs/hooks#infinite-loading-hooks). Use this hook to fetch listings, using the [Asks (listings)](ref:getordersasksv4) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.\n\n```typescript\nimport { useListings } from '@reservoir0x/reservoir-kit-ui'\n\n const {\n   data: listings,\n   fetchNextPage,\n   hasNextPage,\n } = useListings({\n    contracts: ['0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb'],\n })\n```",
+        "order": 5,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-09T02:27:29.842Z",
+        "revision": 3,
+        "_id": "63f3e45464c04e0012a8fbc3",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-09T12:26:55.566Z",
+        "updatedAt": "2023-01-20T20:10:56.154Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbc3"
+    },
+    "meta": {
+        "slug": "uselistings",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useListings",
+        "title_raw": "useListings",
+        "description": "This hook is SWR powered and also handles infinite loading UX. Use this hook to fetch listings, using the Asks (listings) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.TypeScriptimport { useListings } from '@reservoir0x/reservoir-kit-ui' const { da...",
+        "_id": "63f3e45464c04e0012a8fbc3",
+        "hidden": false
+    },
+    "activeDoc": "uselistings"
+}

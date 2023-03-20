@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:23.676Z"
+        },
+        "title": "Bulk Order Creation",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "bulk-order-creation",
+        "excerpt": "",
+        "body": "Reservoir's APIs support bulk order creation enabling developers to cross-post orders across multiple marketplaces with one common interface. \n\nTo further simplify this process, ReservoirKit abstracts the complexities around steps management making it even easier to bring this functionality to your users.\n\n> \ud83d\udcd8 [API Docs: Create Bids and Listings](https://docs.reservoir.tools/reference/creating-and-filling-orders)\n\n> \ud83d\udcd8 [Quick Guide: Listing with ReservoirKit](https://docs.reservoir.tools/docs/listing)",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-23T14:04:29.665Z",
+        "revision": 4,
+        "_id": "63f3e45464c04e0012a8fc2c",
+        "pendingAlgoliaPublish": false,
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2022-12-23T18:12:29.316Z",
+        "updatedAt": "2022-12-23T19:00:03.760Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc2c"
+    },
+    "meta": {
+        "slug": "bulk-order-creation",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Bulk Order Creation",
+        "title_raw": "Bulk Order Creation",
+        "description": "Reservoir's APIs support bulk order creation enabling developers to cross-post orders across multiple marketplaces with one common interface.To further simplify this process, ReservoirKit abstracts the complexities around steps management making it even easier to bring this functionality to your use...",
+        "_id": "63f3e45464c04e0012a8fc2c",
+        "hidden": false
+    },
+    "activeDoc": "bulk-order-creation"
+}

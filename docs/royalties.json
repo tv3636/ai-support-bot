@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-03-01T02:04:13.226Z"
+        },
+        "title": "Royalties",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "royalties",
+        "excerpt": "Repair royalty free orders to be fully royalty compliant on your app.",
+        "body": "Reservoir is committed to preserving creator royalties, and we believe the key to achieving this is by finding pragmatic solutions that balance the needs of different stakeholders.\n\nReservoir's Normalized Royalties is one such solution that enables developers to automatically repair aggregated orders from non-royalty compliant marketplaces by calculating the missing royalties and adding them on top. Our open source marketplace project and [reservoir.market](https://www.reservoir.market/) have `normalizeRoyalties` enabled by default.\n\n### How does it work?\n\nFor supported exchanges we calculate the missing royalty by comparing the royalty fee included in the order to the default royalty. The default royalty is the maximum royalty across all royalty standards we support (eg. OpenSea off-chain royalties and the royalty registry). If `normalizeRoyalties` is enabled Reservoir will automatically return the new price of token with missing royalties added on top. \n\nCurrently `normalizeRoyalty`will impact orders from OpenSea, LooksRare and X2Y2. As we add additional non-royalty compliant exchanges they will automatically support normalized royalties (eg. Sudoswap and Blur).\n\n### How do I enable Normalized Royalties?\n\n**Via ReservoirKit**\n\nIf you are using[ ReservoirKit UI](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) or the [Reservoir SDK](https://docs.reservoir.tools/docs/reservoirkit-client#configuring-reservoir-sdk) packages, they can both be configured to `normalizeRoyalties` globally or on a case by case basis. These changes will impact everything from the hooks to the execution of orders.\n\n**Via APIs**\n\nIf you are using our APIs you can add the `normalizeRoyalties` parameter to configure getting orders/pricing information with normalized royalties. Here are the supported endpoints:\n\n[AsksV3](/reference/getordersasksv3)  \n[BidsV4](/reference/getordersbidsv4)  \n[UserTopBidsV1](https://docs.reservoir.tools/reference/getordersusersusertopbidsv1)  \n[CollectionsV5](/reference/getcollectionsv5)  \n[TokensV5](/reference/gettokensv5)  \n[StatsV2](/reference/getstatsv2)  \n[BuyV6](/reference/postexecutebuyv6)  \n[SellV6](/reference/postexecutesellv6)",
+        "order": 8,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-02T17:33:53.074Z",
+        "revision": 16,
+        "_id": "63f3e45464c04e0012a8fc0e",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-11-02T18:19:43.396Z",
+        "updatedAt": "2023-03-01T02:04:01.585Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0e"
+    },
+    "meta": {
+        "slug": "royalties",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Royalties",
+        "title_raw": "Royalties",
+        "description": "Repair royalty free orders to be fully royalty compliant on your app.",
+        "_id": "63f3e45464c04e0012a8fc0e",
+        "hidden": false
+    },
+    "activeDoc": "royalties"
+}

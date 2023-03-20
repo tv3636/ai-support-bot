@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:24.354Z"
+        },
+        "title": "Flagged Tokens",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "flagged-tokens",
+        "excerpt": "",
+        "body": "Reservoir offers a range of APIs to help developers to track and exclude NFTs that are flagged on OpenSea:\n\n- View the \"non-flagged\" collection floor price ([on-demand](https://docs.reservoir.tools/reference/getcollectionsv5) or [historical](https://docs.reservoir.tools/reference/geteventscollectionsflooraskv1))\n- [Show a list of Tokens](https://docs.reservoir.tools/reference/gettokensv5), with flagged tokens filtered or indicated\n- [Fetch all Token IDs](https://docs.reservoir.tools/reference/gettokensidsv1) in a collection that are flagged\n- Exclude flagged tokens when [placing collection offers](https://docs.reservoir.tools/reference/postexecutebidv4)\n- [View changes in flag status](https://docs.reservoir.tools/reference/gettokensflagchangesv1), to keep your own DB in sync\n- [Oracle for excluding flagged tokens](https://docs.reservoir.tools/reference/getoracletokensstatusv2) in on-chain applications\n\n\n\n### Relevant Fields\n\n- `isFlagged` = whether or not the token is flagged (0 or 1)\n- `lastFlagChange` = date that the flag status last changed\n- `lastFlagUpdate` = date that the flag status was last checked\n\n\n\n### Freshness\n\nWe strive to have the freshest possible data using the following methods:\n\n- Automated re-checks popular collections and floor tokens\n- Crowd-sourced re-checks from users of the Reservoir SDK, as they view tokens\n\nThat said, there is always a risk of us not being perfectly in sync. If you only need data for a single token, it is always safer to check OpenSea directly. In fact, there is a [method in the Reservoir SDK](https://docs.reservoir.tools/docs/detect-tokens-flagged-by-opensea) that makes this easy to add to your app, and report back to our API if it notices a discrepancy, crowd-sourcing better results for everyone. \n\n\n\n### Non-Tradeable Tokens\n\nThe strict definition of a \"flagged\" token is that it is \"not tradeable on OpenSea\". Unfortunately, there are other reasons that a token might not be tradeable, other than being reported stolen, and it's not possible to differentiate these. For example:\n\n- NFTs that pre-date ERC-721 (e.g. CryptoPunks)\n- Tokens that can be staked without lockup (e.g. Moonbirds & The Potatoez)\n\nFor these collections, all tokens or a large number of tokens will be marked as \"flagged\". We are actively working on a potential solution, but don't have one yet.",
+        "order": 7,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-22T20:48:32.747Z",
+        "revision": 6,
+        "_id": "63f3e45464c04e0012a8fc2d",
+        "pendingAlgoliaPublish": false,
+        "user": "62a26bef4af83a00214889fe",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2022-12-23T19:02:02.847Z",
+        "updatedAt": "2023-01-20T05:47:08.870Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc2d"
+    },
+    "meta": {
+        "slug": "flagged-tokens",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Flagged Tokens",
+        "title_raw": "Flagged Tokens",
+        "description": "Reservoir offers a range of APIs to help developers to track and exclude NFTs that are flagged on OpenSea: View the \"non-flagged\" collection floor price (on-demand or historical)Show a list of Tokens, with flagged tokens filtered or indicatedFetch all Token IDs in a collection that are flaggedExclud...",
+        "_id": "63f3e45464c04e0012a8fc2d",
+        "hidden": false
+    },
+    "activeDoc": "flagged-tokens"
+}

@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 2,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:04.940Z"
+        },
+        "title": "Understanding Sales",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "understanding-sales",
+        "excerpt": "",
+        "body": "# Add an adapter to the Core SDK, to normalize interactions with the contract\n\n<https://github.com/reservoirprotocol/core/tree/main/packages/sdk/src>\n\nCreate a directory in `/packages/sdk/src` and name it using only lowercase characters and dash (-) instead of space. For example: `lorem-ipsum` for the Lorem Ipsum protocol. \n\nCreate `addresses.ts` and add the protocol\u2019s exchange contract address for each network:\n\n```typescript\n// addresses.ts\n import { ChainIdToAddress, Network } from \"../utils\";\n \n export const Exchange: ChainIdToAddress = {\n  [Network.Ethereum]: \"0x9757f2d2b135150bbeb65308d4a91804107cd8d6\",\n  [Network.EthereumGoerli]: \"0xd4a57a3bd3657d0d46b4c5bac12b3f156b9b886b\",\n };\n```\n\n\n\n Create `index.ts` an export the Exchange object from `addresses.ts`\n\n````typescript\nimport * as Addresses from \"./addresses\";\n \n export { Addresses };\n```\nEdit /packages/sdk/src/index.ts to export the new protocol\u2019s addresses.\n\n```\nimport * as LoremIpsum from \"./lorem-ipsum\";\n \nexport {\n...\n LoremIpsum,\n };\n````\n\n\n\n# Start listening to and saving events (fills, cancels, etc) in the Indexer\n\n<https://github.com/reservoirprotocol/indexer/tree/v5/src/sync/events/data>\n\n```typescript\nimport { Interface } from \"@ethersproject/abi\";\n import { Rarible } from \"@reservoir0x/sdk\";\n import { config } from \"@/config/index\";\n import { EventData } from \"@/events-sync/data\";\n \n export const match: EventData = {\n  kind: \"rarible-match\",\n  addresses: { [Rarible.Addresses.Exchange[config.chainId].toLowerCase()\n ]: true },\n  topic: \"0x268820db288a211986b26a8fda86b1e0046281b21206936bb0e61c67b5c79ef4\",\n  numTopics: 1,\n  abi: new Interface([\n   `event Match(\n     bytes32 leftHash,\n     bytes32 rightHash,\n     address leftMaker,\n     address rightMaker,\n     uint newLeftFill,\n     uint newRightFill,\n     (bytes4 assetClass, bytes data) leftAsset,\n     (bytes4 assetClass, bytes data) rightAsset\n   )`,\n ]),\n};\n```\n\n\n\nCreate `[protocol-name].ts` in /src/sync/events/data and add a method for each event that will be tracked. The fields correspond to the following:\n\n- kind: unique identifier for the event (format: lowercase and replace spaces with dash (-))\n- addresses: an object where the key is the exchange contract address and value equal true. Use the SDK to retrieve the contract address\n- topic: the even topic. Use the following script to get this value\n\n```typescript\nconst { Interface } = require('@ethersproject/abi')\n \nconst main = () => {\n const iface = new Interface([\n   `event Match(\n     bytes32 leftHash,\n     bytes32 rightHash,\n     address leftMaker,\n     address rightMaker,\n     uint newLeftFill,\n     uint newRightFill,\n     (bytes4 assetClass, bytes data) leftAsset,\n     (bytes4 assetClass, bytes data) rightAsset\n   )`,\n ])\n console.log(iface.getEventTopic('Match'))\n}\n \nmain()\n```\n\n\n\nIf the event contains an Interface, replace it with a solidity data type. For example, from `IERC20 token` to `address token`.\n\nTo run this script you need to run `npm init -y` and install ethers.js `yarn add ethers`. Once finished, run the script using `node main.js`\n\n- numTopics: The number of topics for the event\n- abi: The event\u2019s abi\n\nGo to /src/sync/events/data/index.ts and \n\n1. Import all the methods from /src/sync/events/data/[protocol-name].ts:  \n   `import * as rarible from \"@/events-sync/data/rarible\";`\n2. Add new event types to the EventDataKind type. Include the type for each event created in 3. /src/sync/events/data/[protocol-name].ts\n3. Pass the events in /src/sync/events/data/[protocol-name].ts to the getEventData method.\n4. Add a case for each event to the internalGetEventData method\n\nCreate a migration file which will add [protocol-name] as a valid order kind. \n\nIn your terminal go to the root directory of the indexer repo and call  \n`yarn migrate create -t sql [protocol-name]-order-kind`\n\nand then change the content of the generated file to:\n\n```typescript\n-- Up Migration\n \nALTER TYPE \"order_kind_t\" ADD VALUE '[protocol-name]';\n \n-- Down Migration\n```\n\n\n\nGo to /src/sync/events/index.ts and in the switch case of the syncEvents method add a case for each event in /src/sync/events/data/[protocol-name].ts\n\n```typescript\ncase \"event-name\": {\n             const { args } = eventData.abi.parseLog(log);\n             const leftHash = args[\"leftHash\"].toLowerCase();\n             const leftMaker = args[\"leftMaker\"].toLowerCase();\n             const rightMaker = args[\"rightMaker\"].toLowerCase();\n             const newLeftFill = args[\"newLeftFill\"].toString();\n             const newRightFill = args[\"newRightFill\"].toString();\n             const leftAsset = args[\"leftAsset\"];\n             const rightAsset = args[\"rightAsset\"];\n \n             // Format or modify the parsed data from `args` and\n             // push a new object to the database using\n             // fillEventsPartial.push()\n \n             fillEventsPartial.push({\n               orderKind,\n               orderId,\n               orderSide,\n               maker,\n               taker,\n               price,\n               contract,\n               tokenId,\n               amount,\n               baseEventParams,\n             });\n \n             break;\n           }\n```\n\n\n\nMake sure to make all the addresses lowercase. \n\nTo test the integration: \n\n- Run `docker-compose up` to bootstrap a local postgres and redis instance. (The Docker daemon must be running in the background)\n- In a separate terminal, run `yarn; yarn build; yarn start` to migrate the database and start the indexer\n- Run \n\n```\ncurl -X POST -H 'Content-Type: application/json' -H 'X-Admin-Api-Key: admin' -d '{\"fromBlock\": 1, \"toBlock\": 1}\u2019 http://localhost:3000/admin/sync-events` \n```\n\n\n\nTo sync events for any particular block\n\nThe results would be shown in <http://localhost:3000/sales/bulk/v1>\n\nYou may log the `args` object to debug any issues.",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-03T11:48:39.264Z",
+        "revision": 2,
+        "_id": "63f3e45464c04e0012a8fbb9",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-03T19:12:37.626Z",
+        "updatedAt": "2022-09-19T16:45:46.688Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "parentDoc": "63f3e45464c04e0012a8fbb8",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbb9"
+    },
+    "meta": {
+        "slug": "understanding-sales",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb8",
+        "image": [],
+        "title": "Understanding Sales",
+        "title_raw": "Understanding Sales",
+        "description": "Add an adapter to the Core SDK, to normalize interactions with the contracthttps://github.com/reservoirprotocol/core/tree/main/packages/sdk/srcCreate a directory in /packages/sdk/src and name it using only lowercase characters and dash (-) instead of space. For example: lorem-ipsum for the Lorem Ips...",
+        "_id": "63f3e45464c04e0012a8fbb9",
+        "hidden": false
+    },
+    "activeDoc": "understanding-sales"
+}

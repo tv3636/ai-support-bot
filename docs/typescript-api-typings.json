@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-03-01T01:22:18.042Z"
+        },
+        "title": "Typescript API Typings",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "typescript-api-typings",
+        "excerpt": "Typescript Types that facilitate API interaction",
+        "body": "Reservoir SDK comes with built in api types to facilitate interacting with Reservoir APIs. The API types are useful for parsing api responses and determining what parameters an api accepts. Note that the types are exposed as part of the Reservoir SDK package, leaving where and how you use it up to you. There's no requirement for React, or anything else, except for typescript. Below we'll dig into some examples:\n\n### Typing out parameters:\n\n```typescript\nimport { paths } from '@reservoir0x/reservoir-sdk'\n\nconst parameters: paths['/tokens/v5']['get']['parameters']['query'] = {\n  ...\n}\n\n```\n\n\n\nWith the Typescript types imported you can easily discover what query parameters an api might allow. \n\n### Parsing api responses:\n\n```typescript\nimport { paths } from '@reservoir0x/reservoir-sdk'\n\nconst res = await fetch('https://api.reservoir.tools/tokens/v5?limit=20&collection=0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d')\nconst data = (await res.json())\n\nconst response = data as paths['/tokens/v5']['get']['responses']['200']['schema']\n\n```\n\n\n\nWhen it comes to converting the data returned by an api request into a typed response you can use the Typescript api types. Here we fetch from the tokens api endpoint and then cast the data into a tokens api response schema. The result is an easy to use, typed, json schema.",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "typescript-api",
+        "slugUpdatedAt": "2022-09-21T19:18:02.461Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fbeb",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-16T20:02:47.546Z",
+        "updatedAt": "2023-03-01T01:22:17.724Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbb7",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbeb"
+    },
+    "meta": {
+        "slug": "typescript-api-typings",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb7",
+        "image": [],
+        "title": "Typescript API Typings",
+        "title_raw": "Typescript API Typings",
+        "description": "Typescript Types that facilitate API interaction",
+        "_id": "63f3e45464c04e0012a8fbeb",
+        "hidden": false
+    },
+    "activeDoc": "typescript-api-typings"
+}

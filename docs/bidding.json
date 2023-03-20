@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:10.551Z"
+        },
+        "title": "Add Bidding",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "bidding",
+        "excerpt": "Learn how to bid on a token using ReservoirKit.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## BidModal\n\nReservoirKit provides a simple to configure modal for facilitating token bidding in your react app. Below is an example of a simple BidModal setup.\n\n```typescript\nimport { BidModal } from '@reservoir0x/reservoir-kit-ui'\nimport { useState } from 'react'\n\nconst openState = useState(true)\n\n<BidModal\n  trigger={\n    <button>\n      Place Bid\n    </button>\n  }\n  collectionId=\"0xf5de760f2e916647fd766b4ad9e85ff943ce3a2b\"\n  tokenId=\"1469875\"\n  openState={openState}\n  attribute={{\n   key: \"Fur\",\n   value: \"Gold\"\n  }}\n  onBidComplete={(data) => {\n    console.log('Bid Complete', data)\n  }}\n  onBidError={(error, data) => {\n    console.log('Bid Transaction Error', error, data)\n  }}\n  onClose={(data, stepData, currentStep) => {\n    console.log('BidModal Closed')\n  }}\n/>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll want to provide a `collectionId` and/or a `tokenId`. These can be set to undefined until the data is ready. The BidModal requires at least a `collectionId`, for collection wide bids. You can also set some optional parameters:\n\n| Prop                   | Description                                                                                                                                                                                                                                |\n| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **attribute**          | An object with a key and a value representing an attribute. This is used to prefill the modal with an attribute in the case of a collection offer.                                                                                         |\n| **openState**          | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.     |\n| **normalizeRoyalties** | Use this to ensure that royalties are added to the stats and market pricing information. If unspecified then the [global setting](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) will be used if provided. |\n\nFinally you can set some optional callbacks:\n\n**onBidComplete**: Triggered when the bid was placed successfully, returns some useful data about the bid.\n\n**onBidError**: Triggered when the bid resulted in an error, returns the error and the bid data.\n\n**onClose**: Triggered when the modal was closed. Returns some useful data about the bid as well as the step data and the current step.\n\n## Conditional Rendering\n\nReservoirKit's BidModal doesn't take care of conditionally showing the button/modal, we leave that logic up to the developer. The user also needs to have a **connected wallet**. You can check this by looking for a signer from the [useSigner](https://wagmi.sh/docs/hooks/useSigner) wagmi hook.\n\n## Custom BidModal\n\nThe BidModal also comes with a custom renderer which can be used to just get the data layer that the BidModal uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { BidModal, BidStep } from '@reservoir0x/reservoir-kit-ui'\n\n<BidModal.Custom\n  open={open}\n  tokenId={tokenId}\n  collectionId={collectionId}>\n  {({\n    token,\n    collection,\n    bidStep,\n    expirationOption,\n    expirationOptions,\n    wethBalance,\n    bidAmount,\n    bidAmountUsd,\n    hasEnoughEth,\n    hasEnoughWEth,\n    ethAmountToWrap,\n    balance,\n    wethUniswapLink,\n    transactionError,\n    stepData,\n    bidData,\n    isBanned,\n    setBidAmount,\n    setExpirationOption,\n    setBidStep,\n    placeBid,\n  }) => {\n    { Your Custom React Elements }\n  })}\n</BidModal.Custom>\n```\n\n\n\nThe custom BidModal takes a few parameters like before with one additional one being the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom BidModal then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `BidStep` here which is used to manage the internal state of the BidModal's logic. You can decide to use all or some of the data passed into your custom implementation.\n\n> \ud83d\udc4d Nice job!\n> \n> Now that we've added a bid modal to your dApp, let's [customize the theme to match your brand](/docs/reservoir-kit-theming-and-customization).",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-09-13T12:42:01.391Z",
+        "revision": 13,
+        "_id": "63f3e45464c04e0012a8fbdf",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-13T17:28:15.441Z",
+        "updatedAt": "2023-02-09T16:28:22.792Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbdf"
+    },
+    "meta": {
+        "slug": "bidding",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Add Bidding",
+        "title_raw": "Add Bidding",
+        "description": "Learn how to bid on a token using ReservoirKit.",
+        "_id": "63f3e45464c04e0012a8fbdf",
+        "hidden": false
+    },
+    "activeDoc": "bidding"
+}

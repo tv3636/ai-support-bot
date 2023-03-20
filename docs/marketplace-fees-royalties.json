@@ -1,0 +1,78 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-03-14T05:06:20.826Z"
+        },
+        "title": "Marketplace Fees & Royalties",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "marketplace-fees-royalties",
+        "excerpt": "",
+        "body": "Each marketplace that Reservoir supports has different rules around fees and royalties. Below is a summary:\n\n## OpenSea\n\n**Royalties**\n\n| Collection enforces blocklist | Min Royalty                | Max Royalty               |\n| :---------------------------- | :------------------------- | :------------------------ |\n| Yes                           | Creator configured amount  | Creator configured amount |\n| No                            | 0.5%                       | Creator configured amount |\n\n**Marketplace Fee**\n\n| Collection volume | Royalty >= 0.5% | Royalty \\< 0.5%    |\n| :---------------- | :-------------- | :----------------- |\n| Low               | Fee = 0.5%      | Fee = 0.5%         |\n| High              | Fee = 0         | Fee = 0.5%-Royalty |\n\n_Note: There are no clear guidelines as to what qualifies as \u201clow volume\u201d, so we lookup and cache the marketplace fee per collection when you use our List API._\n\n## LooksRare\n\nLooksRare has a fixed total fee of 2%. If a collection has royalties configured, 0.5% goes to the creator, and 1.5% to protocol. Otherwise, the whole 2% goes to protocol.\n\n## X2Y2\n\nX2Y2 has a fixed protocol fee of 0.5%, and enforces creator configured royalties. Note that creators need to explicitly set royalties on X2Y2 for them to be applied",
+        "order": 999,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-03-13T22:01:15.191Z",
+        "revision": 3,
+        "_id": "640fbd93e255b0003c4ff38e",
+        "user": "62a26bef4af83a00214889fe",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1e",
+        "createdAt": "2023-03-14T00:19:31.604Z",
+        "updatedAt": "2023-03-14T05:06:20.643Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "640fbd93e255b0003c4ff38e"
+    },
+    "meta": {
+        "slug": "marketplace-fees-royalties",
+        "type": "docs",
+        "image": [],
+        "title": "Marketplace Fees &amp; Royalties",
+        "title_raw": "Marketplace Fees & Royalties",
+        "description": "Each marketplace that Reservoir supports has different rules around fees and royalties. Below is a summary:OpenSeaRoyalties Collection enforces blocklistMin RoyaltyMax RoyaltyYesCreator configured amountCreator configured amountNo0.5%Creator configured amountMarketplace Fee Collection volumeRoyalty ...",
+        "_id": "640fbd93e255b0003c4ff38e",
+        "hidden": false
+    },
+    "activeDoc": "marketplace-fees-royalties"
+}

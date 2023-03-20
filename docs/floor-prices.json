@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:23.999Z"
+        },
+        "title": "Floor Prices",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "floor-prices",
+        "excerpt": "",
+        "body": "Reservoir offers access to real-time floor prices and floor price change events for NFTs in a particular collection. This can be useful for developers who are building custom NFT products and want to provide their users with up-to-date information on the current and historical prices of NFTs.\n\n> \ud83d\udcd8 [API Docs: Collections](https://docs.reservoir.tools/reference/getcollectionsv5)\n\n> \ud83d\udcd8 [API Docs: Floor Price Change Events](https://docs.reservoir.tools/reference/geteventscollectionsflooraskv1)",
+        "order": 5,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-23T14:10:16.422Z",
+        "revision": 3,
+        "_id": "63f3e45464c04e0012a8fc2b",
+        "pendingAlgoliaPublish": false,
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2022-12-23T18:10:15.455Z",
+        "updatedAt": "2022-12-23T18:10:15.455Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc2b"
+    },
+    "meta": {
+        "slug": "floor-prices",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Floor Prices",
+        "title_raw": "Floor Prices",
+        "description": "Reservoir offers access to real-time floor prices and floor price change events for NFTs in a particular collection. This can be useful for developers who are building custom NFT products and want to provide their users with up-to-date information on the current and historical prices of NFTs.\ud83d\udcd8API D...",
+        "_id": "63f3e45464c04e0012a8fc2b",
+        "hidden": false
+    },
+    "activeDoc": "floor-prices"
+}

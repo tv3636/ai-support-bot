@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-03-02T04:20:04.772Z"
+        },
+        "title": "Indexer",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "indexer",
+        "excerpt": "Reservoir's open-source indexer constructs the global NFT orderbook",
+        "body": "The Reservoir Indexer is an open-source node responsible for reading from and writing to the\u00a0[Data Lake](https://docs.reservoir.tools/docs/data-lake)\u00a0and reconstructing the\u00a0[Global NFT Orderbook](doc:global-nft-orderbook). The Indexer combines raw order data from Arweave, with ownership data from Ethereum, to trustlessly reconstruct the state of the orderbook and provides open\u00a0[APIs](https://docs.reservoir.tools/docs/reservoir-api)\u00a0for interacting with the data.\n\nIf you wish to run your own indexer, please check out our docs on self-hosting [Self-hosting](doc:hosted-vs-self-hosted) or go straight to the github repo [here](https://github.com/reservoirprotocol/indexer).",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-27T18:30:42.910Z",
+        "revision": 8,
+        "_id": "63fe352416319e0026cfc049",
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "parentDoc": "63f3e6d68678c100260b1a39",
+        "category": "63f3e45464c04e0012a8fb19",
+        "createdAt": "2023-02-28T17:08:52.607Z",
+        "updatedAt": "2023-03-02T04:20:04.447Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63fe352416319e0026cfc049"
+    },
+    "meta": {
+        "slug": "indexer",
+        "type": "docs",
+        "parent": "63f3e6d68678c100260b1a39",
+        "image": [],
+        "title": "Indexer",
+        "title_raw": "Indexer",
+        "description": "Reservoir's open-source indexer constructs the global NFT orderbook",
+        "_id": "63fe352416319e0026cfc049",
+        "hidden": false
+    },
+    "activeDoc": "indexer"
+}

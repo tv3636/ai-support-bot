@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:24.518Z"
+        },
+        "title": "Custom Fees",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "custom-fees",
+        "excerpt": "",
+        "body": "Reservoir offers a variety of solutions for configuring custom fees for NFT marketplaces. These solutions include referral fees, marketplace fees, and royalty fees.\n\nMarketplace fees are fees that are charged to users for buying NFTs that were listed on a particular marketplace. These fees are set when the order is created and must be paid regardless of where the order is filled.\n\nRoyalty fees are fees that are paid to the creator of an NFT when the NFT is sold on a marketplace. These fees function similarly to marketplace fees and are typically set at the time the order is created. If royalties were not set in the original order, it is possible to include them via Reservoir's normalizedRoyalties feature.\n\nReferral fees are fees that are paid to an individual or entity for facilitating a sale. These fees can be added on-top of any order regardless of where it was originally created. Note: If the order also  has a marketplace fee, both fees will be paid.\n\n> \ud83d\udcd8 [API Docs: Creating Listings with Marketplace Fees](https://docs.reservoir.tools/reference/postexecutelistv4)\n\n> \ud83d\udcd8 [Quick Guide: How to enable normalizedRoyalties?](https://docs.reservoir.tools/docs/normalized-royalties)",
+        "order": 9,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-22T20:48:32.104Z",
+        "revision": 6,
+        "_id": "63f3e45464c04e0012a8fc2e",
+        "pendingAlgoliaPublish": false,
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2022-12-23T19:24:41.937Z",
+        "updatedAt": "2022-12-23T19:49:07.876Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc2e"
+    },
+    "meta": {
+        "slug": "custom-fees",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Custom Fees",
+        "title_raw": "Custom Fees",
+        "description": "Reservoir offers a variety of solutions for configuring custom fees for NFT marketplaces. These solutions include referral fees, marketplace fees, and royalty fees.Marketplace fees are fees that are charged to users for buying NFTs that were listed on a particular marketplace. These fees are set whe...",
+        "_id": "63f3e45464c04e0012a8fc2e",
+        "hidden": false
+    },
+    "activeDoc": "custom-fees"
+}

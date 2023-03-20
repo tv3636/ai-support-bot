@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:18.177Z"
+        },
+        "title": "placeBid",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "placebid",
+        "excerpt": "This action is used to place a bid or multiple bids on an ERC-1155 or ERC-721 token. You can also use this action to bid on multiple exchanges/marketplaces.",
+        "body": "You can supply an object of parameters listed below:\n\n| Parameter      | Description                                                                                                                               | Required | Example                                                                                                                                                                      |\n| :------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **bids**       | An array of objects representing bids, mapping directly to the `params` property from the [execute bid api](/reference/postexecutebidv4). | `true`   | `[{         weiPrice: 10000000000000000,         orderbook: 'reservoir',         orderKind: 'seaport',         token: \"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d:0\"     }]` |\n| **signer**     | A valid [signer](https://docs.ethers.io/v5/api/signer/#Signer) from ethers.                                                               | `true`   | _Refer to ethers documentation on [signers](https://docs.ethers.io/v5/api/signer/#Signer)_                                                                                   |\n| **onProgress** | Callback to update UI state as execution progresses. Can also be used to get the transaction hash for a given step item.                  | `true`   | `(steps) => {            console.log(steps)      }`                                                                                                                          |\n\n**Example**\n\n```typescript\nimport { getClient, Execute } from \"@reservoir0x/reservoir-sdk\";\nimport { ethers } from \"ethers\";\n\n...\n\naddress = \"0x8ba1f109551bD432803012645Ac136ddd64DBA72\"\nsigner = new ethers.VoidSigner(address, provider)\n\ngetClient()?.actions.placeBid({\n  bids: [{  \n      weiPrice: 10000000000000000,  \n      orderbook: 'reservoir',  \n      orderKind: 'seaport',  \n      token: \"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d:0\"  \n  }],\n  signer,\n  onProgress: (steps: Execute['steps']) => {\n    console.log(steps)\n  }\n})\n```",
+        "order": 3,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-02T03:18:14.882Z",
+        "revision": 10,
+        "_id": "63f3e45464c04e0012a8fc0b",
+        "pendingAlgoliaPublish": false,
+        "parentDoc": "63f3e45464c04e0012a8fbb7",
+        "createdAt": "2022-11-02T16:27:44.335Z",
+        "updatedAt": "2022-12-28T17:49:08.638Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0b"
+    },
+    "meta": {
+        "slug": "placebid",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb7",
+        "image": [],
+        "title": "placeBid",
+        "title_raw": "placeBid",
+        "description": "This action is used to place a bid or multiple bids on an ERC-1155 or ERC-721 token. You can also use this action to bid on multiple exchanges/marketplaces.",
+        "_id": "63f3e45464c04e0012a8fc0b",
+        "hidden": false
+    },
+    "activeDoc": "placebid"
+}

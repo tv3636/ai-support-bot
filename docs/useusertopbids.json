@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:19.738Z"
+        },
+        "title": "useUserTopBids",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "useusertopbids",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) and also handles [infinite loading UX](https://docs.reservoir.tools/docs/hooks#infinite-loading-hooks). Use this hook to fetch a single user\u2019s top bids, using the [User Top Bids](https://docs.reservoir.tools/reference/getordersusersusertopbidsv2) endpoint. It takes in a user, as the first parameter, a query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional SWR Infinite configuration object, as the third parameter.\n\n| Parameter      | Type                                                                                        |\n| :------------- | :------------------------------------------------------------------------------------------ |\n| **user**       | string                                                                                      |\n| **options**    | [User Top Bids options](https://docs.reservoir.tools/reference/getordersusersusertopbidsv1) |\n| **swrOptions** | [SWR Options](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks)                    |\n\n```typescript\nimport { useUserTopBids } from '@reservoir0x/reservoir-kit-ui'\n\n const {\n   data: bids,\n   fetchNextPage,\n   hasNextPage,\n } = useUserTopBids('0xF296178d553C8Ec21A2fBD2c5dDa8CA9ac905A00', {})\n```",
+        "order": 11,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-17T23:23:33.922Z",
+        "revision": 5,
+        "_id": "63f3e45464c04e0012a8fc11",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-11-18T18:25:52.896Z",
+        "updatedAt": "2023-01-20T20:12:13.495Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc11"
+    },
+    "meta": {
+        "slug": "useusertopbids",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useUserTopBids",
+        "title_raw": "useUserTopBids",
+        "description": "This hook is SWR powered and also handles infinite loading UX. Use this hook to fetch a single user\u2019s top bids, using the User Top Bids endpoint. It takes in a user, as the first parameter, a query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an o...",
+        "_id": "63f3e45464c04e0012a8fc11",
+        "hidden": false
+    },
+    "activeDoc": "useusertopbids"
+}

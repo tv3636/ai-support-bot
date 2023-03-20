@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:58.901Z"
+        },
+        "title": "Theming",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "reservoir-kit-theming-and-customization",
+        "excerpt": "",
+        "body": "![](https://files.readme.io/2cf3e39-reservoirkit-customui.png \"reservoirkit-customui.png\")\n\n\n\nReservoirKit UI provides 2 preconfigured themes, darkMode and lightMode. They can be used as is or configured with some additional overrides:\n\n```typescript\nconst theme = darkTheme({\n  headlineFont: \"Sans Serif\",\n  font: \"Serif\",\n  primaryColor: \"#323aa8\",\n  primaryHoverColor: \"#252ea5\",\n})\n```\n\n\n\nClick [here](https://github.com/reservoirprotocol/reservoir-kit/blob/main/packages/ui/src/themes/ReservoirKitTheme.ts#L73) for a full list of overrides.\n\nIf that isn't enough customization you can also create a completely custom ReservoirKitTheme.\n\n```typescript\nconst theme: ReservoirKitTheme = {\n  radii: { ... },\n  fonts: { ... },\n  colors: { ... }\n}\n```",
+        "order": 7,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "rk-theming-and-customization",
+        "slugUpdatedAt": "2022-07-28T20:13:06.745Z",
+        "revision": 2,
+        "_id": "63f3e45464c04e0012a8fba8",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-07-26T13:27:39.712Z",
+        "updatedAt": "2022-09-20T17:00:41.902Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 3,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fba8"
+    },
+    "meta": {
+        "slug": "reservoir-kit-theming-and-customization",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Theming",
+        "title_raw": "Theming",
+        "description": "ReservoirKit UI provides 2 preconfigured themes, darkMode and lightMode. They can be used as is or configured with some additional overrides:TypeScriptconst theme = darkTheme({ headlineFont: \"Sans Serif\", font: \"Serif\", primaryColor: \"#323aa8\", primaryHoverColor: \"#252ea5\",}) Click here for a full l...",
+        "_id": "63f3e45464c04e0012a8fba8",
+        "hidden": false
+    },
+    "activeDoc": "reservoir-kit-theming-and-customization"
+}

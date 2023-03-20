@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-03-02T16:01:28.193Z"
+        },
+        "title": "acceptOffer",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "acceptoffer",
+        "excerpt": "This action is used to accept a valid offer/bid.",
+        "body": "You can supply an object of parameters listed below:\n\n| Parameter         | Description                                                                                                                                                                           | Required | Example                                                                                    |\n| :---------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | :------- | :----------------------------------------------------------------------------------------- |\n| **items**         | An array of objects representing orders to be purchased. Refer to the the[ execute sell api](https://docs.reservoir.tools/reference/postexecutesellv7) for a full list of parameters. | `true`   | `{ token:\"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d:1\" }`                                 |\n| **signer**        | A valid [signer](https://docs.ethers.io/v5/api/signer/#Signer) from ethers.                                                                                                           | `true`   | _Refer to ethers documentation on [signers](https://docs.ethers.io/v5/api/signer/#Signer)_ |\n| **onProgress**    | Callback to update UI state as execution progresses. Can also be used to get the transaction hash for a given step item.                                                              | `true`   | `(steps) => {            console.log(steps)      }`                                        |\n| **expectedPrice** | Token price used to prevent to protect buyer from price moves.                                                                                                                        | `false`  | 1.543                                                                                      |\n| **options**       | Supports all of the parameters allowed in the [execute sell api](https://docs.reservoir.tools/reference/postexecutesellv7)                                                            | `false`  | `{ source: 'opensea.io' ... }`                                                             |\n\n**Example**\n\n```typescript\nimport { getClient, Execute } from \"@reservoir0x/reservoir-sdk\";\nimport { ethers } from \"ethers\";\n\n...\n\naddress = \"0x8ba1f109551bD432803012645Ac136ddd64DBA72\"\nsigner = new ethers.VoidSigner(address, provider)\n\ngetClient()?.actions.acceptOffer({\n  items: [{  \n      token:  \"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d:1\",\n      quantity: 1\n  }],\n  signer,\n  onProgress: (steps: Execute['steps']) => {\n    console.log(steps)\n  }\n})\n```",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-02T15:36:11.271Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fc0c",
+        "pendingAlgoliaPublish": false,
+        "parentDoc": "63f3e45464c04e0012a8fbb7",
+        "createdAt": "2022-11-02T16:53:56.890Z",
+        "updatedAt": "2023-03-02T16:01:27.870Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc0c"
+    },
+    "meta": {
+        "slug": "acceptoffer",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb7",
+        "image": [],
+        "title": "acceptOffer",
+        "title_raw": "acceptOffer",
+        "description": "This action is used to accept a valid offer/bid.",
+        "_id": "63f3e45464c04e0012a8fc0c",
+        "hidden": false
+    },
+    "activeDoc": "acceptoffer"
+}

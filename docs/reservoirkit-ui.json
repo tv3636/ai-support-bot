@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:12.930Z"
+        },
+        "title": "ReservoirKit UI (React)",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "reservoirkit-ui",
+        "excerpt": "",
+        "body": "### ReservoirKit UI\n\nReservoirKit UI is a react library that makes it easy to add marketplace functionality and UI into your project. If you are not using react and need a custom solution you can use the [Reservoir SDK](https://docs.reservoir.tools/docs/reservoir-sdk).\n\n### Installing ReservoirKit UI\n\n```shell\nyarn add @reservoir0x/reservoir-kit-ui\n```\n\n\n\nAlso make sure to install the peer dependencies required by ReservoirKit if your application doesn't already include them:\n\n```shell\nyarn add wagmi ethers react react-dom\n```\n\n\n\nReservoirKit UI relies on wagmi@v0.9, react@18.0 and ethersjs. \n\nIf your application uses [radix-ui](https://www.radix-ui.com/docs/primitives) you'll need to ensure that the radix ui components version match what `reservoir-kit-ui` is using. Deviating from that version may cause issues.\n\n### Configuring ReservoirKit UI\n\n```typescript\nimport {\n  ReservoirKitProvider,\n  darkTheme,\n} from '@reservoir0x/reservoir-kit-ui'\nimport { WagmiConfig } from 'wagmi'\n\nconst wagmiClient = ...\n\nconst theme = darkTheme({\n  headlineFont: \"Sans Serif\",\n  font: \"Serif\",\n  primaryColor: \"#323aa8\",\n  primaryHoverColor: \"#252ea5\",\n})\n\n<ReservoirKitProvider\n  options={{\n    chains: [{\n      id: 1,\n      baseApiUrl: \"https://api.reservoir.tools\",\n      default: true,\n      apiKey: \"YOUR_KEY\"\n    }],\n    source: \"YOUR_SOURCE\"\n    ...\n  }}\n  theme={theme}\n>\n  <WagmiConfig client={wagmiClient}>\n\n   { Your App }\n\n  </WagmiConfig>\n</ReservoirKitProvider>\n```\n\n\n\nThe sample code above is all you need to get started with ReservoirKit. Let's break it down step by step. Start by importing the `ReservoirKitProvider` which is needed for configuring ReservoirKit. Also import a theme of your choice, we provide a lightTheme and a darkTheme. Next we import the `WagmiConfig`, Wagmi is a peer dependency of ReservoirKit.\n\nNow that we have all the imports ready we can continue by supplying some options. You'll need to supply an array with at least one reservoir chain. A reservoir chain consists of an id (e.g. 1 for mainnet), a `baseApiUrl` and a boolean indicating if it's the default. The`baseApiUrl` which can be any of our [hosted reservoir indexer endpoints](https://docs.reservoir.tools/reference/overview) or you can host one yourself. Optionally a chain can have an `apiKey`, while optional it will raise the rate limit for your application. We recommend getting a [free instant key](https://docs.reservoir.tools/reference/getting-started) before deploying to production. If you'd like to read more about the chain configuration in depth, [click here](https://docs.reservoir.tools/docs/reservoir-sdk#configuring-the-reservoir-sdk).\n\nNow we create a theme. As mentioned previously we have a few preloaded themes with the ability to override some variables, like colors and fonts. Learn more about theming options [here](doc:reservoir-kit-theming-and-customization).\n\nNext we wrap our app with the `ReservoirKitProvider` and pass it some options. Below is a list of ReservoirKit UI options:\n\n| Option                        | Description                                                                                                                                                  |\n| :---------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **apiBase**                   | The apiBase can be one of our hosted api endpoints or any instance of the Reservoir indexer. This is a required option. **This is the only required option** |\n| **disablePoweredByReservoir** | Used to disable the powered by Reservoir footers.                                                                                                            |\n| **normalizeRoyalties**        | Global setting to add royalties on top of orders that do not include royalties.                                                                              |\n| _ReservoirKit Client options_ | [More options ](https://docs.reservoir.tools/docs/reservoir-sdk#configuring-the-reservoir-sdk)can be configured for the underlying client instance.          |\n\nYou can also pass in `swrOptions` which allow you to further [configure swr](https://swr.vercel.app/docs/global-configuration) at a global level.\n\nWe also pass in the theme we previously set up. Now we need to make sure we wrap our application in the `WagmiConfig`. Follow the instructions in their docs to set up the `WagmiClient` and then pass it into the `WagmiConfig`. Finally nest your application code within the `ReservoirKitProvider` and the `WagmiConfig`.\n\nEverything is now correctly configured and ready to go. One last thing you may want to set up for your domain is [custom source metadata](doc:reservoir-meta-tags)  which ReservoirKit as well as the [Indexer](doc:indexer) use to dynamically keep a catalog of all marketplace source metadata.\n\n> \ud83d\udc4d Great job!\n> \n> Now that we've installed and configured ReservoirKit lets [add a buy modal](/docs/buying)",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "reservoir-kit-ui",
+        "slugUpdatedAt": "2022-09-20T17:00:05.758Z",
+        "revision": 21,
+        "_id": "63f3e45464c04e0012a8fbec",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-20T16:58:54.817Z",
+        "updatedAt": "2023-02-15T21:48:49.248Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbec"
+    },
+    "meta": {
+        "slug": "reservoirkit-ui",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "ReservoirKit UI (React)",
+        "title_raw": "ReservoirKit UI (React)",
+        "description": "ReservoirKit UIReservoirKit UI is a react library that makes it easy to add marketplace functionality and UI into your project. If you are not using react and need a custom solution you can use the Reservoir SDK.Installing ReservoirKit UIShellyarn add @reservoir0x/reservoir-kit-ui Also make sure to ...",
+        "_id": "63f3e45464c04e0012a8fbec",
+        "hidden": false
+    },
+    "activeDoc": "reservoirkit-ui"
+}

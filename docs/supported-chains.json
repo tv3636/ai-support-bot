@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:27.161Z"
+        },
+        "title": "Supported Chains",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "supported-chains",
+        "excerpt": "",
+        "body": "The Reservoir hosted API is currently available on the following chains:\n\n- Ethereum - <https://api.reservoir.tools/>\n- Goerli (testnet) - <https://api-goerli.reservoir.tools/>\n- Polygon (beta) - <https://api-polygon.reservoir.tools/>\n- Optimism (beta) - <https://api-optimism.reservoir.tools/>\n\nMore chains coming soon. Visit <https://feedback.reservoir.tools/feature-requests> and have your say on what we should support next.",
+        "order": 3,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-01-25T20:00:50.028Z",
+        "revision": 4,
+        "_id": "63f3e45464c04e0012a8fc41",
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb11",
+        "createdAt": "2023-01-26T16:53:14.879Z",
+        "updatedAt": "2023-01-26T16:57:22.021Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc41"
+    },
+    "meta": {
+        "slug": "supported-chains",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Supported Chains",
+        "title_raw": "Supported Chains",
+        "description": "The Reservoir hosted API is currently available on the following chains: Ethereum - https://api.reservoir.tools/Goerli (testnet) - https://api-goerli.reservoir.tools/Polygon (beta) - https://api-polygon.reservoir.tools/Optimism (beta) - https://api-optimism.reservoir.tools/ More chains coming soon. ...",
+        "_id": "63f3e45464c04e0012a8fc41",
+        "hidden": false
+    },
+    "activeDoc": "supported-chains"
+}

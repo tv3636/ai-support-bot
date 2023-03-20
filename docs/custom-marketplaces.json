@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-03-15T16:24:49.421Z"
+        },
+        "title": "Build a Custom Marketplace",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "custom-marketplaces",
+        "excerpt": "Leverage Reservoir\u2019s NFT marketplace engine to build a best-in-class custom marketplace",
+        "body": "Reservoir offers a range of solutions to help developer teams quickly launch custom NFT marketplaces. \n\n## Understanding NFT Marketplaces\n\nTypically, NFT marketplaces are built on a vertical technology stack, where a single team is responsible for frontend development, orderbook maintenance, aggregation, metadata indexing, and order execution. This leaves little time for the team to focus on the unique value proposition of the business. Reservoir introduces a new paradigm to building NFT marketplaces. With Reservoir, teams can easily plug into a global NFT market to access data, create and execute NFT liquidity in their own orderbook (and cross post to other), get aggregated liquidity from major marketplaces, and get order distribution to the Reservoir ecosystem all using the Reservoir marketplace engine. Interacting with Reservoir gives teams the freedom to innovate across the marketplace stack. \n\n## Why Use Reservoir?\n\nBuilding an NFT marketplace can be complex, but Reservoir simplifies the process so you can focus on your unique value add to the market. Building with Reservoir means you get: \n\n**Developer-focused tooling: Reservoir allows you to build at your desired level of the stack**\n\n- [Reservoir API](doc:reservoir-api) - An all-in-one API for building NFT market applications. You get market data and metadata, order execution, and advanced order features like collection and trait level bids, all out of the box. All this functionality is wrapped into the SDK for a higher level of abstraction.\n\n- [Reservoir SDK (JS/TS/Node)](doc:reservoir-sdk)- An abstracted typescript SDK for interacting with the NFT market. All the function of the Reservoir API wrapped into easily-to-use, performant methods.\n\n- [ReservoirKit UI (React)](doc:reservoirkit-ui) -  A react library that makes it easy to add marketplace functionality and UI into your project.\n\n- [Marketplace UI (NextJS)](doc:marketplace) - An open-source reference marketplace that you can fork and use freely as a stand alone marketplace or a base for building something more custom and unique\n\n- [Dune Dataset](doc:dune-dataset) - Reservoir's data is all available in Dune Analytics so you can query our data and build reports about the NFT market or specific projects/applications.\n\n**Abstracted orderbook and exchange: Reservoir treats the NFT market as one cohesive whole**\n\n- _Upgrade protection_: Since Reservoir abstracts the orderbook and exchange, you get exchange and orderbook upgrades free and with no additional work. By default we use the Seaport exchange, as new features roll out, you will get them without any changes to your code.\n\n- _Out of the box aggregation_: We aggregate all major marketplaces and normalize the liquidity so all orders are treated equally in our system. See a full list of aggregated marketplaces [here](doc:supported-marketplaces). We don\u2019t just aggregate listings, we also aggregate all bid liquidity from across the NFT ecosystem so your users can sell instantly into the best available offer.\n\n- _Order distribution_: Reservoir allows your to post your own orders with your desired fee structure. These orders are distributed to all Reservoir partner marketplaces and marketplaces that aggregate the Reservoir orderbook. Additionally, Reservoir allows you to cross post orders to other major marketplace orderbooks.\n\n**An open-source partner: Working with Reservoir means your data and liquidity are truly yours**  \nAt Reservoir, we believe that the liquidity you create should be yours. Since Reservoir is open-source and we store all order data on Arweave, you never have to worry about losing access to your liquidity. Even if you decide you no longer want to work with Reservoir, you liquidity will still be freely available for you to use. Learn more about our open orderbook [here](https://www.notion.so/Open-Orderbook-42c59de20cf347debf10411237f126b4).\n\n**Marketplace innovation: Reservoir is pushing the boundaries of NFT markets.**  \nWe strive to build best in class NFT market solutions. Here are just some of the important features we have released recently that you won\u2019t find anywhere else.\n\n- [Royalty Compliance](doc:royalties) - Leverage aggregated liquidity with normalized royalties, so you get all the NFT market liquidity while still respecting creator royalties.\n\n- [Custom Fees](doc:custom-fees) -  Distribute orders across the NFT ecosystem with your own custom fee structure.\n\n- [Cross-chain support](doc:supported-chains) - Reservoir is currently live on Ethereum, Polygon, Optimism, and Arbitrum - with more chains on the way.\n\n- [Instant Sell](doc:add-instant-sell) - Aggregated bid liquidity allows your users to sell instantly into the best offer on the market.\n\n## Alternative Options\n\n- Opensea\n  - no aggregation\n  - significant rate limits\n  - Not developer focused\n- Alchemy\n  - no secondary trading\n  - no orderbook",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "community-marketplaces",
+        "slugUpdatedAt": "2022-12-23T21:59:43.505Z",
+        "revision": 24,
+        "_id": "63f3e45464c04e0012a8fc26",
+        "pendingAlgoliaPublish": false,
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "createdAt": "2022-12-22T19:08:16.326Z",
+        "updatedAt": "2023-03-15T16:24:49.080Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc26"
+    },
+    "meta": {
+        "slug": "custom-marketplaces",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Build a Custom Marketplace",
+        "title_raw": "Build a Custom Marketplace",
+        "description": "Leverage Reservoir\u2019s NFT marketplace engine to build a best-in-class custom marketplace",
+        "_id": "63f3e45464c04e0012a8fc26",
+        "hidden": false
+    },
+    "activeDoc": "custom-marketplaces"
+}

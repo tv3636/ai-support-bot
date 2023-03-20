@@ -1,0 +1,83 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 12,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:41.673Z"
+        },
+        "title": "Glossary",
+        "icon": "",
+        "updates": [
+            "631806fa8a7d1b004425d4fe"
+        ],
+        "type": "basic",
+        "slug": "glossary",
+        "excerpt": "",
+        "body": "###Order\nAn NFT order is an agreement to either buy or sell a token or token set under predetermined conditions. Orders are matched together and sent to an on-chain exchange where the trade is executed. \n\n###Ask (Listing)\nAn ask, also known as a listing, is a signed sell-side order determining the conditions under which the owner would  be willing to sell a token. \n\n###Offer (Bid)\nAn offer, also known as a bid, is a signed buy-side order determining the conditions under which a buyer would be willing to purchase a token. \n\n###Liquidity\nLiquidity refers to the ability to instantly buy and sell assets at a fair price. Having NFT liquidity requires sufficient asks and offers so that someone can easily enter or exit the market at a reasonable price. \n\n###Exchange\nAn NFT exchange is an on-chain smart contract that executes trades between matching orders. You can view the Seaport Exchange [here](https://etherscan.io/address/0x00000000006c3852cbef3e08e8df289169ede581).\n\n###Aggregation \nAggregation refers to the collection and normalization of NFT orders from disparate sources. Reservoir aggregates orders from major marketplaces into a single source liquidity. \n\n###Collection\nA collection is a group of tokens. In 99% of cases, a collection is defined as all tokens within a contract, and the contract address is used as the Collection ID. However, in some cases, such as Art Blocks, there are multiple collections within a shared contract. In these cases, the Collection ID will be represented as a range, e.g. for Fidenza, the ID is `0xa7d8d9ef8d8ce8992df33d8b8cf4aebabd5bd270:78000000:78999999`. \n\n###Collection Bid\nA collection bid is an offer that can be filled by any token in the specified collection. \n\n###Attribute Bid\nAn attribute bid is an offer that can be filled by any token with a particular attribute in a specific collection.\n\n###Collection Set\nA collection set is grouping of more than one related collections. Practically collection sets can be created to group collections into larger communities or families. Collection sets are identified by a collection set id. You can make a collection set [here](/reference/postcollectionssetsv1)\n\n###Token Set\nA token set is a set of token ids that group the tokens together by a single identifier. Practically token sets can be created to place orders across many tokens. User can use a token set to create orders that apply to an arbitrary set of token ids. Token sets are identified by a token set id. You can create a token set [here](/reference/posttokensetsv1)\n\n###Oracle\nAn oracle is a verifiable source of external data. Oracles enable on-chain applications to be connected to data that lives off-chain.",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-24T00:18:46.227Z",
+        "revision": 3,
+        "_id": "63f3e45464c04e0012a8fb38",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-24T14:04:02.521Z",
+        "updatedAt": "2022-09-09T00:55:13.429Z",
+        "user": "62a26bef4af83a00214889fe",
+        "category": "63f3e45464c04e0012a8fb1a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 1,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fb38"
+    },
+    "meta": {
+        "slug": "glossary",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Glossary",
+        "title_raw": "Glossary",
+        "description": "OrderAn NFT order is an agreement to either buy or sell a token or token set under predetermined conditions. Orders are matched together and sent to an on-chain exchange where the trade is executed.Ask (Listing)An ask, also known as a listing, is a signed sell-side order determining the conditions u...",
+        "_id": "63f3e45464c04e0012a8fb38",
+        "hidden": false
+    },
+    "activeDoc": "glossary"
+}

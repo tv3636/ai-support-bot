@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:03.564Z"
+        },
+        "title": "Filling Existing Liquidity",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "filling-existing-liquidity",
+        "excerpt": "",
+        "body": "# Add support for storing orders, and maintaining their current status\n\nComing soon\u2026\n\n# Add support for scraping orders to the Relayer \n\nhttps://github.com/reservoirprotocol/relayer/tree/main/src/utils\n\nComing soon\u2026\n\n# Add support for filling orders natively\n\nComing soon\u2026",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-03T13:49:13.783Z",
+        "revision": 1,
+        "_id": "63f3e45464c04e0012a8fbba",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-03T20:07:59.860Z",
+        "updatedAt": "2022-08-03T20:07:59.860Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "parentDoc": "63f3e45464c04e0012a8fbb8",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbba"
+    },
+    "meta": {
+        "slug": "filling-existing-liquidity",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb8",
+        "image": [],
+        "title": "Filling Existing Liquidity",
+        "title_raw": "Filling Existing Liquidity",
+        "description": "Add support for storing orders, and maintaining their current statusComing soon\u2026Add support for scraping orders to the Relayerhttps://github.com/reservoirprotocol/relayer/tree/main/src/utilsComing soon\u2026Add support for filling orders nativelyComing soon\u2026",
+        "_id": "63f3e45464c04e0012a8fbba",
+        "hidden": false
+    },
+    "activeDoc": "filling-existing-liquidity"
+}

@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T17:12:10.194Z"
+        },
+        "title": "Data Lake",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "data-lake",
+        "excerpt": "Decentralized order storage on Arweave",
+        "body": "The Reservoir Data Lake is an open and permissionless data repository built on top of Arweave. It is designed to bring off-chain liquidity on-chain, so that it's publicly available for anyone to leverage. This is critical for building composable protocols and applications that aren't dependent on a single centralized gatekeeper.\n\nReservoir's Data Lake is purely focused on storing raw order data, without actually checking if they are valid. This is partly to keep costs as low as possible, and partly because validity checking requires understanding the state of the parent blockchain in order to know who owns which tokens. This validation is performed at a higher level, by an Indexer node, which can reconstruct the state of the Orderbook from the raw data on each chain.\n\nThe Data Lake is a light-weight protocol on top of Arweave, with transactions that are published with the following tags:\n\n`App-Name: Reservoir ProtocolApp-Version: 0.0.1Network: mainnet / goerli`\n\n[Example Transaction](https://viewblock.io/arweave/tx/DomOJe5Efye10uJudxLQMubQPQtyFJTTxLoNO0ttjIw)\n\nThe data is an array of objects, each with a kind:\n\n`{ \"kind\":\"string\", \"data\":\"object\"}`\n\n[Example Blob](https://b2ey4jpoir7spnos4jxhoewqgltnapiloikjju6exigtws3nrsga.arweave.net/DomOJe5Efye10uJudxLQMubQPQtyFJTTxLoNO0ttjIw)\n\nThe system is designed to be extensible, with new kinds added over time. This can either be new exchanges, with their own order formats, or any other data that might be relevant. For example, mutable NFT metadata like collection descriptions or royalties could be stored in Reservoir's Data Lake, instead of needing to be configured on each NFT marketplace.",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-20T20:30:05.799Z",
+        "revision": 3,
+        "_id": "63f3e759bf128b0065fb38a3",
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "parentDoc": "63f3e6d68678c100260b1a39",
+        "category": "63f3e45464c04e0012a8fb19",
+        "createdAt": "2023-02-20T21:34:17.163Z",
+        "updatedAt": "2023-02-28T17:12:09.841Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e759bf128b0065fb38a3"
+    },
+    "meta": {
+        "slug": "data-lake",
+        "type": "docs",
+        "parent": "63f3e6d68678c100260b1a39",
+        "image": [],
+        "title": "Data Lake",
+        "title_raw": "Data Lake",
+        "description": "Decentralized order storage on Arweave",
+        "_id": "63f3e759bf128b0065fb38a3",
+        "hidden": false
+    },
+    "activeDoc": "data-lake"
+}

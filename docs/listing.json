@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-03-10T21:55:10.069Z"
+        },
+        "title": "Add Listing",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "listing",
+        "excerpt": "Learn how to list a token using ReservoirKit.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## List Modal\n\nReservoirKit provides a simple to configure modal for facilitating token listing in your react app. Below is an example of a simple ListModal setup.\n\n```typescript\nimport { useState } from 'react'\n\nconst openState = useState(true)\n\n<ListModal\n  trigger={\n    <button>\n      List Item\n    </button>\n  }\n  collectionId=\"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\"\n  tokenId=\"1\"\n  currencies={[\n    {\n      contract: '0x0000000000000000000000000000000000000000',\n      symbol: 'ETH',\n    },\n    {\n      contract: '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48',\n      symbol: 'USDC',\n      decimals: 6\n    },\n  ]}\n  openState={openState}\n  nativeOnly={false}\n  oracleEnabled={false}\n  onGoToToken={() => console.log('Awesome!')}\n  onListingComplete={(data) => {\n    console.log('Listing Complete', data)\n  }}\n  onListingError={(error, data) => {\n    console.log('Transaction Error', error, data)\n  }}\n  onClose={(data, stepData, currentStep) => {\n    console.log('ListModal Closed')\n  }}\n/>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll want to provide a `collectionId` and a `tokenId`. These can be set to undefined until the data is ready. You can also set some _optional_ parameters:\n\n| Prop                   | Description                                                                                                                                                                                                                                |\n| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **currencies**         | If there are multiple currencies supplied the user will be able to select from them, otherwise it will be selected by default. If no currencies are supplied the modal will default to ETH.                                                |\n| **nativeOnly**         | A boolean parameter that removes all non native (opensea, x2y2, looks rare etc) marketplace options.                                                                                                                                       |\n| **openState**          | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.     |\n| **normalizeRoyalties** | Use this to ensure that royalties are added to the stats and market pricing information. If unspecified then the [global setting](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) will be used if provided. |\n| **oracleEnabled**      | Use this to create oracle powered listings which can be cancelled without paying a gas cost.                                                                                                                                               |\n\n Finally you can set some optional callbacks:\n\n**onListingComplete**: Triggered when the listing was completed successfully, returns some useful data about the listing.\n\n**onListingError**: Triggered when the listing resulted in an error, returns the error and the listing data.\n\n**onClose**: Triggered when the modal was closed. Returns some useful data about the listing as well as the step data and the current step.\n\n## Conditional Rendering\n\nReservoirKit doesn't take care of conditionally showing the button based on if the item is listable, we leave that logic up to the developer. You'll need to conditionally render your button based on multiple data points. Below are the requirements for listing and how to go about getting that data:\n\n- The user needs to have a **connected wallet**. You can check this by looking for a signer from the [useSigner](https://wagmi.sh/docs/hooks/useSigner) wagmi hook.\n- The user **must be the owner** of the token, you can check this by comparing the current address and the address of the owner.\n\n## Custom ListModal\n\nThe ListModal also comes with a custom renderer which can be used to just get the data layer that the ListModal uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { ListModal, ListStep } from '@reservoir0x/reservoir-kit-ui'\n\n<ListModal.Custom\n  collectionId=\"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\"\n  tokenId=\"1\"\n>\n    {({\n        token,\n        collection,\n        ethUsdPrice,\n        listStep,\n        expirationOption,\n        expirationOptions,\n        marketplaces,\n        unapprovedMarketplaces,\n        localMarketplace,\n        syncProfit,\n        listingData,\n        transactionError,\n        stepData,\n        setListStep,\n        listToken,\n        setMarketPrice,\n        toggleMarketplace,\n        setSyncProfit,\n        setExpirationOption,\n      }) => {\n        { Your Custom React Elements }\n    })}\n</ListModal.Custom>\n```\n\n\n\nThe custom ListModal takes a few parameters like before with one additional one being the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom ListModal then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `ListStep` here which is used to manage the internal state of the ListModal's logic. You can decide to use all or some of the data passed into your custom implementation.\n\n> \ud83d\udc4d Great!\n> \n> Now that we've added a ListModal to your dApp, let's [customize the theme to match your brand](/docs/reservoir-kit-theming-and-customization).",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "add-listing-modal",
+        "slugUpdatedAt": "2022-08-15T17:22:59.103Z",
+        "revision": 10,
+        "_id": "63f3e45464c04e0012a8fbc6",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-09T12:45:29.440Z",
+        "updatedAt": "2023-03-10T21:55:09.691Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbc6"
+    },
+    "meta": {
+        "slug": "listing",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Add Listing",
+        "title_raw": "Add Listing",
+        "description": "Learn how to list a token using ReservoirKit.",
+        "_id": "63f3e45464c04e0012a8fbc6",
+        "hidden": false
+    },
+    "activeDoc": "listing"
+}

@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 5,
+            "publishPending": false,
+            "updatedAt": "2023-03-01T15:39:10.462Z"
+        },
+        "title": "Wallet/Portfolio App",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "walletportfolio-app",
+        "excerpt": "Build the most feature rich NFT wallet with Reservoir",
+        "body": "Whether you are building NFT support into a wallet or a stand alone portfolio app, Reservoir has the tools you need to bring your application to the next level. \n\n**Core Benefits**\n\n- Show accurate NFT floor prices aggregated from all major marketplaces\n- Easily add instant selling to your app by accessing global bid liquidity\n- Get up-to-date metadata for your users\u2019 tokens and collections\n\n## Aggregated Floor Price Data\n\nFloor price data is important for helping your users understand the current state of the market. Reservoir\u2019s floor price data has some key benefits relative to other options: \n\n- _Aggregation_ - Reservoir\u2019s floor price data is aggregated from across all major marketplaces, making the data the most reliable and accurate representation of the market. \n- _Non-flagged token floors_ - When collections have flagged tokens, they typically have a price discount, resulting in collection floor data being dominated by flagged tokens. Reservoir makes it easy to present non-flagged token floors to your users. \n\n**Getting floor price data**\n\nYou can access floor price data for your users using Reservoir\u2019s API or react hooks: \n\n- User token data ([API](https://docs.reservoir.tools/v2.0/reference/getusersusertokensv6)/[hook](https://docs.reservoir.tools/v2.0/docs/useusertokens)) - get floor price data (and more) for a user\u2019s tokens\n- User collections data ([API](https://docs.reservoir.tools/v2.0/reference/getusersusercollectionsv2)/[hook](https://docs.reservoir.tools/v2.0/docs/useusercollections)) - get floor price data (and more) for a user\u2019s collections\n\nLearn more about floor price data [here](doc:floor-prices).\n\n**Other relevant data**\n\nContextualizing the NFT market for your users requires a variety of data. Other highly relevant market data for wallets and portfolios follows:\n\n- collection statistics and activity\n- Token sales history\n- Real-time and historical floor price events\n\nFind out more about market data [here](doc:data-and-analytics)\n\n## Embed Buying and Selling\n\nReservoir makes it simple to embed buying, bidding, listing, and instant selling, right into your application. While portfolio apps and wallets may choose to embed a variety of market behaviors, we find that a valuable first step for these applications is to start with instant sell. If you want to integrate more market actions learn more about embedded buying and selling [here](doc:aggregated-liquidity)\n\n**Instant Sell**\n\nFor wallets and portfolio apps, we recommend starting by adding instant sell capabilities to your wallet. This lets your users instantly sell their tokens into the best bid from across the NFT ecosystem. With Reservoir you get: \n\n- _Aggregated bid liquidity_ - Top bids aggregated from all major NFT markets.\n- _Royalty normalization_ - Opt-in to full royalty compliance. While not all orders have royalties baked in, Reservoir lets you fix orders to pay creator royalties on every order if you so choose.\n- _Batch selling_ - Let your users sell multiple tokens with a single signature.\n- _Top bid events_ - Use Reservoir\u2019s top bid events stream to notify your users about new top bids.\n\nImplementing instant sell in your application is easy: \n\nStep 1: Get your users top bids using the [user-top-bids API endpoint](https://docs.reservoir.tools/v2.0/reference/getordersusersusertopbidsv3) or the [getUsersTopBids react hook](https://docs.reservoir.tools/v2.0/docs/useusertopbids). \n\nStep 2: When a user wants to sell, user the [Reservoir SDK](doc:reservoir-sdk)\u2019s [acceptOffer](doc:acceptoffer) method or  [ReservoirKit](doc:reservoirkit-ui) [acceptBid modal](doc:accept-bid) to initiate the transaction. \n\nFind out more about instant sell [here](https://www.notion.so/Embed-buying-and-selling-into-your-app-00194e19bb5d4779bfa3e86347ff7006)\n\n## Token and Collection Metadata\n\nRepresenting NFT tokens accurately is a vital component of NFT support for any wallet or portfolio app. With Reservoir we provide all the data you need to represent users\u2019 tokens and collections. \n\n- User token data ([API](https://docs.reservoir.tools/v2.0/reference/getusersusertokensv6)/[hook](https://docs.reservoir.tools/v2.0/docs/useusertokens)) - get floor price data (and more) for a user\u2019s tokens\n- User collections data ([API](https://docs.reservoir.tools/v2.0/reference/getusersusercollectionsv2)/[hook](https://docs.reservoir.tools/v2.0/docs/useusercollections)) - get floor price data (and more) for a user\u2019s collections\n\n## Using Us:\n\n- Coinbase Wallet\n- Zapper\n- imToken\n- Bitski\n- Floor\n- Kraken",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-20T20:08:34.248Z",
+        "revision": 9,
+        "_id": "63f3e5d3b4f200006cb1a77d",
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e5be167980006c685cf4",
+        "createdAt": "2023-02-20T21:27:47.825Z",
+        "updatedAt": "2023-03-01T15:39:10.224Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e5d3b4f200006cb1a77d"
+    },
+    "meta": {
+        "slug": "walletportfolio-app",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Wallet/Portfolio App",
+        "title_raw": "Wallet/Portfolio App",
+        "description": "Build the most feature rich NFT wallet with Reservoir",
+        "_id": "63f3e5d3b4f200006cb1a77d",
+        "hidden": false
+    },
+    "activeDoc": "walletportfolio-app"
+}

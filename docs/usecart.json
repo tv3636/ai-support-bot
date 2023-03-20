@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:29.792Z"
+        },
+        "title": "useCart",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "usecart",
+        "excerpt": "",
+        "body": "Make sure you've installed ReservoirKit and followed the [installation steps](https://docs.reservoir.tools/docs/add-a-cart) for adding a cart to your application.\n\nThis hook interacts with the CartProvider to expose the cart state and some useful methods to manage the cart.\n\n```typescript\nimport { useCart } from '@reservoir0x/reservoir-kit-ui'\n\n  const { data, clear, clearTransaction, validate, remove, add, checkout } =\n    useCart((cart) => cart)\n```\n\n\n\nThe hook takes one parameter, which is a selector. To make the hook performant we've given developers the ability to select a piece of state to get updates on. This means that the hook won't trigger unnecessary rerenders. In the example above we select the whole state but if you simply want to just get the items you can do something like this:\n\n```\nimport { useCart } from '@reservoir0x/reservoir-kit-ui'\n\n  const { data: items } =\n    useCart((cart) => cart.items)\n```\n\n\n\nThe code above will just expose the items and only rerender when the items in the cart change. Let's dig into some of the methods returned by the hook:\n\n| Method               | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |\n| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **add**              | You can use this method to add multiple items to the cart. There are two interfaces that the method accepts. An array of tokens matching the interface from the [tokens hook](https://docs.reservoir.tools/docs/usetokens) or a simplified interface where the cart needs to fetch the token data asynchronously. This could impact UX but is easier to implement in scenarios where the token info is not already prefetched. The second parameter the function takes is the chain id for the tokens.                                                                                                   |\n| **remove**           | You can use this method for removing an item from the cart. Just pass an array of objects with an id property, which is just a combination of the token collection id and the token id delimited by a colon (`:`).                                                                                                                                                                                                                                                                                                                                                                                       |\n| **validate**         | This method validates the cart by checking if all the tokens have valid listings and also updates the OpenSea flagged status on each token.                                                                                                                                                                                                                                                                                                                                                                                                                                                              |\n| **checkout**         | Use this method to checkout valid tokens in the cart. If the transaction fails before being submitted then the tokens will not be removed from the cart. You can pass an object of options that map to the [execute buy endpoint](https://docs.reservoir.tools/reference/postexecutebuyv6). Once this method is called the transaction object will be added to the cart which has information around the transaction hash and the status of the transaction. You can observe and react to this state to give your users an update on the pending transaction. Only one transaction is tracked at a time. |\n| **clear**            | Clears all the items in the cart.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |\n| **clearTransaction** | Clears the pending transaction.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |\n\n```typescript\nimport { useCart } from '@reservoir0x/reservoir-kit-ui'\n\n  const { data, clear, clearTransaction, validate, remove, add, checkout } =\n    useCart((cart) => cart)\n  const tokens = useTokens({collection: \"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb\"})\n\n//add: Simplified interface\nadd([{id: \"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb:1\"}], 1)\n\n//add: Optimized interface\nadd([tokens[0]], 1)\n\nremove([\"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb:1\"])\ncheckout({ ...buyEndpointOptions })\nvalidate()\nclear()\nclearTransaction()\n```",
+        "order": 14,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-12T22:20:14.819Z",
+        "revision": 7,
+        "_id": "63f3e45464c04e0012a8fc4e",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-02-13T15:52:17.777Z",
+        "updatedAt": "2023-02-13T16:18:37.902Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc4e"
+    },
+    "meta": {
+        "slug": "usecart",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useCart",
+        "title_raw": "useCart",
+        "description": "Make sure you've installed ReservoirKit and followed the installation steps for adding a cart to your application.This hook interacts with the CartProvider to expose the cart state and some useful methods to manage the cart.TypeScriptimport { useCart } from '@reservoir0x/reservoir-kit-ui' const { da...",
+        "_id": "63f3e45464c04e0012a8fc4e",
+        "hidden": false
+    },
+    "activeDoc": "usecart"
+}

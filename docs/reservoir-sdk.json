@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:02.898Z"
+        },
+        "title": "Reservoir SDK (JS/TS/Node)",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "reservoir-sdk",
+        "excerpt": "",
+        "body": "### Reservoir SDK\n\nThe Reservoir SDK is the underlying package that [ReservoirKit UI](https://docs.reservoir.tools/docs/reservoirkit-ui) uses behind the scenes to execute core functionality (listing, bidding, buying and selling). The Reservoir SDK can be used if you are using another **javascript framework**, executing orders via a **Nodejs server** or building a custom experience.\n\nIf you're using [ReservoirKit UI](https://docs.reservoir.tools/docs/reservoirkit-ui) then you're already using the sdk, and you have access to the `useReservoirClient` hook to retrieve the sdk in a react context and use it. If you aren't using the UI package then you'll need to follow these steps to get the sdk up and running.\n\n### Installing Reservoir SDK:\n\n```shell\nyarn add @reservoir0x/reservoir-sdk\n```\n\n\n\nThe Reservoir SDK also requires ethers to be installed, make sure that's added to your package.json if it isn't already.\n\n```shell\nyarn add ethers\n```\n\n\n\n### Configuring the Reservoir SDK\n\nTo configure the SDK we first need to create a global instance of it:\n\n```typescript\nimport { createClient } from \"@reservoir0x/reservoir-sdk\"\n\ncreateClient({\n  chains: [{\n    id: 1,\n    baseApiUrl: 'https://api.reservoir.tools',\n    default: true,\n    apiKey: \"YOUR_KEY\"\n  }],\n  source: \"YOUR.SOURCE\n});\n```\n\n\n\nWe start by importing the `createClient` function and then calling that function to create a global client, passing in the required parameters.  \n\n| Option                      | Description                                                                                                                                                                                                              |\n| :-------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **chains**                  | An array of chain objects representing reservoir chains that your application supports. Below we'll breakdown the properties of the chain object.                                                                        |\n| **source**                  | The `source` parameter can be any valid domain (e.g. `reservoir.market`). It's used to attribute orders to your particular marketplace and to scrape [custom metadata](/docs/reservoir-meta-tags) from your marketplace. |\n| **marketplaceFee**          | Fee in <<glossary:bps>> included when creating an order (listing & bidding). Only relevant for native orders.                                                                                                            |\n| **marketplaceFeeRecipient** | The recipient address to receive the marketplaceFee                                                                                                                                                                      |\n| **automatedRoyalties**      | If true, royalties will be automatically included, defaults to true. Only relevant for creating orders (listing and bidding)                                                                                             |\n| **normalizeRoyalties**      | Global setting to add royalties on top of orders that do not include royalties.                                                                                                                                          |\n\nLet's dive into the properties that make up a reservoir chain:\n\n| Property   | Description                                                                                                                                                                                  |\n| :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| id         | The id of the chain (e.g. 1 for mainnet)                                                                                                                                                     |\n| baseApiUrl | Can be one of our [hosted api](https://docs.reservoir.tools/reference/overview) endpoints or any instance of the Reservoir indexer.                                                          |\n| default    | Only one chain can be the default at a time. This is used in the SDK when determining which default chain to select.                                                                         |\n| apiKey     | The apiKey is not required but should be passed in as it allows for higher rate limits. Read more about the [API Keys & Rate Limits](ref:getting-started) and how to instantly generate one. |\n\nOnce the client has been created there are 5 core actions available to you:\n\n[buyToken](/docs/buytoken)  \n[listToken](/docs/listtoken)  \n[placeBid](/docs/placebid)  \n[acceptOffer](/docs/acceptoffer)  \n[cancelOrder](/docs/cancelorder)\n\n> \ud83d\udc4d Nice!\n> \n> Now that the Reservoir SDK is up and running lets [add sweeping](/docs/sweeping) to our javascript application.",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "reservoirkit-client",
+        "slugUpdatedAt": "2022-12-28T17:44:55.247Z",
+        "revision": 33,
+        "_id": "63f3e45464c04e0012a8fbb7",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-01T14:37:14.196Z",
+        "updatedAt": "2023-02-15T21:41:34.106Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbb7"
+    },
+    "meta": {
+        "slug": "reservoir-sdk",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Reservoir SDK (JS/TS/Node)",
+        "title_raw": "Reservoir SDK (JS/TS/Node)",
+        "description": "Reservoir SDKThe Reservoir SDK is the underlying package that ReservoirKit UI uses behind the scenes to execute core functionality (listing, bidding, buying and selling). The Reservoir SDK can be used if you are using another javascript framework, executing orders via a Nodejs server or building a c...",
+        "_id": "63f3e45464c04e0012a8fbb7",
+        "hidden": false
+    },
+    "activeDoc": "reservoir-sdk"
+}

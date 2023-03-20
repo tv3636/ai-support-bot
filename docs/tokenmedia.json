@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:19.413Z"
+        },
+        "title": "TokenMedia",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "tokenmedia",
+        "excerpt": "Render any token media, supports a wide range of media types",
+        "body": "TokenMedia is a component that renders a token in an easy and customizable way. Use this component in various layouts while not having to implement your own rendering logic. Below is a list of component properties:\n\n| Prop                   | Description                                                                                                                                                                                                                                                        |\n| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **token**              | This is a token object mapping out to a Token object returned from the [tokensv5 api](/reference/gettokensv5). The only required parameters properties from that object are `image`, `media` and `collection`. Without this property the component will not render |\n| **preview**            | A boolean prop that controls showing a static image preview instead of displaying the token media                                                                                                                                                                  |\n| **style**              | An inline style prop override that's applied to the container of the rendered component                                                                                                                                                                            |\n| **className**          | A string that applies a class to the container of the rendered component                                                                                                                                                                                           |\n| **modelViewerOptions** | An object containing additional attributes to control the model-viewer. Refer to the [model-viewer docs](https://modelviewer.dev/docs/index.html#loading-attributes) for more information                                                                          |\n| **videoOptions**       | An object containing additional HTML5 video attributes. Refer to the [docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) for more information                                                                                                  |\n| **audioOptions**       | An object containing additional HTML5 audio attributes. Refer to the [docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio) for more information                                                                                                  |\n| **iframeOptions**      | An object containing additional HTML5 iframe attributes. Refer to the [docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe) for more information                                                                                                |\n| **fallback**           | A function that passes in a media type and expects a ReactElement or null. Use this prop to override the default fallback per media type. If null is returned then the default fallback if used.                                                                   |\n| **onError**            | A callback whenever an error occurs loading the media or preview.                                                                                                                                                                                                  |\n| **onRefreshToken**     | A callback for the default fallback UI that the user decided to refresh the token metadata. You can use this to display a notification and give the user some feedback.                                                                                            |\n\n### List of supported media types\n\n- mp4\n- wav, mp3\n- gltf, glb\n- png, jpeg, jpg, gif, svg\n- html\n\n### Usage\n\n```typescript\nimport { TokenMedia, useTokens } from '@reservoir0x/reservoir-kit-ui'\n\n...\n\n  const { data: tokens } = useTokens({\n    collection: \"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\"\n  })\n  \n\n\treturn (tokens.map((token, i) => (\n    <TokenMedia\n      key={i}\n      token={token?.token}\n    />\n  )))\n```\n\n\n\nIn the example above we import `TokenMedia` and [useTokens](https://docs.reservoir.tools/docs/usetokens) hook. We then use the `useTokens` hook to fetch the token data for a given collection. Finally we iterate over the tokens and use the `TokenMedia` component to render the tokens, passing in the token prop.\n\n### Advanced Usage\n\nIn some cases you may want to override one particular media type (video for example) and render it in your own player or layer some additional controls. To support this use case we export a utility function to extract the media type from the token object:\n\n```typescript\nimport { TokenMedia, useTokens, extractMediaType } from '@reservoir0x/reservoir-kit-ui'\n\n...\n\n  const { data: tokens } = useTokens({\n    collection: \"0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d\"\n  })\n  \n\n\treturn (tokens.map((token, i) => {\n   \tconst mediaType = extractMediaType(token) \n    \n    if (mediaType === 'mp4') {\n      return <CustomVideoComponent/>\n    }\n    \n\t\treturn (<TokenMedia\n      key={i}\n      token={token?.token}\n    />)\n  }))\n```",
+        "order": 8,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-11-23T08:46:53.267Z",
+        "revision": 9,
+        "_id": "63f3e45464c04e0012a8fc12",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-11-23T14:10:14.066Z",
+        "updatedAt": "2022-11-23T22:45:42.788Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc12"
+    },
+    "meta": {
+        "slug": "tokenmedia",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "TokenMedia",
+        "title_raw": "TokenMedia",
+        "description": "Render any token media, supports a wide range of media types",
+        "_id": "63f3e45464c04e0012a8fc12",
+        "hidden": false
+    },
+    "activeDoc": "tokenmedia"
+}

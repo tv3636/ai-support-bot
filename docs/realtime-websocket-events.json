@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:22:01.033Z"
+        },
+        "title": "Websocket Events [BETA]",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "realtime-websocket-events",
+        "excerpt": "",
+        "body": "**Overview**\n\nReservoir web socket service is a Pusher protocol based service which utilizes Pusher channels in order to enable developers to receive events as they occur, without the need to continuously poll for updates. \n\nSubscribing to a channel gives means that you can listen for any events that occur in that channel (or listen to a specific event).\n\nSupported channels:\n\n- \"top-bids\"\n  - Events:\n    - \"new-top-bid\"\\*:\n      - Payload:\n        - ```\n          {\n            \"event\": \"new-top-bid\",\n            \"channel\": \"top-bids\",\n            \"data\": {\n              \"order\": {\n                \"id\": \"0xa8b2151fa2711a20f2f502cf0d62f771e94a0daf2a7fb021955f412330228d85\",\n                \"maker\": \"0xdb66e3b63bbfc795d4233a82cfe68a1387b11f18\",\n                \"createdAt\": \"2023-01-24T17:33:34.738Z\",\n                \"validFrom\": 1674581551,\n                \"validUntil\": 1674840810,\n                \"source\": {\n                  \"id\": \"0x3169aeb16feeae4dc16fd13473fbb9072c372021\",\n                  \"domain\": \"dev.reservoir.market\",\n                  \"name\": \"Reservoir Market\",\n                  \"icon\": \"https://www.reservoir.market/reservoir.svg\"\n                },\n                \"price\": {\n                  \"currency\": {\n                    \"contract\": \"0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6\",\n                    \"name\": \"Wrapped Ether\",\n                    \"symbol\": \"WETH\",\n                    \"decimals\": 18\n                  },\n                  \"amount\": {\n                    \"raw\": \"10000000000000000\",\n                    \"decimal\": 0.01,\n                    \"usd\": null,\n                    \"native\": 0.01\n                  },\n                  \"netAmount\": {\n                    \"raw\": \"10000000000000000\",\n                    \"decimal\": 0.01,\n                    \"usd\": null,\n                    \"native\": 0.01\n                  }\n                },\n                \"priceNormalized\": {\n                  \"currency\": {\n                    \"contract\": \"0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6\",\n                    \"name\": \"Wrapped Ether\",\n                    \"symbol\": \"WETH\",\n                    \"decimals\": 18\n                  },\n                  \"amount\": {\n                    \"raw\": \"10000000000000000\",\n                    \"decimal\": 0.01,\n                    \"usd\": null,\n                    \"native\": 0.01\n                  },\n                  \"netAmount\": {\n                    \"raw\": \"10000000000000000\",\n                    \"decimal\": 0.01,\n                    \"usd\": null,\n                    \"native\": 0.01\n                  }\n                },\n                \"criteria\": {\n                  \"kind\": \"token\",\n                  \"data\": {\n                    \"token\": {\n                      \"tokenId\": \"302\"\n                    }\n                  }\n                }\n              },\n              \"owners\": [\n                \"0xdabc74ac2b155f0f2e7cee39301f7554aa3e45cf\"\n              ]\n            }\n          }\n          ```\n\n- Potentially, you can receive multiple \"new-top-bid\" events with the same order id (but with unique owners in each event). This can happen when the number of owners is very large so we avoid sending a very big payload by sending multiple events\n\n**Authentication**\n\nAuthentication with the Websocket Service uses the same API key as our other APIs and does not affect the rate limits on your API key tier.\n\n**Connecting**\n\n- Pusher App Key: `yajqimyMarlhmnV1a3`\n- Websocket Endpoint: wss://websocket.reservoir.tools\n- Authentication Endpoint: <https://api.reservoir.tools/websocket/user-auth>\n- Client Example:\n\n  - ```\n    const PusherJS = require('pusher-js');\n\n    let client = new PusherJS('yajqimyMarlhmnV1a3', {\n        wsHost: 'websocket.reservoir.tools',\n        forceTLS: true,\n        encrypted: true,\n        disableStats: true,\n        enabledTransports: ['ws', 'wss'],\n        userAuthentication: { endpoint: \"https://api.reservoir.tools/websocket/user-auth\", params: { api_key: 'YOUR API KEY' }},\n    });\n\n    // This is needed in order to authenticate your api key.\n    pusher.signin();\n\n    client.subscribe('top-bids').bind('new-top-bid', (message) => {\n        alert(`${message.sender} says: ${message.content}`);\n    });\n    ```",
+        "order": 10,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-01-19T19:17:31.933Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fc3e",
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2023-01-19T21:12:51.345Z",
+        "updatedAt": "2023-02-28T18:22:00.819Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc3e"
+    },
+    "meta": {
+        "slug": "realtime-websocket-events",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Websocket Events [BETA]",
+        "title_raw": "Websocket Events [BETA]",
+        "description": "OverviewReservoir web socket service is a Pusher protocol based service which utilizes Pusher channels in order to enable developers to receive events as they occur, without the need to continuously poll for updates.Subscribing to a channel gives means that you can listen for any events that occur i...",
+        "_id": "63f3e45464c04e0012a8fc3e",
+        "hidden": false
+    },
+    "activeDoc": "realtime-websocket-events"
+}

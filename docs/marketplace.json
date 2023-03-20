@@ -1,0 +1,90 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": [
+                {
+                    "type": "doc",
+                    "icon": "file-text-o",
+                    "name": "Getting Started",
+                    "slug": "marketplace-getting-started",
+                    "deprecated": false,
+                    "category": "Marketplace"
+                }
+            ]
+        },
+        "algolia": {
+            "recordCount": 8,
+            "publishPending": false,
+            "updatedAt": "2023-03-10T21:57:35.250Z"
+        },
+        "title": "Marketplace UI (NextJS)",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "marketplace",
+        "excerpt": "",
+        "body": "## Introduction\n\n[Reservoir Market v2 ](https://github.com/reservoirprotocol/marketplace-v2)is an open source marketplace built with Reservoir APIs that enables access to instant liquidity aggregated from major marketplace. We encourage developers to use this project as a reference for their own implementation or even fork the project and make their own meaningful changes. The project is lightly configurable refer to the configuration variables below. If you're looking for a no-code solution check out our [v1 marketplace](https://github.com/reservoirprotocol/marketplace-v1).\n\n## Getting Started\n\n### Prerequisites\n\n1. Install [Node.js and NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)\n2. Install [Yarn](https://classic.yarnpkg.com/en/docs/install)\n3. Request free [Reservoir API key](https://reservoir.tools/request-api-key)\n\n### Built With\n\n- [ReservoirKit](https://docs.reservoir.tools/docs/reservoir-kit)\n- [Reservoir Protocol and API](https://reservoirprotocol.github.io/)\n- [Next.js](https://nextjs.org/)\n- [React.js](https://reactjs.org/)\n- [Ethers.io](https://ethers.io/)\n- [WAGMI](https://wagmi.sh/)\n- [Stitches](https://stitches.dev/docs/variants)\n\n### Installation\n\nFork this repo and follow these instructions to install dependancies.\n\nWith yarn:\n\n```bash\n$ yarn install\n```\n\n\n\nWith NPM:\n\n```bash\n$ npm install\n```\n\n\n\n### Configuration\n\nReservoir Market v2 is lightly configurable with the configurations below. You can either add these to a `.env.production` and `.env.development` or add env variables to a deployment platform like [vercel](https://vercel.com/).\n\n**Environment Variables**  \n\n| Environment Variable               | Required | Description                                                                                                                                          | Example                                                          |\n| :--------------------------------- | :------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |\n| NEXT_PUBLIC_HOST_URL               | `true`   | The domain that the deployed project is hosted on.                                                                                                   | <http://localhost:3000>                                          |\n| ETH_RESERVOIR_API_KEY              | `false`  | Ethereum Reservoir API key. [Sign up here get a free API key.](https://reservoir.tools/)                                                             | 123e4567-e89b-12d3-a456-426614174000                             |\n| GOERLI_RESERVOIR_API_KEY           | `false`  | Goerli Reservoir API key. [Sign up here get a free API key.](https://reservoir.tools/)                                                               | 123e4567-e89b-12d3-a456-426614174000                             |\n| POLYGON_RESERVOIR_API_KEY          | `false`  | Polygon Reservoir API key. [Sign up here get a free API key.](https://reservoir.tools/)                                                              | 123e4567-e89b-12d3-a456-426614174000                             |\n| NEXT_PUBLIC_ALCHEMY_ID             | `false`  | Alchemy API key required for removing rate limiting restrictions.                                                                                    | 123e4567-e89b-12d3-a456-426614174000                             |\n| NEXT_PUBLIC_COLLECTION_SET_ID      | `false`  | Use this to configure a community marketplace. [Generate your collection set ID here.](https://docs.reservoir.tools/reference/postcollectionssetsv1) | f566ba09c14f56aedeed3f77e3ae7f5ff28b9177714d3827a87b7a182f8f90ff |\n| NEXT_PUBLIC_COMMUNITY              | `false`  | Use this to configure a community marketplace. Note: Community IDs are only available for certain communities.                                       | artblocks                                                        |\n| NEXT_PUBLIC_NORMALIZE_ROYALTIES    | `false`  | Enables royalty normalization. [Refer to docs for more info.](https://docs.reservoir.tools/docs/normalized-royalties)                                | `true`, `false`                                                  |\n| NEXT_PUBLIC_DATADOG_CLIENT_TOKEN   | `false`  | Datadog client token for configuring analytics.                                                                                                      | pubdaddswww4dad449dadas12ada123bae                               |\n| NEXT_PUBLIC_DATADOG_APPLICATION_ID | `false`  | Datadog application id for configuring analytics.                                                                                                    | 123cccbb-1234-1111-4411-abc12345612afgds                         |\n| NEXT_PUBLIC_MARKETPLACE_SOURCE     | `false`  | Marketplace source, used to attribute a source to orders. Must be a valid domain                                                                     | reservoir.tools                                                  |\n\nIn addition to the configuration above we've also added comments prefixed with `CONFIGURABLE:` throughout the app pointing out some pieces of code where you could customize functionality. After cloning the app make sure to search the repo for the aforementioned prefix.\n\n### Run the App\n\nOnce you have your setup ready, run:\n\nWith yarn:\n\n```\n$ yarn dev\n```\n\n\n\nWith npm:\n\n```\n$ npm run dev\n```\n\n\n\n### Deploy with Vercel\n\nThis is a Next.js app that can be easily deployed using [Vercel](https://vercel.com/). For more information on how to deploy your Github repository with Vercel visit their [docs](https://vercel.com/docs/concepts/projects/overview).",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "introduction",
+        "slugUpdatedAt": "2022-07-28T20:11:31.353Z",
+        "revision": 9,
+        "_id": "63f3e45464c04e0012a8fb29",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-15T20:28:54.398Z",
+        "updatedAt": "2023-03-10T21:57:34.878Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 4,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fb29"
+    },
+    "meta": {
+        "slug": "marketplace",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Marketplace UI (NextJS)",
+        "title_raw": "Marketplace UI (NextJS)",
+        "description": "IntroductionReservoir Market v2 is an open source marketplace built with Reservoir APIs that enables access to instant liquidity aggregated from major marketplace. We encourage developers to use this project as a reference for their own implementation or even fork the project and make their own mean...",
+        "_id": "63f3e45464c04e0012a8fb29",
+        "hidden": false
+    },
+    "activeDoc": "marketplace"
+}

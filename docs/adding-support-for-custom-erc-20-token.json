@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:18:52.361Z"
+        },
+        "title": "Custom ERC-20 Support",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "adding-support-for-custom-erc-20-token",
+        "excerpt": "",
+        "body": "Reservoir enables users to create and fill orders in any ERC-20 token, however some custom ERC-20 tokens require special handling in our [indexer](https://github.com/reservoirprotocol/indexer).\n\nTo add support for your custom ERC-20 Token follow these steps below:\n\n1. Add your custom token details [here](https://github.com/reservoirprotocol/indexer/blob/9bea88db12f3a012aa6558942635b4ee39ff83e2/src/config/network.ts#L126)\n\n```c Example\n[\n            \"0xceb726e6383468dd8ac0b513c8330cc9fb4024a8\", // MUST BE LOWERCASE\n            {\n              contract: \"0xceb726e6383468dd8ac0b513c8330cc9fb4024a8\",\n              name: \"Worms\",\n              symbol: \"WORMS\",\n              decimals: 18,\n            },\n          ]\n```\n\n\n\n2. Submit a PR and add the reservoirprotocol/backend team as a reviewer.\n3. Once our team has reviewed and merged the PR, the token will be supported.",
+        "order": 6,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-01-19T19:17:31.538Z",
+        "revision": 8,
+        "_id": "63f3e45464c04e0012a8fc3f",
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2023-01-20T19:08:51.545Z",
+        "updatedAt": "2023-02-28T18:18:52.042Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc3f"
+    },
+    "meta": {
+        "slug": "adding-support-for-custom-erc-20-token",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Custom ERC-20 Support",
+        "title_raw": "Custom ERC-20 Support",
+        "description": "Reservoir enables users to create and fill orders in any ERC-20 token, however some custom ERC-20 tokens require special handling in our indexer.To add support for your custom ERC-20 Token follow these steps below: Add your custom token details here Example[ \"0xceb726e6383468dd8ac0b513c8330cc9fb4024...",
+        "_id": "63f3e45464c04e0012a8fc3f",
+        "hidden": false
+    },
+    "activeDoc": "adding-support-for-custom-erc-20-token"
+}

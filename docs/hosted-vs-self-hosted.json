@@ -1,0 +1,82 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:22:44.060Z"
+        },
+        "title": "Self-hosting",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "hosted-vs-self-hosted",
+        "excerpt": "",
+        "body": "The Reservoir Indexer is completely open-source, which means you can run it yourself if you want to. However, there are some considerations to keep in mind:\n\n- There is a steep learning curve, and we\u2019ve not yet had time to invest in documentation\n- The software is still under rapid development, so will require frequent maintenance to get the latest updates and patches\n- Running your own indexer is expensive, because you need to index every event for every NFT, which requires a lot of RPC calls and database resources\n\nIn 99% of cases, we recommend using the Hosted Indexer provided by the Core Team, and available at <https://api.reservoir.tools>. This is a highly available version of Reservoir that allows you to get started right away, without needing to worry about infrastructure. \n\nOnce the product matures, it\u2019s a high priority to make it simpler to run Reservoir on your own infrastructure, for those who want to do so. However, in the meantime, our focus is on the Hosted Indexer, and we can only offer very basic guidance for self-hosted.\n\n## Bulk Data Access\n\nIf your reason for running the Indexer is getting bulk access to data, there might be easier options:\n\n- A number of endpoints (Events, Sales, Transfers, Orders) are specifically designed to allow bulk scraping\n- Reservoir's dataset is available in Dune Analytics! It's still being tested, but send us a DM and we can give early access\n- If you need a dump of a particular dataset, we can probably provide it. Very shortly we will start doing daily dumps to make historical data access much easier\n\n## Additional Notes / FAQs\n\n- Even if you want to run your own Indexer, you don\u2019t also need to run the Relayer. Your Indexer can get liquidity from the Arweave data lake, that is made available by the Relayer run by the core team\n- You will also need to run the metadata service if you want to index token metadata (names, images, etc). This has only been optimized for Ethereum mainnet\n- By default, the Indexer only indexes data moving forward. To have complete data, you will need to run backfill jobs",
+        "order": 13,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-26T21:45:33.433Z",
+        "revision": 4,
+        "_id": "63f3e45464c04e0012a8fbd5",
+        "pendingAlgoliaPublish": false,
+        "pendingTempStagingPublish": false,
+        "createdAt": "2022-08-27T10:55:51.083Z",
+        "updatedAt": "2023-02-28T18:22:43.337Z",
+        "user": "62aa40bf070ba500847db14f",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbd5"
+    },
+    "meta": {
+        "slug": "hosted-vs-self-hosted",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Self-hosting",
+        "title_raw": "Self-hosting",
+        "description": "The Reservoir Indexer is completely open-source, which means you can run it yourself if you want to. However, there are some considerations to keep in mind: There is a steep learning curve, and we\u2019ve not yet had time to invest in documentationThe software is still under rapid development, so will re...",
+        "_id": "63f3e45464c04e0012a8fbd5",
+        "hidden": false
+    },
+    "activeDoc": "hosted-vs-self-hosted"
+}

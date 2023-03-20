@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": "Reservoir aggregates NFT orders from across the Ethereum ecosystem and makes this liquidity available and fillable through easy-to-use API endpoints and SDKs."
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 5,
+            "publishPending": false,
+            "updatedAt": "2023-03-15T15:03:22.988Z"
+        },
+        "title": "Supported Marketplaces",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "supported-marketplaces",
+        "excerpt": "",
+        "body": "### Marketplaces\n\nReservoir aggregates both ask and bid liquidity from all major marketplaces. However, due to the various complexities of each protocol, there are some limitations.\n\n| Marketplace      | Listings              | Token Offers          | Collection Offers  | Protocol      |\n| :--------------- | :-------------------- | :-------------------- | :----------------- | :------------ |\n| opensea.io       | :white-check-mark:    | :white-check-mark: \\* | :white-check-mark: | Seaport       |\n| looksrare.org    | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | LooksRare     |\n| x2y2.io          | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | X2Y2          |\n| sudoswap.xyz     | :white-check-mark:    | n/a                   | :white-check-mark: | Sudoswap      |\n| nft.coinbase.com | :white-check-mark:    | :white-check-mark:    | n/a                | 0x v4         |\n| rarible.com      | :white-check-mark:    | :x:                   | :white-check-mark: | Rarible       |\n| nftx.io          | :white-check-mark:    | n/a                   | :white-check-mark: | NFTX          |\n| foundation.app   | :white-check-mark:    | :x:                   | n/a                | Foundation    |\n| manifold.xyz     | :white-check-mark:    | n/a                   | n/a                | Manifold      |\n| zora.co          | :white-check-mark:    | :x:                   | :x:                | Zora Asks 1.1 |\n| blur.io          | :white-check-mark: \\* | n/a                   | :x:                | Blur          |\n| cryptopunks.app  | :white-check-mark:    | :white-check-mark:    | n/a                | CryptoPunks   |\n| element.market   | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Element       |\n| infinity.xyz     | :white-check-mark:    | n/a                   | n/a                | Infinity      |\n| universe.xyz     | :white-check-mark:    | n/a                   | n/a                | Universe      |\n| sansa.xyz        | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| ens.vision       | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| magically.gg     | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| alienswap.xyz    | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| sound.xyz        | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| atomic0.com      | :white-check-mark:    | :white-check-mark:    | n/a                | Seaport       |\n| rare.id          | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| parcel.so        | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| metahood.xyz     | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| reservoir.market | :white-check-mark:    | :white-check-mark:    | :white-check-mark: | Seaport       |\n| tessera.co       | :white-check-mark:    | n/a                   | n/a                | Seaport       |\n\n_\\*Due to high volume of spam, only OpenSea token offers within 20% of floor are ingested _  \n_\\*Blur protocol is integrated, but we integrating listing creation and bidding now_\n\n### Market Makers\n\nIt's possible for Market Makers to push liquidity directly into Reservoir without an associated marketplace. In those cases, the \"source\" for the orders will be `reservoir.tools` indicating that they used the Reservoir API. \n\n### Community Marketplaces\n\nReservoir also allows community marketplaces to built directly on top of our aggregated order book, either with Reservoir's open-source marketplace UI, or a variety of marketplace-building platforms (e.g. [Snag](https://www.snagsolutions.io/), [FirstMate](https://firstmate.xyz/), [Mobo](https://mobo.xyz/), [PerkShop](https://perk.shop/))\n\n| Community                | Marketplace                      | Built With     |\n| :----------------------- | :------------------------------- | :------------- |\n| Forgotten Runes          | forgotten.market                 | Custom         |\n| GoblinTown               | marketplace.truthlabs.co         | Snag           |\n| ApeCoin (Yuga Labs)      | www.apecoinmarketplace.com       | Snag           |\n| 9dcc                     | 9dcc.market                      | FirstMate      |\n| Bankless                 | market.bankless.com              | FirstMate      |\n| SupDucks                 | perk.shop/supducks/shop          | PerkShop       |\n| Proof                    | pudding.xyz                      | Mobo           |\n| Gmoney                   | gmoney.market                    | Marketplace V1 |\n| Finiliar                 | finiliar.com                     | Marketplace V1 |\n| Chimpers                 | chimpers.xyz                     | Marketplace V1 |\n| GodHatesNFTees           | marketplace.godhatesnftees.com   | Marketplace V1 |\n| 6529                     | 6529memes.market                 | Marketplace V1 |\n| InBetweeners             | marketplace.inbetweeners.io      | Marketplace V1 |\n| Lazy Ape Yacht Club      | marketplace.lazyapeyachtclub.com | Snag           |\n| Genuine Undead           | portal.genuineundead.io          | Snag           |\n| Boki                     | marketplace.boki.art             | Snag           |\n| Los Muertos              | marketplace.los-muertos.io       | Snag           |\n| NFTeams                  | marketplace.nfteams.club         | Snag           |\n| Pirates of the Metaverse | marketplace.piratesnft.io        | Snag           |\n| Zombie Apes              | marketplace.zombieapes.io        | Snag           |\n| OnChainBirds             | buy.onchainbirds.com             | Marketplace V1 |\n| thric3                   | join.thric3.io                   | Marketplace V1 |\n| Dead Birds Society       | underground.deadbirds.io         | Marketplace V1 |\n| Milady                   | pleasebepatientwith.me           | FirstMate      |\n| Techie Club              | market.techieclub.co             | FirstMate      |\n| Bubblegum Kids           | market.bubblegumkids.com         | Marketplace V1 |\n| Goldfinch                | lark.market                      | Marketplace V1 |\n| Quirkies                 | marketplace.quirkies.io          | Marketplace V1 |\n| Eyeverse                 | marketplace.eyeverse.world       | Marketplace V1 |\n| Tricil                   | tricil.art                       | Marketplace V1 |\n| R Planet                 | marketplace.rplanetnft.xyz       | Snag           |\n| Froggy Friends           | marketplace.froggyfriendsnft.com | Snag           |\n| Citizens of Tajigen      | marketplace.tajigen.xyz          | Snag           |\n\n### Auctions\n\nCurrently, Reservoir only supports _instant_ liquidity. This means we supports fixed priced listings and Dutch Auctions (Seaport only). We don't support English Auctions, however in some cases we still record sales from auctions (see below)\n\n### Sales / Mint Events\n\nIn addition to ingesting liquidity, Reservoir parses sale data for the following protocols:\n\n| Marketplace    |\n| :------------- |\n| ens.domains    |\n| artblocks.io   |\n| async.art      |\n| knownorigin.io |\n| okx.com        |\n| nouns.wtf      |\n| superrare.com  |\n| tofunft.com    |\n| nfttrader.io   |\n| benddao.xyz    |",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "aggregated-liquidity",
+        "slugUpdatedAt": "2022-11-30T18:22:38.392Z",
+        "revision": 43,
+        "_id": "63f3e45464c04e0012a8fc08",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-11-01T22:32:04.130Z",
+        "updatedAt": "2023-03-15T15:03:22.560Z",
+        "user": "638528928b4b3601d2a4bf4a",
+        "category": "63f3e45464c04e0012a8fb11",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc08"
+    },
+    "meta": {
+        "slug": "supported-marketplaces",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Supported Marketplaces",
+        "title_raw": "Supported Marketplaces",
+        "description": "Reservoir aggregates NFT orders from across the Ethereum ecosystem and makes this liquidity available and fillable through easy-to-use API endpoints and SDKs.",
+        "_id": "63f3e45464c04e0012a8fc08",
+        "hidden": false
+    },
+    "activeDoc": "supported-marketplaces"
+}

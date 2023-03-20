@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 2,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:47:11.142Z"
+        },
+        "title": "Embed Buying and Selling",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "aggregated-liquidity",
+        "excerpt": "Allow your users to buy any on-sale NFT or instantly sell directly from your app",
+        "body": "One of the major advantages of leveraging Reservoir\u2019s NFT marketplace engine is that applications can embed marketplace functionality into their apps without it being a primary focus for the developers. \n\n**Core Benefits**\n\n- Add marketplace functionality without building any backend infrastructure\n- Access Reservoir\u2019s open orderbook, including liquidity aggregated from all major marketplaces\n- Control the fees of the orders on your site to generate revenue\n- Leverage Reservoir\u2019s ReservoirKit to get out-of-the-box checkout UI\n\nMarketplace functionality is _not_ just for teams building marketplaces. Reservoir supports a variety of applications with embedded marketplace functionality, including:\n\n- Wallets\n- Social\n- Explorer\n- Portfolio Apps\n\n## How to embed marketplace functionality into your app.\n\nTo most effectively leverage Reservoir to embed buying, bidding, listing, or selling into your application, we recommend you user either:\n\n- [Reservoir SDK (JS/TS/Node)](doc:reservoir-sdk): An abstracted SDK for interacting with the NFT market. All the function of the Reservoir API wrapped into easily-to-use, performant methods.\n- [ReservoirKit UI (React)](doc:reservoirkit-ui): a react library that makes it easy to add marketplace functionality and UI into your project.\n\nReservoirKit is a react library that wraps the Reservoir SDK, so its less of a choice between these two and more a choice of whether you would like to use UI kit components in your application.\n\n> \ud83d\udcd8 [Learn more about our supported marketplaces](https://docs.reservoir.tools/docs/supported-marketplaces)\n\n> \ud83d\udcd8 [Quick Start: Add Buying](https://docs.reservoir.tools/docs/buying)\n\n> \ud83d\udcd8 [Quick Start: Add Instant Sell](https://docs.reservoir.tools/docs/add-instant-sell)",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-21T20:10:03.013Z",
+        "revision": 20,
+        "_id": "63f3e45464c04e0012a8fc27",
+        "pendingAlgoliaPublish": false,
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "createdAt": "2022-12-22T19:09:05.367Z",
+        "updatedAt": "2023-02-28T18:47:10.790Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc27"
+    },
+    "meta": {
+        "slug": "aggregated-liquidity",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Embed Buying and Selling",
+        "title_raw": "Embed Buying and Selling",
+        "description": "Allow your users to buy any on-sale NFT or instantly sell directly from your app",
+        "_id": "63f3e45464c04e0012a8fc27",
+        "hidden": false
+    },
+    "activeDoc": "aggregated-liquidity"
+}

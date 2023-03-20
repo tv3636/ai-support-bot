@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:24.181Z"
+        },
+        "title": "Cancel a Bid",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "cancel-a-listing-1",
+        "excerpt": "Learn how to cancel a bid using ReservoirKit.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## CancelBidModal\n\nReservoirKit provides a simple to configure modal for canceling a valid bid in your react app. Below is an example of a simple CancelBidModal setup.\n\n```typescript\nimport { CancelBidModal } from '@reservoir0x/reservoir-kit-ui'\n\n<CancelBidModal\n  trigger={\n    <button>\n      Cancel Bid\n    </button>\n  }\n  bidId=\"0x26546d77a4511a2c0c2ab24970cdad886fad35f9f875bbb524f1d92775115153\"\n  onCancelComplete={(data: any) => {\n    console.log('Bid Canceled', data)\n  }}\n  onCancelError={(error: any, data: any) => {\n    console.log('Bid Cancel Error', error, data)\n  }}\n  onClose={(data, currentStep) => {\n    console.log('CancelBidModal Closed')\n  }}\n/>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll want to provide a `bidId`, it can be set to undefined until the data is ready. \n\nThere are also some additional _optional_ props:\n\n| Prop                   | Description                                                                                                                                                                                                                                                                                                   |\n| :--------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| **normalizeRoyalties** | Use this to ensure that royalties are added to the bid data displayed. If royalties are missing from the order then the correct royalties are added on top. If unspecified then the [global setting](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) will be used if provided. |\n| **openState**          | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.                                                                        |\n\nFinally you can set some optional callbacks:\n\n**onCancelComplete**: Triggered when cancelling was completed successfully, returns some useful data about the bid and the cancel step.\n\n**onCancelError**: Triggered when the cancel resulted in an error, returns the error and the bid data.\n\n**onClose**: Triggered when the modal was closed. Returns some useful data about the bid as well as the step data and the current step.\n\n## Conditional Rendering\n\nReservoirKit's CancelBidModal doesn't take care of conditionally showing the button/modal based on if the item is cancelable by the user, we leave that logic up to the developer. Below are the requirements for canceling a bid and how to go about getting that data:\n\n- The user needs to have a **connected wallet**. You can check this by looking for a signer from the [useSigner](https://wagmi.sh/docs/hooks/useSigner) wagmi hook.\n- The user must be the maker of the bid, you can check this by comparing maker in the bid object to the connected wallet address. You can get a full list of a wallet's bids by using the [useBids](https://docs.reservoir.tools/docs/usebids) hook or the underlying api.\n\n## Custom CancelBidModal\n\nThe CancelBidModal also comes with a custom renderer which can be used to just get the data layer that the CancelBidModal uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { CancelBidModal, CancelBidStep } from '@reservoir0x/reservoir-kit-ui'\n\n<CancelBidModal.Custom\n    open={open}\n    bidId=\"0x26546d77a4511a2c0c2ab24970cdad886fad35f9f875bbb524f1d92775115153\"\n  >\n    {({\n      loading,\n      bid,\n      tokenId,\n      cancelStep,\n      transactionError,\n      stepData,\n      totalUsd,\n      blockExplorerBaseUrl,\n      cancelOrder,\n    }) => {\n  { Your Custom React Elements }\n})}\n</CancelBidModal.Custom>\n```\n\n\n\nThe custom CancelBidModal takes a few parameters like before with one additional one being the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom CancelBidModal then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `CancelBidStep` here which is used to manage the internal state of the CancelBidModal's logic. You can decide to use all or some of the data passed into your custom implementation.\n\n> \ud83d\udc4d Nice job!\n> \n> Now that we've added a cancel bid modal to your dApp, let's [customize the theme to match your brand](/docs/reservoir-kit-theming-and-customization).",
+        "order": 6,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-01-06T16:43:55.430Z",
+        "revision": 9,
+        "_id": "63f3e45464c04e0012a8fc31",
+        "pendingAlgoliaPublish": false,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-01-06T16:46:43.290Z",
+        "updatedAt": "2023-02-09T16:32:51.761Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc31"
+    },
+    "meta": {
+        "slug": "cancel-a-listing-1",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Cancel a Bid",
+        "title_raw": "Cancel a Bid",
+        "description": "Learn how to cancel a bid using ReservoirKit.",
+        "_id": "63f3e45464c04e0012a8fc31",
+        "hidden": false
+    },
+    "activeDoc": "cancel-a-listing-1"
+}

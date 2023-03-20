@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 24,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:40.106Z"
+        },
+        "title": "FAQs",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "faq",
+        "excerpt": "",
+        "body": "### Is the hosted Reservoir API free to use?\n\nCurrently, the [hosted Reservoir API](/reference) is free to use. Register for an instant API key [here](https://docs.reservoir.tools/reference/rate-limits).\n\n### From where does Reservoir currently aggregate orders?\n\nCurrently, Reservoir aggregates sell-side orders (asks) from: \n\n- OpenSea\n- LooksRare\n- X2Y2\n- Sudoswap\n- Coinbase NFT\n- Rarible\n- Manifold Gallery\n- Foundation\n- Zora\n- Reservoir\u2019s native applications\n\nAnd buy-side orders from:\n\n- OpenSea\n- LooksRare\n- X2Y2\n- Sudoswap\n- Rarible\n- CoinbaseNFT\n\nYou can find a more detailed breakdown [here](https://docs.reservoir.tools/docs/aggregated-liquidity).\n\n### When will you aggregate Blur?\n\nCurrently, Blur has a closed API. The moment Blur releases a public API, we will aggregate them immediately.\n\n### What listings do you support?\n\nReservoir supports fixed (Buy Now) and Dutch auctions. We do not support English auctions at this time. Dutch auction prices are updated every 10 minutes.\n\n### Do you support lazy minting NFTs?\n\nWe do not support lazy minting at this time.\n\n### What blockchains do you support?\n\nReservoir hosted API is currently available on the following chains:\n\n- Ethereum\n- Goerli (testnet)\n- Polygon (beta)\n- Optimism (beta)\n\nWe plan to roll out support for more EVM compatible chains soon.\n\n### Do you offer Mumbai (testnet)?\n\nCurrently, we only offer Goerli as a testnet. You're welcome to make a Feature Request if you'd like Mumbai support [here](https://reservoir.canny.io/feature-requests).\n\n### Do you support OpenRarity or provide a rarity score?\n\nWe do not currently use OpenRarity ranks for our api. We use PopRank's NFT rankings that you can more about [here](https://www.npmjs.com/package/@poprank/rankings).\n\nWe return both rarity and rarityRank in the tokens API (<https://docs.reservoir.tools/reference/gettokensv5>). \n\n`rarity` is a score based on the frequencies of each trait given to each token within a collection. \n\n`rarityRank` is a rank given to each each token within a collection based on their `rarity`. In most cases we recommended using `rarityRank`. \n\nNote: As `rarity` is based on trait frequency, collections with few or no traits will not provide accurate `rarity`  or `rarityRank` data.\n\n### How do you handle suspicious tokens flagged by OpenSea?\n\nOur [tokens endpoint ](https://docs.reservoir.tools/reference/gettokensv5)will return `isflagged` boolean to help developers easily identify suspicious tokens flagged by OpenSea. You can read more about this feature [here](https://docs.reservoir.tools/docs/flagged-tokens).\n\n### How do I see collection wide offers?\n\nUse our `/orders/bids/v5` and use the collection param with a collection-id. You can see the Bids API [here](https://docs.reservoir.tools/reference/getordersbidsv5) and create a collection-id [here](https://docs.reservoir.tools/reference/postcollectionssetsv1). \n\n### Why do I not see all bids(offers)?\n\nWe filter out single token bids that are 80% below the floor price. This is to reduce spam due to there being large volumes of bids with low chances of being accepted.\n\nWe show 100% of collection wide and trait wide bids.\n\n### Why don't I see mint prices listed under activity?\n\nUnfortunately we don't save the mint prices in the activities API feed, we only do it in the sales API. You're welcome to make a Feature Request for this [here](https://reservoir.canny.io/feature-requests)\n\n### Where do Reservoir native orders get distributed to?\n\nReservoir orders get distributed to any application that natively ingests orders from the aggregated orderbook. While Reservoir native orders are not automatically pushed to OpenSea, we make it possible (and easy) to publish orders into the OpenSea orderbook using our Router contract or API. \n\n### How do marketplace and royalty fees work with Reservoir?\n\nWith our easy-to-use APIs apps built on Reservoir have full control over marketplace and royalty fees. You can read more about royalties [here](https://docs.reservoir.tools/docs/royalties).\n\n### What's the difference between marketplace and referral fees?\n\nMarketplace fees are built into the order. Referral fees are taken on top when filling the order. (e.g. You could take fees on top when filling an OpenSea order that already  has a marketplace fee built-in)\n\n### What is a trait-specific bid?\n\nTrait-specific bids are bids that apply to any token that has a particular trait associated with it. A single trait-specific bid can be accepted by any holder of a token with the trait. Once your single trait-specific bid is accepted, is it considered executed, so only one sale is possible with each bid quantity, even if the bid applies to multiple tokens. Further, we allow you to create custom sets of tokens on which to bid, in a similar style to how trait-specific bids work (see the API reference [here](/reference/)) as well as create your own custom metadata for collections ( see [Metadata Engine](doc:metadata-engine)).\n\n### How do I get a Reservoir API key?\n\nRegister for an API key [here](https://docs.reservoir.tools/reference/rate-limits). If you want to just test out the API first, feel free to query without the key. \n\n### What is WETH?\n\nWrapped Ethereum (WETH) is Ethereum wrapped in the ERC-20 standard. This ERC-20 standard allows you to approve the token to be transferred, which is the fundamental mechanism by which you can place bids and have the WETH transferred out of your wallet at a later date. This is also why you need to approve your WETH for trading.\n\n### Why is it necessary to pay gas to cancel orders?\n\nYou need to pay to cancel orders because orders are signed atomic units that can be copied. If Reservoir simply deleted your order from the orderbook, there's no way to know whether someone has a signed copy of the order stored elsewhere. When you cancel an order, you are sending a transaction to the on-chain exchange contract tell it to not process your order. Since this step must be done on-chain, you need to pay gas. \n\n### How frequently is metadata automatically refreshed?\n\nToken metadata is never automatically refreshed, but may be manually refreshed [here](https://docs.reservoir.tools/reference/posttokensrefreshv1).\n\nCollection metadata is updated at 23:30 UTC daily for:\n\n- Top 500 Collection by 24hr Volume\n- Collections Minted 1 Day Ago\n- Collections Minted 7 Days Ago\n\nCollections can also be manually refreshed [here](https://docs.reservoir.tools/reference/postcollectionsrefreshv1).\n\nCaution: These APIs should be used in moderation, like only when missing data is discovered. Calling it in bulk / programmatically will result in your key getting rate limited.\n\n### Do you have any websockets?\n\nWe offer a top bids websocket (beta). You can read more about it [here](https://docs.reservoir.tools/docs/realtime-websocket-events).\n\n### What RPC provider do you use?\n\nWe use QuickNode. But when a user is purchasing, it uses their own RPC.\n\n### Where is the Reservoir router contract?\n\nThe ethereum contract address for the Reservoir router is: 0x178a86d36d89c7fdebea90b739605da7b131ff6a ([etherscan](https://etherscan.io/address/0x178a86d36d89c7fdebea90b739605da7b131ff6a))\n\n### Has the Reservoirrouter contract been audited?\n\nYes the router contract has been audited by Consensys Dilligence. You can find more details [here](https://docs.reservoir.tools/docs/security-and-smart-contract-audits).",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-15T19:20:29.898Z",
+        "revision": 34,
+        "_id": "63f3e45464c04e0012a8fb35",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-15T20:39:05.384Z",
+        "updatedAt": "2023-02-15T17:44:24.980Z",
+        "user": "638528928b4b3601d2a4bf4a",
+        "category": "63f3e45464c04e0012a8fb11",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fb35"
+    },
+    "meta": {
+        "slug": "faq",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "FAQs",
+        "title_raw": "FAQs",
+        "description": "Is the hosted Reservoir API free to use?Currently, the hosted Reservoir API is free to use. Register for an instant API key here.From where does Reservoir currently aggregate orders?Currently, Reservoir aggregates sell-side orders (asks) from: OpenSeaLooksRareX2Y2SudoswapCoinbase NFTRaribleManifold ...",
+        "_id": "63f3e45464c04e0012a8fb35",
+        "hidden": false
+    },
+    "activeDoc": "faq"
+}

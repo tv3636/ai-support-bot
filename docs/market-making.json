@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 6,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:44:39.418Z"
+        },
+        "title": "Trade Programmatically",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "market-making",
+        "excerpt": "",
+        "body": "Reservoir's aggregated liquidity and easy-to-use APIs make it a useful tool for market makers in the NFT ecosystem who want to quickly and effectively provide liquidity across NFT markets. Reservoir provides the tools to understand the market, create robust trading strategies, and create and publish orders. Market makers can publish orders to the Reservoir ecosystem _and_ other major NFT marketplaces using Reservoir's tooling. \n\nReservoir has an extremely comprehensive set of real-time and historical data for NFT collections, sales, and liquidity. You can see some of that data in use here: <https://dune.com/reservoir0x/nft-marketplace-overview> This data is particularly useful for creating models of NFT prices, and building robust market making strategies. All this data and more is available using our [Data APIs](https://docs.reservoir.tools/reference/overview). If you need more comprehensive data access, feel free to reach out. \n\n## Data\n\n- All historical sales  \n  maker, taker, mp, price (Eth and USD), fees  \n\n- Most historical listings\n\n- Maker, price (Eth and USD), expiration, final state (executed expired)\n\n- Token and collection metadata\n\n- Token attributes: i.e. token #123 has \u2018blue hair\u2019\n\n- Collection attributes: i.e. total supply, holders, etc.\n\n- Real time floor price data including TWAPs\n\n- Some, but not all current bids\n\n### Reservoir SDK\n\nReservoir SDK allows you to interact with major NFT marketplaces easily. In order to showcase this SDK we walk you through an example of market making activity below.  \nFeel free to check out the full example code here.\n\nInstalling and Configuring the Reservoir SDK\n\n```shell\n> yarn add @reservoir0x/reservoir-sdk\n```\n\n\n\nThe Reservoir SDK also requires ethers to be installed, make sure that's added to your package.json if it isn't already.\n\n```shell\n> yarn add ethers\n```\n\n\n\nTo configure the SDK we first need to create a global instance of it:\n\n```typescript\nimport { createClient } from \"@reservoir0x/reservoir-sdk\"\n\nconst client =  createClient({\n  apiBase: \"https://api.reservoir.tools\",\n  apiKey: \"YOUR_API_KEY\",\n  source: \"YOUR.SOURCE\"\n});\n\nexport default client\n```\n\n\n\nMore details about the Reservoir SDK are available [here](https://docs.reservoir.tools/docs/reservoir-sdk).\n\n## Bidding and Listing on Different Marketplaces\n\nWe are going to assume here that you have the price that you want to bid or list a token already computed. Where data can be useful for this calculation, see the Data APIs for real time data. \n\n## Bidding\n\nIn order to bid you must first set the bid order params. For a collection bid, you simply set the collection as follows:\n\n**Collection Bid Example**\n\n```typescript\nlet bidPrice = x; //example bid price  \nlet expirationTime = dayjs().add(20, \"minutes\").unix().toString(); \nlet bidOrder = {\n  collection: contract,\n  orderKind: \"seaport\",\n  orderbook: \"reservoir\",\n  automatedRoyalties: true,\n  excludeFlaggedTokens: true,\n  weiPrice: ethers.utils.parseEther(bidPrice).toString(),\n  expirationTime,\n};\n```\n\n\n\nTo make a token bid, In order to bid on a single token, you pass token: tokenId into the params in addition to the collection contract.\n\n**Token Bid Example**\n\n```typescript\nlet bidPrice = x; //example bid price  \nlet expirationTime = dayjs().add(20, \"minutes\").unix().toString();\nlet bidOrder = {\n  collection: contract,\n  token: tokenId,\n  orderKind: \"seaport\",\n  orderbook: \"reservoir\",\n  automatedRoyalties: true,\n  excludeFlaggedTokens: true,\n  weiPrice: ethers.utils.parseEther(bidPrice).toString(),\n  expirationTime,\n};\n```\n\n\n\nYou can also place trait and arbitrary token set bids, depending on the orderbook you choose. \n\nHere `orderKind` and `orderbook` set the marketplace you wish to interact with:\n\n| Marketplace | orderKind  | orderbook  | Marketplace Fee | Available Features                                |\n| :---------- | :--------- | :--------- | :-------------- | :------------------------------------------------ |\n| OpenSea     | seaport    | opensea    | 2.5%            | Collection, token bids                            |\n| LooksRare   | looks-rare | looks-rare | 2%              | Collection, token bids                            |\n| X2Y2        | x2y2       | x2y2       | 0.5%            | Collection, token bids                            |\n| Reservoir   | seaport    | reservoir  | 0%              | Collection, trait, token arbitrary token set bids |\n\nThen, you can simply use the the Reservoir SDK for bidding:\n\n```typescript\nawait reservoirClient.actions\n  .placeBid({\n    signer: signer,\n    onProgress: () => {},\n    bids: [bidOrder],\n  })\n```\n\n\n\nThe place bid function takes an array of bid objects that match the params passed to the execute bid api \n\n### Listing\n\nIn order to list you must first set the listing params:\n\n**Example System Set-up**\n\n```typescript\nlet listPrice = x //example list price \nlet expirationTime = dayjs().add(20, \"minutes\").unix().toString();\n \nlet listOrder = {\n  token: `${contract}:${token}`,\n  orderKind: \"seaport\",\n  orderbook: \"reservoir\",\n  weiPrice: ethers.utils.parseEther(listPrice).toString(),\n  expirationTime: listingTime,\n};\n\nawait reservoirClient.actions\n  .listToken({\n    signer: signer,\n    onProgress: () => {},\n    listings: [listOrder],\n  })\n```\n\n\n\nOne could set up a programmatic trading system in a number of ways. But one simple set up is as follows:  \n\n- Design a trading strategy using Reservoir\u2019s APIs to get all the data needed to set buys and sells or bids and asks appropriately\n- Use Reservoir\u2019s abstracted SDK for creating orders\n- For on-chain actions use Ethers.js and connect to an OpenZeppelin defender relayer and Reservoir SDK takes care of everything that needs to happen behind the scenes (including approvals, making safety checks, etc.)\n- Deploy a node server to execute a cron job, loop the job over a collections list and executes a market making strategy above\n\n> \ud83d\udcd8 [Learn more about Programmatic Trading with Reservoir](https://docs.reservoir.tools/docs/programmatic-trading-with-reservoir)",
+        "order": 3,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-23T11:53:39.081Z",
+        "revision": 14,
+        "_id": "63f3e45464c04e0012a8fc29",
+        "pendingAlgoliaPublish": false,
+        "user": "62aa40bf070ba500847db14f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "createdAt": "2022-12-23T16:08:47.497Z",
+        "updatedAt": "2023-02-28T18:44:39.040Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc29"
+    },
+    "meta": {
+        "slug": "market-making",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Trade Programmatically",
+        "title_raw": "Trade Programmatically",
+        "description": "Reservoir's aggregated liquidity and easy-to-use APIs make it a useful tool for market makers in the NFT ecosystem who want to quickly and effectively provide liquidity across NFT markets. Reservoir provides the tools to understand the market, create robust trading strategies, and create and publish...",
+        "_id": "63f3e45464c04e0012a8fc29",
+        "hidden": false
+    },
+    "activeDoc": "market-making"
+}

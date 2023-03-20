@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 5,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:29.461Z"
+        },
+        "title": "Add a Cart",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "add-a-cart",
+        "excerpt": "Learn how to add cart UX to your app.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## Cart Provider\n\nReservoirKit provides a cart for you to quickly get a functional, persistent cart into your react application. The first step to configuring your cart is to add the `CartProvider` to your application. Ensure that it's wrapped by the ReservoirKitProvider as well as Wagmi\n\n```typescript\nimport { CartProvider } from '@reservoir0x/reservoir-kit-ui'\n\n<WagmiConfig ...>\n ...\n  <ReservoirKitProvider ...>\n ...\n    <CartProvider>\n      {YOUR APP COMPONENTS}\n    </CartProvider>\n  </ReservoirKitProvider>\n</WagmiConfig>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll want to provide a `collectionId` and a `tokenId`. These can be set to undefined until the data is ready. \n\nThere are also some additional _optional_ props:\n\n| Prop               | Description                                                                                                                                                                                                                                                                                 |\n| :----------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n| **referrer**       | Used to conditionally apply a referral fee receiver on top of an order when purchasing. This will override the global configuration.                                                                                                                                                        |\n| **referrerFeeBps** | Used to conditionally apply a referral fee on top of an order when purchasing. The fee is in <<glossary:bps>>. This will override the global configuration. The fee currency will follow the default rules for the [execute buy endpoint](/reference/postexecutebuyv6) feesOnTop parameter. |\n| **persist**        | Use this to disable the cart's persistence. This is true by default.                                                                                                                                                                                                                        |\n\n## CartPopover\n\nAfter setting up the CartProvider, you can now use the CartPopover to display your cart in your app. The cart automatically validates the cart whenever it's opened and allows the user to check out or edit their cart.\n\n```typescript\nimport { CartPopover } from '@reservoir0x/reservoir-kit-ui'\n\n<CartPopover \n  trigger={<button>Open the Cart</button>}\n  side={'bottom'}\n  openState={openState}\n  tokenUrl={'https://reservoir.market/${contract}/${tokenId}'}\n  onConnectWallet={() => {}} />\n```\n\n\n\nLet's go over the options you can provide to the CartPopover. The trigger is an element that the user can interact with to open the modal. The rest of them are optional:\n\n| Prop                | Description                                                                                                                                                                                                                                                                                                 |\n| :------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **side**            | The preferred side of the anchor to render against when open. This maps to the side property in [radix](https://www.radix-ui.com/docs/primitives/components/popover#content).                                                                                                                               |\n| **openState**       | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.                                                                      |\n| **tokenUrl**        | You can configure the token url schema that the CartPopover uses to route users to the token page when clicking on an item in the cart. By default the CartPopover will detect the token url schema based on the reservoir [custom source metatags](https://docs.reservoir.tools/docs/reservoir-meta-tags). |\n| **onConnectWallet** | This is a required parameter to handle scenarios when the user needs to connect their wallet. Either prompt a custom modal for the user to connect their wallet or prompt metamask/the wallet of your choice.                                                                                               |\n\n## Conditional Rendering\n\nReservoirKit's CartPopover doesn't take care of conditionally showing the button/modal based on if the user has a connected wallet, we leave that logic up to the developer. You can decide to show the button all the time and allow users to add/remove items from the cart but you need to handle validation when they connect their wallet.\n\n## Custom CartPopover\n\nThe CartPopover also comes with a custom renderer which can be used to just get the data layer that the CartPopover uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { CartPopover, CheckoutStatus } from '@reservoir0x/reservoir-kit-ui'\n\n<CartPopover open={open}>\n    {({\n      loading,\n      items,\n      flaggedItems,\n      unavailableItems,\n      priceChangeItems,\n      totalPrice,\n      referrerFee,\n      usdPrice,\n      hasEnoughCurrency,\n      balance,\n      currency,\n      transaction,\n      blockExplorerBaseUrl,\n\t    cartChain,\n      remove,\n      clear,\n      checkout,\n    }) => {\n  { Your Custom React Elements }\n  })}\n</CartPopover.Custom>\n```\n\n\n\nThe custom CartPopover takes one parameter, the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom CartPopover then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `CheckoutStatus` here which is used to manage the internal state of the `CartPopover`'s logic. You can decide to use all or some of the data passed into your custom implementation.\n\nIn addition to the components mention above there is also a [hook](https://docs.reservoir.tools/docs/usecart) for interacting with the cart context. You can use it to add items, remove items, validate the cart etc.",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-11T21:45:24.500Z",
+        "revision": 13,
+        "_id": "63f3e45464c04e0012a8fc4d",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-02-12T22:25:23.998Z",
+        "updatedAt": "2023-02-20T20:45:33.320Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc4d"
+    },
+    "meta": {
+        "slug": "add-a-cart",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Add a Cart",
+        "title_raw": "Add a Cart",
+        "description": "Learn how to add cart UX to your app.",
+        "_id": "63f3e45464c04e0012a8fc4d",
+        "hidden": false
+    },
+    "activeDoc": "add-a-cart"
+}

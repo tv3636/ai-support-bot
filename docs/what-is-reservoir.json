@@ -1,0 +1,93 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [
+                "https://files.readme.io/2eec8bc-og.png",
+                "og.png",
+                1200,
+                630,
+                "#000000"
+            ],
+            "title": "",
+            "description": "Reservoir is an NFT Marketplace Engine enabling the next generation of NFT applications and services."
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 2,
+            "publishPending": false,
+            "updatedAt": "2023-03-15T16:28:43.972Z"
+        },
+        "title": "What is Reservoir?",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "what-is-reservoir",
+        "excerpt": "A NFT marketplace engine that enables the next generation of NFT products",
+        "body": "**Reservoir is an NFT Marketplace Engine enabling the next generation of NFT applications and services**\n\nAt its core, Reservoir is an NFT marketplace engine. But what _is_ an NFT marketplace engine? Our vision for Reservoir is a framework that abstracts the NFT market into an easy to use and rigorous set of tools, giving you the freedom to leverage marketplace functionality to build the next generation of NFT applications. Under the hood, there are four key components that come together to power Reservoir: \n\n[NFT Liquidity Router](doc:nft-liquidity-router) A universal router for creating and filling NFT liquidity across major marketplaces and the Reservoir ecosystem.\n\n[Global NFT Orderbook](doc:global-nft-orderbook) An aggregated and normalized ledger of NFT orders, available in real-time and excecutable.\n\n[NFT Data API](doc:nft-data-api) A comprehensive NFT data API, complete with metadata, market data, and ownership data. \n\n[Marketplace Toolkit](doc:marketplace-toolkit) A toolkit that abstracts the router, orderbook, and APIs into digestible SDKs and UI kits.\n\nThese pieces come together to create an _engine_ a comprehensive and modular toolset for interacting with the NFT market. \n\n## Why use Reservoir?\n\nBuilding NFT marketplace functionality from scratch is a headache and requires a significant development lift just to reach product parity with major marketplaces. Reservoir simplifies the process so you can spending your time focusing on your unique value add to the market. \n\nBuilding with Reservoir means you get: \n\n**Developer-focused tooling: Reservoir allows you to build at your desired level of the stack**\n\n- [Reservoir API](doc:reservoir-api) - An all-in-one API for building NFT market applications. You get market data and metadata, order execution, and advanced order features like collection and trait level bids, all out of the box. All this functionality is wrapped into the SDK for a higher level of abstraction.\n- [Reservoir SDK (JS/TS/Node)](doc:reservoir-sdk)- An abstracted typescript SDK for interacting with the NFT market. All the function of the Reservoir API wrapped into easily-to-use, performant methods.\n- [ReservoirKit UI (React)](doc:reservoirkit-ui) -  A react library that makes it easy to add marketplace functionality and UI into your project.\n- [Marketplace UI (NextJS)](doc:marketplace) - An open-source reference marketplace that you can fork and use freely as a stand alone marketplace or a base for building something more custom and unique\n- [Dune Dataset](doc:dune-dataset) - Reservoir's data is all available in Dune Analytics so you can query our data and build reports about the NFT market or specific projects/applications.\n\n**Abstracted orderbook and exchange: Reservoir treats the NFT market as one cohesive whole**\n\n- _Upgrade protection_: Since Reservoir abstracts the orderbook and exchange, you get exchange and orderbook upgrades free and with no additional work. By default we use the Seaport exchange, as new features roll out, you will get them without any changes to your code.\n- _Out of the box aggregation_: We aggregate all major marketplaces and normalize the liquidity so all orders are treated equally in our system. See a full list of aggregated marketplaces [here](doc:supported-marketplaces). We don\u2019t just aggregate listings, we also aggregate all bid liquidity from across the NFT ecosystem so your users can sell instantly into the best available offer.\n- _Order distribution_: Reservoir allows your to post your own orders with your desired fee structure. These orders are distributed to all Reservoir partner marketplaces and marketplaces that aggregate the Reservoir orderbook. Additionally, Reservoir allows you to cross post orders to other major marketplace orderbooks.\n\n**An open-source partner: Working with Reservoir means your data and liquidity are truly yours**\n\nAt Reservoir, we believe that the liquidity you create should be yours. Since Reservoir is open-source and we store all order data on Arweave, you never have to worry about losing access to your liquidity. Even if you decide you no longer want to work with Reservoir, you liquidity will still be freely available for you to use. Learn more about our open orderbook [here](https://www.notion.so/Open-Orderbook-42c59de20cf347debf10411237f126b4).\n\n**Marketplace innovation: Reservoir is pushing the boundaries of NFT markets.**\n\nWe strive to build best in class NFT market solutions. Here are just some of the important features we have released recently that you won\u2019t find anywhere else.\n\n- [Royalty Compliance](doc:royalties) - Leverage aggregated liquidity with normalized royalties, so you get all the NFT market liquidity while still respecting creator royalties.\n\n- [Custom Fees](doc:custom-fees) -  Distribute orders across the NFT ecosystem with your own custom fee structure.\n\n- [Cross-chain support](doc:supported-chains) - Reservoir is currently live on Ethereum, Polygon and Optimism  - with more chains on the way.\n\n- [Instant Sell](doc:add-instant-sell) - Aggregated bid liquidity allows your users to sell instantly into the best offer on the market.\n\nCheck out our features on the left panel for a full list.",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-14T18:56:59.925Z",
+        "revision": 16,
+        "_id": "63f3e45464c04e0012a8fb28",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-15T17:56:54.925Z",
+        "updatedAt": "2023-03-02T04:12:52.123Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb11",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 4,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fb28"
+    },
+    "meta": {
+        "slug": "what-is-reservoir",
+        "type": "docs",
+        "parent": null,
+        "image": [
+            "https://files.readme.io/2eec8bc-og.png",
+            "og.png",
+            1200,
+            630,
+            "#000000"
+        ],
+        "title": "What is Reservoir?",
+        "title_raw": "What is Reservoir?",
+        "description": "Reservoir is an NFT Marketplace Engine enabling the next generation of NFT applications and services.",
+        "_id": "63f3e45464c04e0012a8fb28",
+        "hidden": false
+    },
+    "activeDoc": "what-is-reservoir"
+}

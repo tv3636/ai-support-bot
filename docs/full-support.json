@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 2,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:04.270Z"
+        },
+        "title": "Full Support",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "full-support",
+        "excerpt": "",
+        "body": "# Add support for batch filling orders via Router contract \nhttps://github.com/reservoirprotocol/core/blob/main/packages/contracts/contracts/router/ReservoirV5_0_0.sol\n\nComing soon\u2026\n\n# Add support for creating orders, and publishing externally \n\nComing soon\u2026",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-03T08:37:21.857Z",
+        "revision": 1,
+        "_id": "63f3e45464c04e0012a8fbbb",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-03T20:08:35.391Z",
+        "updatedAt": "2022-08-03T20:08:35.391Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "parentDoc": "63f3e45464c04e0012a8fbb8",
+        "category": "63f3e45464c04e0012a8fb1f",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbbb"
+    },
+    "meta": {
+        "slug": "full-support",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbb8",
+        "image": [],
+        "title": "Full Support",
+        "title_raw": "Full Support",
+        "description": "Add support for batch filling orders via Router contracthttps://github.com/reservoirprotocol/core/blob/main/packages/contracts/contracts/router/ReservoirV5_0_0.solComing soon\u2026Add support for creating orders, and publishing externallyComing soon\u2026",
+        "_id": "63f3e45464c04e0012a8fbbb",
+        "hidden": false
+    },
+    "activeDoc": "full-support"
+}

@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:23.514Z"
+        },
+        "title": "Buy & Sweep",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "buy-sweep",
+        "excerpt": "",
+        "body": "Reservoir's APIs and SDKs make it easy to add buying and sweeping functionality directly into your product. Showcase your users the best prices across all major marketplaces and execute orders through one simple interface.\n\nWith Reservoir you can:\n\n- Buy multiple on sale NFTs across many marketplaces in one transaction\n- Set your own referrer fees on-top of aggregated orders\n- Automatically add missing royalty fees on-top of aggregated orders\n- Buy any non-ETH listing with ETH\n\n> \ud83d\udcd8 [API Docs: Execute Buy](https://docs.reservoir.tools/reference/postexecutebuyv6)\n\n> \ud83d\udcd8 [Quick Start: Add Buying with ReservoirKit](https://docs.reservoir.tools/docs/buying)",
+        "order": 3,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "buying-sweep",
+        "slugUpdatedAt": "2022-12-23T22:01:11.861Z",
+        "revision": 7,
+        "_id": "63f3e45464c04e0012a8fc2a",
+        "pendingAlgoliaPublish": false,
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb20",
+        "createdAt": "2022-12-23T16:48:29.185Z",
+        "updatedAt": "2022-12-23T18:02:24.651Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc2a"
+    },
+    "meta": {
+        "slug": "buy-sweep",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Buy &amp; Sweep",
+        "title_raw": "Buy & Sweep",
+        "description": "Reservoir's APIs and SDKs make it easy to add buying and sweeping functionality directly into your product. Showcase your users the best prices across all major marketplaces and execute orders through one simple interface.With Reservoir you can: Buy multiple on sale NFTs across many marketplaces in ...",
+        "_id": "63f3e45464c04e0012a8fc2a",
+        "hidden": false
+    },
+    "activeDoc": "buy-sweep"
+}

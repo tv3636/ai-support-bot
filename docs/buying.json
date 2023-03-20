@@ -1,0 +1,83 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:58.089Z"
+        },
+        "title": "Add Buying",
+        "icon": "",
+        "updates": [
+            "63036682648cb6014aa43ab5"
+        ],
+        "type": "basic",
+        "slug": "buying",
+        "excerpt": "Learn how to buy a token using ReservoirKit.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## BuyModal\n\nReservoirKit provides a simple to configure modal for facilitating token purchases in your react app. Below is an example of a simple BuyModal setup.\n\n```typescript\nimport { BuyModal } from '@reservoir0x/reservoir-kit-ui'\n\n<BuyModal\n  trigger={\n    <button>\n      Buy Token\n    </button>\n  }\n  collectionId=\"0xf5de760f2e916647fd766b4ad9e85ff943ce3a2b\"\n  tokenId=\"1236715\"\n  onPurchaseComplete={(data) => console.log('Purchase Complete')}\n  onPurchaseError={(error, data) => console.log('Transaction Error', error, data)}\n  onClose={(data, stepData, currentStep) => console.log('Modal Closed')}\n\n/>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll want to provide a `collectionId` and a `tokenId`. These can be set to undefined until the data is ready. \n\nThere are also some additional _optional_ props:\n\n| Prop                   | Description                                                                                                                                                                                                                                                                                      |\n| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **referrer**           | Used to conditionally apply a referral fee receiver on top of an order when purchasing. This will override the global configuration.                                                                                                                                                             |\n| **referrerFeeBps**     | Used to conditionally apply a referral fee on top of an order when purchasing. The fee is in <<glossary:bps>>. This will override the global configuration. The fee currency will follow the default rules for the [execute buy endpoint](/reference/postexecutebuyv6) feesOnTop parameter.      |\n| **normalizeRoyalties** | Use this to ensure that royalties are added to the order. If royalties are missing from the order then the correct royalties are added on top. If unspecified then the [global setting](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) will be used if provided. |\n| **openState**          | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.                                                           |\n\nFinally you can set some optional callbacks:\n\n**onPurchaseComplete**: Triggered when the purchase was completed successfully, returns some useful data about the purchase.\n\n**onPurchaseError**: Triggered when the purchase resulted in an error, returns the error and the purchase data.\n\n**onClose**: Triggered when the modal was closed. Returns some useful data about the purchase as well as the step data and the current step.\n\n## Conditional Rendering\n\nReservoirKit's BuyModal doesn't take care of conditionally showing the button/modal based on if the item is purchasable, we leave that logic up to the developer. Below are the requirements for purchasing and how to go about getting that data:\n\n- The user needs to have a **connected wallet**. You can check this by looking for a signer from the [useSigner](https://wagmi.sh/docs/hooks/useSigner) wagmi hook.\n- The user **cannot be the owner** of the token, you can check this by comparing the current address and the address of the owner.\n- The token must have a **valid listing**, you can check if the `floorAskPrice` is available for that token using the [Tokens](ref:gettokensv5) api endpoint.\n\n## Custom BuyModal\n\nThe BuyModal also comes with a custom renderer which can be used to just get the data layer that the BuyModal uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { BuyModal, BuyStep } from '@reservoir0x/reservoir-kit-ui'\n\n<BuyModal.Custom\n  open={open}\n  tokenId={tokenId}\n  collectionId={collectionId}>\n  {({\n    token,\n    collection,\n    totalPrice,\n    referrerFee,\n    buyStep,\n    transactionError,\n    hasEnoughEth,\n    txHash,\n    feeUsd,\n    totalUsd,\n    ethUsdPrice,\n    isBanned,\n    balance,\n    address,\n    etherscanBaseUrl,\n    buyToken,\n    setBuyStep,\n  }) => {\n    { Your Custom React Elements }\n  })}\n</BuyModal.Custom>\n```\n\n\n\nThe custom BuyModal takes a few parameters like before with one additional one being the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom BuyModal then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `BuyStep` here which is used to manage the internal state of the BuyModal's logic. You can decide to use all or some of the data passed into your custom implementation.\n\n> \ud83d\udc4d Nice job!\n> \n> Now that we've added a buy modal to your dApp, let's [customize the theme to match your brand](/docs/reservoir-kit-theming-and-customization).",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-27T17:34:33.254Z",
+        "revision": 14,
+        "_id": "63f3e45464c04e0012a8fba0",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-27T18:41:22.925Z",
+        "updatedAt": "2023-02-09T16:24:53.284Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 1,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fba0"
+    },
+    "meta": {
+        "slug": "buying",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Add Buying",
+        "title_raw": "Add Buying",
+        "description": "Learn how to buy a token using ReservoirKit.",
+        "_id": "63f3e45464c04e0012a8fba0",
+        "hidden": false
+    },
+    "activeDoc": "buying"
+}

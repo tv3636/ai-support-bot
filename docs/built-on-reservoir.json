@@ -1,0 +1,88 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:39.654Z"
+        },
+        "title": "Building with Reservoir",
+        "icon": "",
+        "updates": [
+            "62c9f00b31fc66009964c1b9",
+            "62d892b0d1ef6d002f7c74a1",
+            "631fef5a895896002b95150a",
+            "6345cb079e6bdb00103f77c6",
+            "63c2da4d2d5c7a002abf7484",
+            "63ea7ce5bd709500119f7f14"
+        ],
+        "type": "basic",
+        "slug": "built-on-reservoir",
+        "excerpt": "Check out the amazing products building with Reservoir",
+        "body": "## Analytics\n\n[block:parameters]\n{\n  \"data\": {\n    \"h-0\": \"Name\",\n    \"h-1\": \"Description\",\n    \"h-2\": \"Link\",\n    \"0-0\": \"Upshot\",\n    \"0-1\": \"Where NFTs meet DeFi\",\n    \"0-2\": \"<https://upshot.xyz/>\",\n    \"1-0\": \"Spicyest\",\n    \"1-1\": \"Find out how much  \\nyour NFT is worth\",\n    \"1-2\": \"<https://www.spicyest.com/>\",\n    \"2-0\": \"FlooredApe\",\n    \"2-1\": \"All your floor prices  \\nin one place\",\n    \"2-2\": \"<https://flooredape.io>\",\n    \"3-0\": \"WGMI.io\",\n    \"3-1\": \"NFT Floor Tracker and Account Valuation Tool\",\n    \"3-2\": \"<https://wgmi.io/>\",\n    \"4-0\": \"Terraforms Explorer\",\n    \"4-1\": \"Terraforms analytics site\",\n    \"4-2\": \"<https://terraformexplorer.xyz>\",\n    \"5-0\": \"Relay\",\n    \"5-1\": \"Make the BEST NFT trading decision in seconds\",\n    \"5-2\": \"<https://relayhq.ai>\",\n    \"6-0\": \"Flava Tools\",\n    \"6-1\": \"Analyze & invest in NFTs with ease\",\n    \"6-2\": \"<https://flava.tools>\",\n    \"7-0\": \"NFTGo\",\n    \"7-1\": \"The Best All-In-One  \\nNFT Analytics Platform\",\n    \"7-2\": \"<https://nftgo.io/>\",\n    \"8-0\": \"Flipflop\",\n    \"8-1\": \"NFT deals that suit your style and budget\",\n    \"8-2\": \"<http://flipflop.xyz/>\"\n  },\n  \"cols\": 3,\n  \"rows\": 9,\n  \"align\": [\n    \"left\",\n    \"left\",\n    \"left\"\n  ]\n}\n[/block]\n\n## Discovery\n\n| Name         | Description                        | Link                             |\n| :----------- | :--------------------------------- | :------------------------------- |\n| Context      | Web3 Social Feed                   | <https://context.app>            |\n| Wat          | Metaverse Natural Language Search  | <https://wat.to/>                |\n| Floor Finder | Trait price explorer               | <https://floorfinder.xyz>        |\n| JPEG.space   | Open gallery ecosystem             | <https://jpeg.space>             |\n| FreshDrops   | NFT mint tracker and rarity tool   | <https://freshdrops.io>          |\n| NFTHailer    | NFT focused media and data company | <https://www.nfthailer.com/news> |\n\n## Horizontal Marketplaces\n\n| Name            | Description                                            | Link                        |\n| :-------------- | :----------------------------------------------------- | :-------------------------- |\n| Levee           | Collection-wide and trait-specific bidding marketplace | <https://levee.bid>         |\n| Evaluate Market | Analytical Marketplace                                 | <https://evaluate.market/>  |\n| Future Tape     | Horizontal Music Marketplace                           | <https://futuretape.xyz/>   |\n| Obscura DAO     | Curate Photography Marketplace                         | <https://obscura.io>        |\n| Skry            | The first NFT aggregator with ratings & reviews        | [https://www.skry.xyz/](<>) |\n\n## Community Marketplaces\n\n| Name                               | Description                           | Link                                      |\n| :--------------------------------- | :------------------------------------ | :---------------------------------------- |\n| ENS Vision                         | ENS Community Marketplace             | <https://ens.vision/>                     |\n| NFTEmbed                           | Embeddable marketplace widget         | <https://www.nftembed.org/>               |\n| Forgotten Market                   | Forgotten Runes Community Marketplace | <https://forgotten.market/>               |\n| Chimpers Market                    | Chimpers Community Marketplace        | <https://marketplace.chimpers.xyz/>       |\n| Gmoney Market                      | GMoney Community Marketplace          | <https://gmoney.market>                   |\n| Crypto Packaged Goods (CPG) Market | CPG Community Marketplace             | <https://market.cryptopackagedgoods.com/> |\n| Mems Market                        | Mems Community Marketplace            | <https://market.memnfts.com/collections/> |\n| Pleasebepatientwith.me             | Miladys Community Marketplace         | <https://www.pleasebepatientwith.me/>     |\n| Loot Exchange                      | Loot Community Marketplace            | <https://www.loot.exchange/>              |\n| Realms Market                      | Realms Community Marketplace          | <https://marketplace.lootrealms.xyz/>     |\n| Swapbox                            | P2P Swapping Marketplace.             | <https://swapbox.xyz/>                    |",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-15T19:20:29.898Z",
+        "revision": 8,
+        "_id": "63f3e45464c04e0012a8fb32",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-15T20:37:18.381Z",
+        "updatedAt": "2023-02-14T02:30:32.605Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb1a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 6,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fb32"
+    },
+    "meta": {
+        "slug": "built-on-reservoir",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Building with Reservoir",
+        "title_raw": "Building with Reservoir",
+        "description": "Check out the amazing products building with Reservoir",
+        "_id": "63f3e45464c04e0012a8fb32",
+        "hidden": false
+    },
+    "activeDoc": "built-on-reservoir"
+}

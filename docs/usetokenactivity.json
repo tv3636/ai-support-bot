@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-03-10T21:52:02.828Z"
+        },
+        "title": "useTokenActivity",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "usetokenactivity",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks). Use this hook to fetch a token's activity, using the [Token Activity](https://docs.reservoir.tools/reference/gettokenstokenactivityv4) endpoint. It takes the collection ID appended to the token ID (collectionID:tokenID), as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional [SWR Infinite](https://swr.vercel.app/docs/pagination#useswrinfinite) configuration object, as the third parameter.\n\n```typescript\nimport { useTokenActivity } from '@reservoir0x/reservoir-kit-ui'\n\nconst { data: activity } = useTokenActivity(\n  \"0x744df993f93c89801cadbea8a4a3fd2b4a443d2c:1793\"\n)\n```",
+        "order": 4,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-03-02T19:27:01.511Z",
+        "revision": 8,
+        "_id": "6400fa20df92330029fa9016",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-03-02T19:33:52.593Z",
+        "updatedAt": "2023-03-02T19:53:28.366Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "6400fa20df92330029fa9016"
+    },
+    "meta": {
+        "slug": "usetokenactivity",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useTokenActivity",
+        "title_raw": "useTokenActivity",
+        "description": "This hook is SWR powered. Use this hook to fetch a token's activity, using the Token Activity endpoint. It takes the collection ID appended to the token ID (collectionID:tokenID), as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the se...",
+        "_id": "6400fa20df92330029fa9016",
+        "hidden": false
+    },
+    "activeDoc": "usetokenactivity"
+}

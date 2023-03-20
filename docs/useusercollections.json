@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:27.645Z"
+        },
+        "title": "useUserCollections",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "useusercollections",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks). Use this hook to fetch a single user's collections using the [Users Collections](ref:getusersusercollectionsv2) endpoint. It takes an address, as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional [SWR Infinite](https://swr.vercel.app/docs/pagination#useswrinfinite) configuration object, as the third parameter.\n\n```typescript\nimport { useUserCollections } from '@reservoir0x/reservoir-kit-ui'\n\nconst { data: collections } = useUserCollections(\"0xFd03726FD90ccc7386bf62b44Bb594f7cbFB3995\")\n```",
+        "order": 12,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-01-20T19:46:53.109Z",
+        "revision": 5,
+        "_id": "63f3e45464c04e0012a8fc40",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "project": "62a239ec3e4c0800663c6d05",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-01-20T20:03:46.446Z",
+        "updatedAt": "2023-01-31T23:03:27.917Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc40"
+    },
+    "meta": {
+        "slug": "useusercollections",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useUserCollections",
+        "title_raw": "useUserCollections",
+        "description": "This hook is SWR powered. Use this hook to fetch a single user's collections using the Users Collections endpoint. It takes an address, as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional SWR Infinite...",
+        "_id": "63f3e45464c04e0012a8fc40",
+        "hidden": false
+    },
+    "activeDoc": "useusercollections"
+}

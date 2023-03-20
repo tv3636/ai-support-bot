@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:14.080Z"
+        },
+        "title": "useAttributes",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "useattributes",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks). Use this hook to fetch collection attributes, using the [All Attributes](ref:getcollectionscollectionattributesallv2) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.\n\n```typescript\nimport { useAttributes } from '@reservoir0x/reservoir-kit-ui'\n\n  const attributes = useAttributes(collectionId)\n```",
+        "order": 9,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-09-26T17:54:59.681Z",
+        "revision": 6,
+        "_id": "63f3e45464c04e0012a8fbf2",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-26T21:30:56.399Z",
+        "updatedAt": "2022-09-27T12:57:42.851Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbf2"
+    },
+    "meta": {
+        "slug": "useattributes",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useAttributes",
+        "title_raw": "useAttributes",
+        "description": "This hook is SWR powered. Use this hook to fetch collection attributes, using the All Attributes endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.TypeScriptimport { useAttributes } from '@reservoir0x/reservoir-kit-ui' const attributes = useAttributes(...",
+        "_id": "63f3e45464c04e0012a8fbf2",
+        "hidden": false
+    },
+    "activeDoc": "useattributes"
+}

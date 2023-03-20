@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 2,
+            "publishPending": false,
+            "updatedAt": "2023-03-01T01:12:06.685Z"
+        },
+        "title": "NFT Liquidity Router",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "nft-liquidity-router",
+        "excerpt": "Reservoir\u2019s liquidity router lets you create, fill, and distribute NFT liquidity across all major marketplaces and the Reservoir ecosystem, through one universal interface.",
+        "body": "Reservoir's NFT liquidity router is built of two constituent components, our Router API and Router Contract. The API is also wrapped into the Reservoir SDK, which abstracts some of the complexities of creating and executing liquidity. The goal of Reservoir\u2019s liquidity router is to simplify the creation and execution of NFT orders  across the ecosystem. \n\n**Core Benefits**\n\n- Execute orders from Reservoir\u2019s open orderbook, including orders aggregated from major NFT marketplaces\n- Create native Reservoir orders and/or push orders to major NFT marketplaces\n- Leverage Reservoir\u2019s router contract for advanced buying and selling, like sweeping, multi-sell, and buying and selling in other erc-20 currencies.\n- Abstraction of the underlying exchanges means you get exchange upgrades for free. \n\n## Using Reservoir\u2019s Liquidity Router\n\nThere are three levels at which you can use Reservoir's liquidity router. For most applications we recommend using the Reservoir SDK because it offers the highest level of abstraction for developers. \n\n[Reservoir SDK (JS/TS/Node)](doc:reservoir-sdk) - includes helpers that abstract the process of iterating through steps, and returning callbacks that can be used to update your UI.\n\n[Router API](ref:creating-and-filling-orders) - APIs for buying, selling, and cancelling any order on any marketplace.\n\n[Router Contract](doc:security-and-smart-contract-audits) - execute multi-item sales through Reservoir\u2019s Router contract, enabling users to purchase items from different marketplaces in one transaction.",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-20T20:08:35.047Z",
+        "revision": 12,
+        "_id": "63f3e658a70b6d000b26397d",
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb19",
+        "createdAt": "2023-02-20T21:30:00.047Z",
+        "updatedAt": "2023-03-01T01:12:06.055Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e658a70b6d000b26397d"
+    },
+    "meta": {
+        "slug": "nft-liquidity-router",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "NFT Liquidity Router",
+        "title_raw": "NFT Liquidity Router",
+        "description": "Reservoir\u2019s liquidity router lets you create, fill, and distribute NFT liquidity across all major marketplaces and the Reservoir ecosystem, through one universal interface.",
+        "_id": "63f3e658a70b6d000b26397d",
+        "hidden": false
+    },
+    "activeDoc": "nft-liquidity-router"
+}

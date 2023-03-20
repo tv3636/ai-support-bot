@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:14.246Z"
+        },
+        "title": "useBids",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "usebids",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) and also handles [infinite loading UX](https://docs.reservoir.tools/docs/hooks#infinite-loading-hooks). Use this hook to fetch bids, using the [Bids (offers)](ref:getordersbidsv5) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.\n\n| Parameter      | Type                                                                     |\n| :------------- | :----------------------------------------------------------------------- |\n| **options**    | [Bids (offers) options](ref:getordersbidsv4)                             |\n| **swrOptions** | [SWR Options](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) |\n| **enabled**    | Boolean                                                                  |\n\n```typescript\nimport { useBids } from '@reservoir0x/reservoir-kit-ui'\n\n const {\n   data: bids,\n   fetchNextPage,\n   hasNextPage,\n } = useBids({\n    contracts: ['0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb'],\n })\n```",
+        "order": 10,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-09-26T17:55:01.248Z",
+        "revision": 11,
+        "_id": "63f3e45464c04e0012a8fbf3",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-26T21:31:09.412Z",
+        "updatedAt": "2023-01-20T20:11:46.919Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbf3"
+    },
+    "meta": {
+        "slug": "usebids",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useBids",
+        "title_raw": "useBids",
+        "description": "This hook is SWR powered and also handles infinite loading UX. Use this hook to fetch bids, using the Bids (offers) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses. ParameterTypeoptionsBids (offers) optionsswrOptionsSWR OptionsenabledBooleanTypeScrip...",
+        "_id": "63f3e45464c04e0012a8fbf3",
+        "hidden": false
+    },
+    "activeDoc": "usebids"
+}

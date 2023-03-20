@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:02.577Z"
+        },
+        "title": "useTokenOpenseaBanned",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "detect-tokens-flagged-by-opensea",
+        "excerpt": "",
+        "body": "This hook is used to check if a particular token has been flagged for suspicious activity on OpenSea. Once the hook is imported the next step is to use it within a React component. You'll need to pass in a collectionId and a tokenId. Currently there's no requirement for an OpenSea api token to use the underlying API. Note that this hook only works with mainnet tokens.\n[block:code]\n{\n  \"codes\": [\n    {\n      \"code\": \"import { useTokenOpenseaBanned } from '@reservoir0x/reservoir-kit-ui'\\n\\nconst isBanned = useTokenOpenseaBanned(collectionId, tokenId)\",\n      \"language\": \"typescript\"\n    }\n  ]\n}\n[/block]",
+        "order": 8,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-01T12:39:56.631Z",
+        "revision": 1,
+        "_id": "63f3e45464c04e0012a8fbb6",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-01T13:59:06.887Z",
+        "updatedAt": "2022-08-09T12:38:19.339Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbb6"
+    },
+    "meta": {
+        "slug": "detect-tokens-flagged-by-opensea",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useTokenOpenseaBanned",
+        "title_raw": "useTokenOpenseaBanned",
+        "description": "This hook is used to check if a particular token has been flagged for suspicious activity on OpenSea. Once the hook is imported the next step is to use it within a React component. You'll need to pass in a collectionId and a tokenId. Currently there's no requirement for an OpenSea api token to use t...",
+        "_id": "63f3e45464c04e0012a8fbb6",
+        "hidden": false
+    },
+    "activeDoc": "detect-tokens-flagged-by-opensea"
+}

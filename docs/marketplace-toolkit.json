@@ -1,0 +1,80 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-03-01T01:33:53.765Z"
+        },
+        "title": "Overview",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "marketplace-toolkit",
+        "excerpt": "Reservoir's complete suite of APIs, SDKs and UI Kits. Low-level tooling that lets you focus on your product\u2019s strengths by abstracting the complexity of interacting with the NFT market.",
+        "body": "Reservoir's marketplace toolkit is a modular set of tools that allows you to interact with the NFT market at the appropriate level of abstraction for your application. The basic components of the toolkit are:\n\n- [Reservoir API](doc:reservoir-api) - An all-in-one API for building NFT market applications. You get market data and metadata, order execution, and advanced order features like collection and trait level bids, all out of the box. All this functionality is wrapped into the SDK for a higher level of abstraction.\n- [Reservoir SDK (JS/TS/Node)](doc:reservoir-sdk)- An abstracted typescript SDK for interacting with the NFT market. All the function of the Reservoir API wrapped into easily-to-use, performant methods.\n- [ReservoirKit UI (React)](doc:reservoirkit-ui) -  A react library that makes it easy to add marketplace functionality and UI into your project.\n- [Marketplace UI (NextJS)](doc:marketplace) - An open-source reference marketplace that you can fork and use freely as a stand alone marketplace or a base for building something more custom and unique\n- [Dune Dataset](doc:dune-dataset) - Reservoir's data is all available in Dune Analytics so you can query our data and build reports about the NFT market or specific projects/applications.",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2023-02-20T20:57:02.879Z",
+        "revision": 9,
+        "_id": "63f3e80a1903cc0012df229a",
+        "user": "62a2345635a16d0608ba84f4",
+        "project": "62a239ec3e4c0800663c6d05",
+        "category": "63f3e45464c04e0012a8fb21",
+        "createdAt": "2023-02-20T21:37:14.154Z",
+        "updatedAt": "2023-03-01T01:33:53.423Z",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e80a1903cc0012df229a"
+    },
+    "meta": {
+        "slug": "marketplace-toolkit",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Overview",
+        "title_raw": "Overview",
+        "description": "Reservoir's complete suite of APIs, SDKs and UI Kits. Low-level tooling that lets you focus on your product\u2019s strengths by abstracting the complexity of interacting with the NFT market.",
+        "_id": "63f3e80a1903cc0012df229a",
+        "hidden": false
+    },
+    "activeDoc": "marketplace-toolkit"
+}

@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:22.187Z"
+        },
+        "title": "Instant Sell",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "add-instant-sell",
+        "excerpt": "Learn how to add instant sell into your product with Reservoir.",
+        "body": "Instant selling enables users to sell their token at a fair market price without having to experience the hassle of listing on a marketplace, a process that is time consuming and uncertain. Developer teams can easily add this functionality to their products with Reservoir. \n\n**How does it work?**\n\nReservoir aggregates the best bids from all major sources (including marketplaces and professional marketplace makers) making them available via a simple API. These bids can then be filled with ReservoirKit.\n\n**How do I add this to my product?**\n\nWhile there are many ways to take advantage of Reservoir\u2019s aggregated bid liquidity, below is one example of how to add instant sell into your product in two simple steps.\n\n1. Find a user\u2019s best bids from all their tokens using [user-top-bids endpoint](https://docs.reservoir.tools/reference/getordersusersusertopbidsv2).\n\n![](https://files.readme.io/afab20e-Screen_Shot_2022-12-07_at_5.36.18_PM.png)\n\nExample:  \n<https://api.reservoir.tools/orders/users/{walletAddress}/top-bids/v1?optimizeCheckoutURL=false&normalizeRoyalties=false&sortBy=floorDifferencePercentage&sortDirection=des>  \nc&limit=20\n\n2. Initiate ResevoirKit\u2019s [AcceptBidModal](https://docs.reservoir.tools/docs/accept-bid) when user clicks Sell to accept the bid and handle the execute steps.\n\n[block:image]\n{\n  \"images\": [\n    {\n      \"image\": [\n        \"https://files.readme.io/60257b9-uikit.png\",\n        null,\n        \"\"\n      ],\n      \"sizing\": \"75% \"\n    }\n  ]\n}\n[/block]",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-12-07T18:19:35.887Z",
+        "revision": 8,
+        "_id": "63f3e45464c04e0012a8fc20",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-12-07T22:04:54.130Z",
+        "updatedAt": "2022-12-22T20:50:22.082Z",
+        "user": "62a2345635a16d0608ba84f4",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc20"
+    },
+    "meta": {
+        "slug": "add-instant-sell",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Instant Sell",
+        "title_raw": "Instant Sell",
+        "description": "Learn how to add instant sell into your product with Reservoir.",
+        "_id": "63f3e45464c04e0012a8fc20",
+        "hidden": false
+    },
+    "activeDoc": "add-instant-sell"
+}

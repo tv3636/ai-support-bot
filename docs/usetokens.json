@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:05.736Z"
+        },
+        "title": "useTokens",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "usetokens",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) and also handles [infinite loading UX](https://docs.reservoir.tools/docs/hooks#infinite-loading-hooks). Use this hook to fetch token details, using the [Tokens](ref:gettokensv5) endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.\n[block:code]\n{\n  \"codes\": [\n    {\n      \"code\": \"import { useTokens } from '@reservoir0x/reservoir-kit-ui'\\n\\nconst { data: tokens } = useTokens({\\n  tokens: [\\\"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb:1\\\"],\\n})\",\n      \"language\": \"typescript\"\n    }\n  ]\n}\n[/block]",
+        "order": 0,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "usetokendetails",
+        "slugUpdatedAt": "2022-09-01T16:00:58.417Z",
+        "revision": 4,
+        "_id": "63f3e45464c04e0012a8fbc1",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-09T12:24:09.747Z",
+        "updatedAt": "2022-09-01T15:59:14.174Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbc1"
+    },
+    "meta": {
+        "slug": "usetokens",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useTokens",
+        "title_raw": "useTokens",
+        "description": "This hook is SWR powered and also handles infinite loading UX. Use this hook to fetch token details, using the Tokens endpoint. It takes a query parameter which maps to the same parameters that the api endpoint uses.TypeScriptimport { useTokens } from '@reservoir0x/reservoir-kit-ui' const { data: to...",
+        "_id": "63f3e45464c04e0012a8fbc1",
+        "hidden": false
+    },
+    "activeDoc": "usetokens"
+}

@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-28T18:19:51.316Z"
+        },
+        "title": "Marketplace Source Attribution",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "calldata-attribution",
+        "excerpt": "",
+        "body": "One challenge for NFT Aggregation platforms is the most gas-efficient method to fill an order is directly through the exchange contract (Seaport, LooksRare, etc). However when doing so, the transaction is indistinguishable from an order that was filled on the marketplace where the order was created (e.g. OpenSea). This leads to significant misreporting of where NFT volume is happening, when looking at on-chain analytics. As an example, around 50% of all Gem transactions are filled directly via Seaport, and completely unattributed to Gem!\n\nTo solve this problem, we are working with the NFT community on a standard for attributing trades that is:\n\n- open \n- on-chain \n- gas-efficient \n- compatible with any exchange\n\nIn short, the idea is that aggregation platforms pass their domain name in the calldata of each transaction they fill, so that on-chain analytics tools can parse it and determine who filled the order.\n\nDomain names are used because:\n\n- They are easy to read\n- They can be visited to learn more\n- Additional metadata (icon, etc) can be pulled from html tags\n\n## Version 1\n\nIn Version 1, the domain is converted to hex, and surrounded by the delimiter `1f`:\n\n`ens.vision` > `1f656e732e766973696f6e1f`  \n`marketplace.truthlabs.co` > `1f6d61726b6574706c6163652e74727574686c6162732e636f1f`\n\n[Example Transaction](https://etherscan.io/tx/0xfb9fe023fbdf3dd10f97958475ab07c1eac47422b7b8d644f0af17bb8b487038):  \n[Dune Report Demonstrating Parsing](https://dune.com/queries/1177710)\n\n## Version 2\n\nThe advantage of Version 1 is that it is completely open, and does not require any \"registry\" of valid domains. However the downside is that the gas cost grows with the length of the domain (16 gas units per character). \n\nTo solve this, we are working on a V2 that uses the first 4 bytes of the domain hash: \n\n`bytes4(keccak256(\"mydomain.com\")`\n\nThis is already [live](https://mobile.twitter.com/vasa_develop/status/1572331744032067584) in production on Gem:\n\n`gem.xyz` > `72db8c0b`\n\n[Example Dune Query](https://dune.com/queries/1289755)\n\nWe will be rolling this out across Reservoir soon, along with tooling for reverse lookups on domain hashes.\n\n\n\n## Setting custom source metadata\n\nBy default Reservoir will automatically create source metadata for every new source that creates or fills an order. However it is possible to overwrite these defaults by setting your own custom source metadata using Reservoir meta tags.\n\nThe `reservoir:title` meta tag should map to a human readable marketplace name. If nothing is provided then the domain is used instead.\n\n```html\n<meta property=\"reservoir:title\" content=\"Reservoir Marketplace\" />\n```\n\n\n\nUse the `reservoir:icon` meta tag to override the icon that the reservoir orderbook uses to display your marketplace logo. If nothing is provided then the favicon is used by default. The url can either be relative or absolute.\n\n```html\n<meta\n  property=\"reservoir:icon\"\n  content=\"https://api.reservoir.tools/redirect/sources/reservoir/logo/v2\"\n/>\n```\n\n\n\nThe `reservoir:token-url-x` meta tag is used to provide a url for the indexer to redirect to the correct token page. It can either be an absolute or a relative url. Replace `x` with the name of your chain (mainnet, goerli etc) and keep the two required keys (`contract` and `tokenId`). These keys are meant to be a placeholder for the indexer to replace when generating the url.  This api redirects to the given url: [Redirect response to the given source token page](ref:getredirectsourcessourcetokenstokenlinkv2)\n\n```html\n<meta\n  property=\"reservoir:token-url-mainnet\"\n  content=\"https://reservoir.market/${contract}/${tokenId}\"\n/>\n\n<meta\n  property=\"reservoir:token-url-goerli\"\n  content=\"https://dev.reservoir.market/${contract}/${tokenId}\"\n/>\n\n<meta\n  property=\"reservoir:token-url-polygon\"\n  content=\"https://polygon.reservoir.market/${contract}/${tokenId}\"\n/>\n```",
+        "order": 1,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-30T09:52:13.713Z",
+        "revision": 13,
+        "_id": "63f3e45464c04e0012a8fbd7",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-30T11:47:30.046Z",
+        "updatedAt": "2023-02-28T18:19:51.110Z",
+        "user": "62aa40bf070ba500847db14f",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbd7"
+    },
+    "meta": {
+        "slug": "calldata-attribution",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Marketplace Source Attribution",
+        "title_raw": "Marketplace Source Attribution",
+        "description": "One challenge for NFT Aggregation platforms is the most gas-efficient method to fill an order is directly through the exchange contract (Seaport, LooksRare, etc). However when doing so, the transaction is indistinguishable from an order that was filled on the marketplace where the order was created ...",
+        "_id": "63f3e45464c04e0012a8fbd7",
+        "hidden": false
+    },
+    "activeDoc": "calldata-attribution"
+}

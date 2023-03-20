@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:06.472Z"
+        },
+        "title": "useOwnerListings",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "useownerlistings",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks) and also handles [infinite loading UX](https://docs.reservoir.tools/docs/hooks#infinite-loading-hooks). The hook is an extension of the [useListings](doc:uselistings) hook. It's a convenient way to fetch the listings that belong to the currently connected wallet. The parameters are exactly the same as the aforementioned useListings hook.\n[block:code]\n{\n  \"codes\": [\n    {\n      \"code\": \"import { useOwnerListings } from '@reservoir0x/reservoir-kit-ui'\\n\\n const {\\n   data: listings,\\n   fetchNextPage,\\n   hasNextPage,\\n } = useOwnerListings()\",\n      \"language\": \"typescript\"\n    }\n  ]\n}\n[/block]",
+        "order": 6,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-08-09T10:28:09.124Z",
+        "revision": 1,
+        "_id": "63f3e45464c04e0012a8fbc4",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-08-09T12:27:11.456Z",
+        "updatedAt": "2022-08-09T12:41:47.347Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbc4"
+    },
+    "meta": {
+        "slug": "useownerlistings",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useOwnerListings",
+        "title_raw": "useOwnerListings",
+        "description": "This hook is SWR powered and also handles infinite loading UX. The hook is an extension of the useListings hook. It's a convenient way to fetch the listings that belong to the currently connected wallet. The parameters are exactly the same as the aforementioned useListings hook.TypeScriptimport { us...",
+        "_id": "63f3e45464c04e0012a8fbc4",
+        "hidden": false
+    },
+    "activeDoc": "useownerlistings"
+}

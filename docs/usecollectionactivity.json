@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:14.893Z"
+        },
+        "title": "useCollectionActivity",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "usecollectionactivity",
+        "excerpt": "",
+        "body": "This hook is [SWR powered](https://docs.reservoir.tools/docs/hooks#swr-powered-hooks). Use this hook to fetch a collection's activity, using the [Collection Activity](https://docs.reservoir.tools/reference/getcollectionsactivityv5) endpoint. It takes the collection ID, as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional [SWR Infinite](https://swr.vercel.app/docs/pagination#useswrinfinite) configuration object, as the third parameter.\n\n```typescript\nimport { useCollectionActivity } from '@reservoir0x/reservoir-kit-ui'\n\nconst { data: activity } = useCollectionActivity(\n  \"0xb47e3cd837ddf8e4c57f05d70ab865de6e193bbb\"\n)\n```",
+        "order": 2,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-10-05T14:47:38.704Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fbf7",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-10-05T17:05:22.532Z",
+        "updatedAt": "2023-01-20T20:08:52.872Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbc0",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbf7"
+    },
+    "meta": {
+        "slug": "usecollectionactivity",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbc0",
+        "image": [],
+        "title": "useCollectionActivity",
+        "title_raw": "useCollectionActivity",
+        "description": "This hook is SWR powered. Use this hook to fetch a collection's activity, using the Collection Activity endpoint. It takes the collection ID, as the first parameter, an optional query object which maps to the same parameters that the API endpoint uses, as the second parameter, and an optional SWR In...",
+        "_id": "63f3e45464c04e0012a8fbf7",
+        "hidden": false
+    },
+    "activeDoc": "usecollectionactivity"
+}

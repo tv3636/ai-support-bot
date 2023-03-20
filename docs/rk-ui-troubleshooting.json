@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 1,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:21.850Z"
+        },
+        "title": "Troubleshooting",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "rk-ui-troubleshooting",
+        "excerpt": "Having issues with ReservoirKit? Make sure to check this guide first.",
+        "body": "## Nextjs commonjs module error\n\n`SyntaxError: Named export 'Arrow' not found. The requested module '@radix-ui/react-popover' is a CommonJS module, which may not support all module.exports as named exports.\nCommonJS modules can always be imported via the default export, for example using:`\n\nReservoirKit UI 0.7+ uses esmodules and drops commonjs module support in order to support wagmi 0.8+. The error message may vary but will always suggest importing the package differently. This is an issue when using ReservoirKit UI in a nextjs application. This issue is not specific to the ReservoirKit UI package and is impacting many other [projects](https://github.com/ant-design/ant-design-mobile/blob/3c87f1c5b16c39c70e494159732f6bb1f0a08c01/docs/guide/ssr.en.md) that have switched to esmodules. Thankfully there are a couple of solutions to solve the issue above:\n\n**Next 13+**\n\n```\n// next.config.js\nconst nextConfig = {\n  experimental: {\n    transpilePackages: ['@reservoir0x/reservoir-kit-ui'],\n  },\n};\n\nmodule.exports = nextConfig;\n```\n\n\n\nThis solution uses the experimental nextjs flag to transpile packages to whatever nextjs's packager is expecting. Add the flag to your next.config.js file.\n\n<https://beta.nextjs.org/docs/api-reference/next.config.js#transpilepackages>\n\n**Nextjs 12 and below:**  \n`yarn add -D next-transpile-modules`\n\n```\nconst withTM = require('next-transpile-modules')([\n  '@reservoir0x/reservoir-kit-ui',\n]);\n\nmodule.exports = withTM({\n  // other Next.js configuration in your project\n});\n```\n\n\n\nOlder versions of Nextjs don't have the luxury of a simple flag, instead you need to install the `next-transpile-modules` plugin and add the following code to your next.config.js file.",
+        "order": 9,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "rktroubleshooting",
+        "slugUpdatedAt": "2022-12-15T16:26:38.740Z",
+        "revision": 12,
+        "_id": "63f3e45464c04e0012a8fc22",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-12-15T16:13:54.879Z",
+        "updatedAt": "2022-12-15T16:42:55.374Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fc22"
+    },
+    "meta": {
+        "slug": "rk-ui-troubleshooting",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Troubleshooting",
+        "title_raw": "Troubleshooting",
+        "description": "Having issues with ReservoirKit? Make sure to check this guide first.",
+        "_id": "63f3e45464c04e0012a8fc22",
+        "hidden": false
+    },
+    "activeDoc": "rk-ui-troubleshooting"
+}

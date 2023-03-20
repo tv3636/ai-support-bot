@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 3,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:25:58.419Z"
+        },
+        "title": "Accessing Native Reservoir Liquidity",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "accessing-native-liquidity",
+        "excerpt": "",
+        "body": "Reservoir's aggregated order book consists of two categories of orders:\n\n1. **Mirrored**: from external marketplaces (OpenSea, LooksRare, X2Y2, etc)  \n2. **Native**: from marketplaces built directly on top of Reservoir\n\nThere are now over 100 marketplaces creating native liquidity through Reservoir, including:\n\n- [ENSVision](https://ens.vision) (Major ENS Marketplace doing ~50% of all ENS sales)\n- [Truth Marketplace](https://marketplace.truthlabs.co/collections/0xbce3781ae7ca1a5e050bd9c4c77369867ebc307e) (Official Marketplace for Goblintown.wtf, IlluminatiNFT, etc)\n- [Forgotten.Market](https://forgotten.market/) (Forgotten Runes Wizard Cult Community Marketplace)\n\nAggregators looking to ingest only native Reservoir liquidity (because they already have the rest), can do so easily by querying the Asks API with the filter `native=true`\n\n<https://api.reservoir.tools/orders/asks/v3?native=true&includePrivate=false&includeMetadata=false&includeRawData=true&sortBy=createdAt&limit=1000>\n\nThis API is designed to be queried in bulk, returning up to 1000 orders at a time. To get all orders, follow the continuation until you see a result you've ingested already. To get real-time orders, poll every second for new results.\n\n## Supported Protocols\n\nThe Reservoir Order Book supports the following order kinds:\n\n- `seaport`\n- `zeroex-v4-erc721`\n- `zeroex-v4-erc1155`\n- `wyvern-v2.3` (deprecated)\n\nThe vast majority of current orders (99.99%) use `seaport`. \n\nYou can filter out protocols you don't support by looking at the `kind` field in the response.\n\n## Marketplace Attribution\n\nReservoir is not a single marketplace, it's a dynamically growing collection of marketplaces, which can make integration slightly more complicated. \n\nTo help with this, every order contains detailed `source` information, so you can correctly attribute the marketplace where the order came from. \n\n```coffeescript json\n\"source\": {\n        \"domain\": \"ens.vision\",\n        \"name\": \"ENSVision\",\n        \"icon\": \"https://www.ens.vision/favicon.ico\"\n      },\n```\n\nWhen integrating, there are 3 options to consider:\n\n1. Attribute everything to \"Reservoir\", ignoring the source marketplace\n   1. This is the easiest, but not a great UX\n2. Attribute everything to it's source marketplace \n   1. Most accurate, but complex to handle a dynamic set of marketplaces\n3. Maintain a whitelist of known marketplaces, with fallback \"Reservoir\" category\n   1. A middle ground between accurate attribution and simplicity\n\nAs an example, implementing Option 3 would work roughly like this:\n\n- Internally in your system, create a fallback \"Reservoir\" marketplace, along with a handful of known marketplaces (ENSVision, Forgotten.Market, etc)\n- Ingest all native Reservoir orders\n- If the source is known, assign it to that market, otherwise assign to \"Reservoir\" \n- If a new marketplace launches, you're getting their orders with zero extra effort (shows \"Reservoir\" as source)\n- If it starts to get traction, you add it internally and start classifying the orders correctly (shows actual marketplace name as source)",
+        "order": 12,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-06-27T23:02:13.289Z",
+        "revision": 7,
+        "_id": "63f3e45464c04e0012a8fba1",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-06-28T00:48:50.480Z",
+        "updatedAt": "2022-10-10T06:05:05.701Z",
+        "user": "62a26bef4af83a00214889fe",
+        "category": "63f3e45464c04e0012a8fb20",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": null,
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fba1"
+    },
+    "meta": {
+        "slug": "accessing-native-liquidity",
+        "type": "docs",
+        "parent": null,
+        "image": [],
+        "title": "Accessing Native Reservoir Liquidity",
+        "title_raw": "Accessing Native Reservoir Liquidity",
+        "description": "Reservoir's aggregated order book consists of two categories of orders: Mirrored: from external marketplaces (OpenSea, LooksRare, X2Y2, etc)Native: from marketplaces built directly on top of Reservoir There are now over 100 marketplaces creating native liquidity through Reservoir, including: ENSVisi...",
+        "_id": "63f3e45464c04e0012a8fba1",
+        "hidden": false
+    },
+    "activeDoc": "accessing-native-liquidity"
+}

@@ -1,0 +1,81 @@
+{
+    "doc": {
+        "metadata": {
+            "image": [],
+            "title": "",
+            "description": ""
+        },
+        "api": {
+            "method": "get",
+            "url": "",
+            "auth": "required",
+            "results": {
+                "codes": [
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 200
+                    },
+                    {
+                        "name": "",
+                        "code": "{}",
+                        "language": "json",
+                        "status": 400
+                    }
+                ]
+            },
+            "params": []
+        },
+        "next": {
+            "description": "",
+            "pages": []
+        },
+        "algolia": {
+            "recordCount": 4,
+            "publishPending": false,
+            "updatedAt": "2023-02-20T21:26:12.731Z"
+        },
+        "title": "Accept a Bid",
+        "icon": "",
+        "updates": [],
+        "type": "basic",
+        "slug": "accept-bid",
+        "excerpt": "Learn how to accept a bid on a token using ReservoirKit.",
+        "body": "## Prerequisites \u2699\ufe0f\n\n[Install and configure ReservoirKit](/docs/reservoirkit-ui).\n\n## AcceptBidModal\n\nReservoirKit provides a simple to configure modal for facilitating accepting bids in your react app. Below is an example of a simple AcceptBidModal setup.\n\n```typescript\nimport { AcceptBidModal } from '@reservoir0x/reservoir-kit-ui'\n\n<AcceptBidModal\n  trigger={\n    <button>\n      Accept Bid\n    </button>\n  }\n  collectionId=\"0xf5de760f2e916647fd766b4ad9e85ff943ce3a2b\"\n  tokenId=\"1469875\"\n\tbidId=\"0x4518b3a90ae5873ee3031904b74366b0316329c2f5ef81ec30480c562a30be9c\"\n  onBidAccepted={(data) => {\n    console.log('Bid Accepted', data)\n  }}\n  onBidAcceptError={(error, data) => {\n    console.log('Bid Acceptance Error', error, data)\n  }}\n  onClose={(data, stepData, currentStep) => {\n    console.log('AcceptBidModal Closed')\n  }}\n/>\n```\n\n\n\nLet's dive into the parameters. You'll need to provide an element to trigger the modal, this can be any valid html element. Next you'll need to provide a `collectionId` and a`tokenId`. These can be set to `undefined` until the data is ready. \n\nThere are also some additional _optional_ props:\n\n| Prop                   | Description                                                                                                                                                                                                                                                                                      |\n| :--------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| **bidId**              | You can also optionally supply a `bidId` which will pull the order directly from the [bids api](/reference/getordersbidsv4)                                                                                                                                                                      |\n| **openState**          | This is a state tuple from react's [useState](https://reactjs.org/docs/hooks-state.html), you can use this to programmatically open or close the modal. The modal will use this state when determining if the modal is open or closed.                                                           |\n| **normalizeRoyalties** | Use this to ensure that royalties are added to the order. If royalties are missing from the order then the correct royalties are added on top. If unspecified then the [global setting](https://docs.reservoir.tools/docs/reservoirkit-ui#configuring-reservoirkit-ui) will be used if provided. |\n\n Finally you can set some optional callbacks:\n\n**onBidAccepted**: Triggered when the bid was accepted successfully, returns some useful data about the bid.\n\n**onBidAcceptError**: Triggered when accepting the bid resulted in an error, returns the error and the bid data.\n\n**onClose**: Triggered when the modal was closed. Returns some useful data about the bid as well as the step data and the current step.\n\n## Conditional Rendering\n\nReservoirKit's AcceptBidModal doesn't take care of conditionally showing the button/modal based on if the item has a bid, we leave that logic up to the developer. Below are the requirements for accepting a bid and how to go about getting that data:\n\n- The user needs to have a **connected wallet**. You can check this by looking for a signer from the [useSigner](https://wagmi.sh/docs/hooks/useSigner) wagmi hook.\n- The token must have a **valid offer**, you can check if the `token.market.topBid.price.amount.decimal` is available for that token using the [Tokens](ref:gettokensv5) api endpoint.\n\n## Custom AcceptBidModal\n\nThe AcceptBidModal also comes with a custom renderer which can be used to just get the data layer that the AcceptBidModal uses internally to handle the underlying business logic. With the renderer you can rebuild the UI completely to your liking. Below is an example of how it works in practice.\n\n```typescript\nimport { AcceptBidModal, AcceptBidStep } from '@reservoir0x/reservoir-kit-ui'\n\n<AcceptBidModal.Custom\n  open={open}\n  tokenId={tokenId}\n  collectionId={collectionId}>\n  {({\n        token,\n        collection,\n        source,\n        expiration,\n        totalPrice,\n        bidAmount,\n        bidAmountCurrency,\n        ethBidAmount,\n        fees,\n        acceptBidStep,\n        transactionError,\n        txHash,\n        totalUsd,\n        ethUsdPrice,\n        address,\n        etherscanBaseUrl,\n        stepData,\n        acceptBid,\n  }) => {\n    { Your Custom React Elements }\n  })}\n</AcceptBidModal.Custom>\n```\n\n\n\nThe custom AcceptBidModal takes a few parameters like before with one additional one being the open parameter. This is because there is no trigger, you have control over what sort of modal you want this to eventually live in and how to trigger that modal. You'll have the ability to add a custom button with a custom handler, etc. The custom AcceptBidModal then passes some key data into the children which we parse above and use in our custom UI. It's also important to note the `AcceptBidStep` here which is used to manage the internal state of the AcceptBidModal logic. You can decide to use all or some of the data passed into your custom implementation.\n\n> \ud83d\udc4d Nice job!\n> \n> Now that we've added an accept bid modal to your dApp, let's [customize the theme to match your brand](/docs/reservoir-kit-theming-and-customization).",
+        "order": 3,
+        "isReference": false,
+        "deprecated": false,
+        "hidden": false,
+        "sync_unique": "",
+        "link_url": "",
+        "link_external": false,
+        "previousSlug": "",
+        "slugUpdatedAt": "2022-09-14T19:04:52.096Z",
+        "revision": 17,
+        "_id": "63f3e45464c04e0012a8fbe9",
+        "pendingAlgoliaPublish": false,
+        "createdAt": "2022-09-15T18:29:59.046Z",
+        "updatedAt": "2023-02-09T16:29:02.761Z",
+        "user": "62a237cf8ebf2e01e174e64a",
+        "category": "63f3e45464c04e0012a8fb21",
+        "project": "62a239ec3e4c0800663c6d05",
+        "version": "63f3e45464c04e0012a8fc52",
+        "__v": 0,
+        "parentDoc": "63f3e45464c04e0012a8fbec",
+        "isApi": false,
+        "id": "63f3e45464c04e0012a8fbe9"
+    },
+    "meta": {
+        "slug": "accept-bid",
+        "type": "docs",
+        "parent": "63f3e45464c04e0012a8fbec",
+        "image": [],
+        "title": "Accept a Bid",
+        "title_raw": "Accept a Bid",
+        "description": "Learn how to accept a bid on a token using ReservoirKit.",
+        "_id": "63f3e45464c04e0012a8fbe9",
+        "hidden": false
+    },
+    "activeDoc": "accept-bid"
+}
